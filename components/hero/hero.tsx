@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       <div className="container">
         <div className="hero_wrap pt-40">
           <div className="row align-items-center">
-            <div className="col-lg-6">
+            <div className="col-lg-6 mt-xl-5">
               <div className="xb-hero">
                 <Fade direction="up" triggerOnce duration={1000}>
                   <h1
