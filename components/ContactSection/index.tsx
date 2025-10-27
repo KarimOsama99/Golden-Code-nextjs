@@ -35,7 +35,11 @@ const ContactSection: React.FC = () => {
                     </span>
                     <ul className="social_icons_block list-unstyled ul_li">
                       <li>
-                        <Link href="/contact" aria-label="Facebook">
+                        <Link
+                          href="https://www.facebook.com/goldencodee/"
+                          target="_blank"
+                          aria-label="Facebook"
+                        >
                           <i className="fab fa-facebook-f"></i>
                         </Link>
                       </li>
@@ -61,7 +65,11 @@ const ContactSection: React.FC = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/" area-label="instagram">
+                        <Link
+                          href="https://www.instagram.com/goldencodee/"
+                          target="_blank"
+                          area-label="instagram"
+                        >
                           <i className="fab fa-instagram"></i>
                         </Link>
                       </li>
@@ -78,9 +86,7 @@ const ContactSection: React.FC = () => {
 
                   <div className="contact-info_widget">
                     <h3 className="xb-title">Saudi Arabia Office</h3>
-                    <span className="xb-location">
-                      Riyadh
-                    </span>
+                    <span className="xb-location">Riyadh</span>
                   </div>
 
                   <hr className="breack-line" />

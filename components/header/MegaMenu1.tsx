@@ -109,7 +109,10 @@ const MegaMenu1: React.FC = () => {
                       <h5>Follow Us:</h5>
                       <ul className="social_icons_block unordered_list">
                         <li>
-                          <Link href="/">
+                          <Link
+                            href="https://www.facebook.com/goldencodee/"
+                            target="_blank"
+                          >
                             <i className="fab fa-facebook-f"></i>
                           </Link>
                         </li>
@@ -135,7 +138,7 @@ const MegaMenu1: React.FC = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/">
+                          <Link href="https://www.instagram.com/goldencodee/" target="_blank">
                             <i className="fab fa-instagram"></i>
                           </Link>
                         </li>
