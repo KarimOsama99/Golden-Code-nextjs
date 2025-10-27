@@ -148,7 +148,7 @@ const ProjectSection: React.FC = () => {
                     <div className="xb-item--inner ul_li_between pos-rel z-1">
                       <div className="xb-item--project_title">
                         <h2 className="xb-item--title">{project.title}</h2>
-                        <p className="xb-item--content">
+                        <p className="xb-item--content line-clamp-2">
                           {project.description}
                         </p>
                         <div className="xb-btn mt-50">
