@@ -18,9 +18,12 @@ const Hero: React.FC = () => {
             <div className="col-lg-6">
               <div className="xb-hero">
                 <Fade direction="up" triggerOnce duration={1000}>
-                  <h1 className="xb-item--title wow fadeInUp" data-wow-duration="600ms">
-                    Grow your business
-                    <br /> with <span>SEO strategy</span>
+                  <h1
+                    className="xb-item--title wow fadeInUp"
+                    data-wow-duration="600ms"
+                  >
+                    We Build Apps
+                    <br /> That <span>Users Love</span>
                   </h1>
                 </Fade>
 
@@ -30,7 +33,7 @@ const Hero: React.FC = () => {
                     data-wow-delay="100ms"
                     data-wow-duration="600ms"
                   >
-                    (like 0 to 1000 new sales per month kind of results)
+                    (Get a lightning-fast site built on modern frameworks.)
                   </p>
                 </Fade>
 
@@ -44,10 +47,14 @@ const Hero: React.FC = () => {
                       <i className="far fa-check"></i> Validate market fit
                     </li>
                     <li>
-                      <i className="far fa-check"></i> Build and launch an MVP
+                      <i className="far fa-check"></i> Custom UI/UX Design
                     </li>
                     <li>
-                      <i className="far fa-check"></i> Scale infrastructure & grow users
+                      <i className="far fa-check"></i> High Performance
+                    </li>
+                    <li>
+                      <i className="far fa-check"></i> Scale infrastructure &
+                      grow users
                     </li>
                   </ul>
                 </Fade>
@@ -58,7 +65,10 @@ const Hero: React.FC = () => {
                     data-wow-delay="300ms"
                     data-wow-duration="600ms"
                   >
-                    <Link href="/contact" className="thm-btn thm-btn--aso thm-btn--aso_yellow">
+                    <Link
+                      href="/contact"
+                      className="thm-btn thm-btn--aso thm-btn--aso_yellow"
+                    >
                       Book a free consultation
                     </Link>
                   </div>
@@ -75,7 +85,7 @@ const Hero: React.FC = () => {
                     src="/images/hero/hero-img02.svg"
                     alt="Main Hero"
                     fill
-                    style={{ objectFit: 'contain' }}
+                    style={{ objectFit: "contain" }}
                   />
                 </Fade>
               </div>
@@ -83,11 +93,15 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <div className="banner-scroll-down active">
-          <AnchorLink href="#about" aria-label="Scroll to top" className="scrollspy-btn">
+          <AnchorLink
+            href="#about"
+            aria-label="Scroll to top"
+            className="scrollspy-btn"
+          >
             <span></span>
             <span></span>
             <span></span>
-        </AnchorLink>
+          </AnchorLink>
         </div>
       </div>
     </section>
