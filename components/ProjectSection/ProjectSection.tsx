@@ -176,7 +176,7 @@ const ProjectSection: React.FC = () => {
                       </div>
 
                       {"rnumber" in project && (
-                        <div className="xb-item--item-box mt-none-50">
+                        <div className="xb-item--item-box mt-none-50 d-none d-xl-block">
                           <div className="xb-item--item">
                             <span className="xb-item--number">
                               {project.rnumber}%
