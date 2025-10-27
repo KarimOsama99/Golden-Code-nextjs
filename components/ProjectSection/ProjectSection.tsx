@@ -115,7 +115,7 @@ const ProjectSection: React.FC = () => {
           </div>
           <Fade direction="right" triggerOnce={false} duration={1000} delay={9}>
             <Link
-              href={"/casestudy"}
+              href={"/portfolio"}
               className="thm-btn thm-btn--aso thm-btn--aso_dark"
             >
               View more Projects

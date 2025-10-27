@@ -8,66 +8,7 @@ import cIcon1 from '@/public/images/icon/cp-icon.svg';
 import cIcon2 from '@/public/images/icon/loc-icon.svg';
 import cIcon3 from '@/public/images/icon/clock-icon.svg';
 import Image from "next/image";
-
-type Job = {
-  id: number;
-  title: string;
-  location: string;
-  type: string;
-  slug: string;
-  categories: string[];
-};
-
-const jobListings: Job[] = [
-  {
-    id: 1,
-    title: "Enterprise SEO Consultant",
-    location: "Remote, (USA)",
-    type: "Full time",
-    slug: "enterprise-seo-consultant",
-    categories: ["cat1", "cat3", "cat5"],
-  },
-  {
-    id: 2,
-    title: "IT Infrastructure Manager",
-    location: "Remote, Colombia",
-    type: "Full time",
-    slug: "it-infrastructure-manager",
-    categories: ["cat2", "cat4"],
-  },
-  {
-    id: 3,
-    title: "Technical Project Manager",
-    location: "Warsaw, Poland",
-    type: "Full time",
-    slug: "technical-project-manager",
-    categories: ["cat1", "cat5"],
-  },
-  {
-    id: 4,
-    title: "Cloud Solutions Architect",
-    location: "Bangalore (Hybrid)",
-    type: "Full time",
-    slug: "cloud-solutions-architect",
-    categories: ["cat2", "cat3"],
-  },
-  {
-    id: 5,
-    title: "IT Support Engineer",
-    location: "Remote, Argentina",
-    type: "Full time",
-    slug: "it-support-engineer",
-    categories: ["cat1", "cat4"],
-  },
-  {
-    id: 6,
-    title: "Global Benefits Manager",
-    location: "Remote, Canada",
-    type: "Full time",
-    slug: "global-benefits-manager",
-    categories: ["cat2", "cat3", "cat5"],
-  },
-];
+import jobListings from "@/api/careers";
 
 const CareerTeam: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>("*");
@@ -100,7 +41,11 @@ const CareerTeam: React.FC = () => {
             </div>
           </Fade>
           <Fade direction="up" triggerOnce={false} duration={1200} delay={9}>
-            <h2 className="title wow fadeInDown" data-wow-delay="150ms" data-wow-duration="600ms">
+            <h2
+              className="title wow fadeInDown"
+              data-wow-delay="150ms"
+              data-wow-duration="600ms"
+            >
               Join our team
             </h2>
           </Fade>
@@ -127,12 +72,15 @@ const CareerTeam: React.FC = () => {
                 {jobListings
                   .filter(
                     (job) =>
-                      activeFilter === "*" || job.categories.includes(activeFilter)
+                      activeFilter === "*" ||
+                      job.categories.includes(activeFilter)
                   )
                   .map((job) => (
                     <motion.div
                       key={job.id}
-                      className={`cp-team-item grid-item ${job.categories.join(" ")}`}
+                      className={`cp-team-item grid-item ${job.categories.join(
+                        " "
+                      )}`}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
@@ -141,7 +89,10 @@ const CareerTeam: React.FC = () => {
                       <div className="xb-item--inner ul_li_between">
                         <div className="xb-item--content">
                           <h3 className="xb-item--title">
-                            <Link onClick={scrollToTop} href={'/career-details'}>
+                            <Link
+                              // onClick={scrollToTop}
+                              href={`/career/${job.slug}`}
+                            >
                               {job.title}
                             </Link>
                           </h3>
@@ -157,8 +108,13 @@ const CareerTeam: React.FC = () => {
                           </div>
                         </div>
                         <div className="cp-team-btn">
-                          <Link onClick={scrollToTop} href={'/career-details'} className="thm-btn--aso cp-btn">
-                            View job <i className="fal fa-arrow-right text-white"></i>
+                          <Link
+                            // onClick={scrollToTop}
+                            href={`/career/${job.slug}`}
+                            className="thm-btn--aso cp-btn"
+                          >
+                            View job{" "}
+                            <i className="fal fa-arrow-right text-white"></i>
                           </Link>
                         </div>
                       </div>

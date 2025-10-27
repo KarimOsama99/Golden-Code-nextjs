@@ -1,16 +1,38 @@
-"use client";
+// "use client";
 
 import React, { Fragment } from "react";
-import Header from "../../components/header/Header";
-import Scrollbar from "../../components/scrollbar/scrollbar";
-import Footer from "../../components/footer/Footer";
-import CtaSection from "../../components/CtaSection/CtaSection";
+import Header from "../../../components/header/Header";
+import Scrollbar from "../../../components/scrollbar/scrollbar";
+import Footer from "../../../components/footer/Footer";
+import CtaSection from "../../../components/CtaSection/CtaSection";
 import icon from "@/public/images/icon/magic.svg";
 import gImg from "@/public/images/vectors/career.png";
 import Image from "next/image";
 import ApplyForm from "./applyForm";
+import { notFound } from "next/navigation";
+import jobListings from "@/api/careers";
 
-const CareerSingle: React.FC = () => {
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+export function generateStaticParams() {
+  // Map your data source to an array of objects,
+  // where each object contains the dynamic segment key (slug)
+  return jobListings.map((item) => ({
+    // The key MUST match the folder name: [slug]
+    slug: item.slug,
+  }));
+}
+
+const CareerSingle: React.FC = ({ params }: Props) => {
+  const job = jobListings.find((item) => item.slug === params.slug);
+
+  if (!job) {
+    notFound();
+  }
   return (
     <Fragment>
       <div className="body_wrap sco_agency">
@@ -25,17 +47,15 @@ const CareerSingle: React.FC = () => {
                 <div className="col-lg-8 mt-30">
                   <div className="page-title-box">
                     <span className="sub-title">
-                      <Image src={icon} alt="icon" /> Careers
+                      <Image src={icon} alt="icon" /> Career
                     </span>
                     <h2 className="title">
-                      Be a part of shaping the <br />
-                      future & career opportunities <br />
-                      at Golden Code today.
+                      {job.title}
                     </h2>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">
-                    <div className="xb-img">
+                  <div className="xb-img">
                     <Image src={gImg} alt="" />
                   </div>
                 </div>
@@ -50,27 +70,27 @@ const CareerSingle: React.FC = () => {
               <div className="cp-details-wrap">
                 <div className="cp-manager_info">
                   <h2 className="xb-item--title">
-                    Technical project manager - (Full-time)
+                    {job.title} - ({job.type})
                   </h2>
                   <ul className="xb-details-content list-unstyled">
-                    <li>
+                    {/* <li>
                       <span>Department :</span> Technical Project Manager
                     </li>
                     <li>
                       <span>No. of Openings :</span> (3)
+                    </li> */}
+                    <li>
+                      <span>Job Type :</span> {job.type}
                     </li>
                     <li>
-                      <span>Job Type :</span> Full-Time
+                      <span>Location :</span> {job.location}
                     </li>
                     <li>
-                      <span>Location :</span> Warsaw, Poland
-                    </li>
-                    <li>
-                      <span>Salary :</span> $80k to $100k (Based on your
+                      <span>Salary :</span> {job.minSalary} to {job.maxSalary} EGP (Based on your
                       experience)
                     </li>
                     <li>
-                      <span>Deadline :</span> December 10, 2024
+                      <span>Deadline :</span> {job.deadline}
                     </li>
                     <li>
                       <span>Experience Required :</span> 5+ Years

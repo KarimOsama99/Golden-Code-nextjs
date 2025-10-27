@@ -40,6 +40,11 @@ const ContactSection: React.FC = () => {
                         </Link>
                       </li>
                       <li>
+                        <Link href="/contact" aria-label="Linkedin">
+                          <i className="fab fa-linkedin-in"></i>
+                        </Link>
+                      </li>
+                      <li>
                         <Link href="/contact" aria-label="Twitter">
                           <svg
                             width="17"
@@ -56,8 +61,8 @@ const ContactSection: React.FC = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/contact" aria-label="Linkedin">
-                          <i className="fab fa-linkedin-in"></i>
+                        <Link href="/" area-label="instagram">
+                          <i className="fab fa-instagram"></i>
                         </Link>
                       </li>
                     </ul>
@@ -66,16 +71,15 @@ const ContactSection: React.FC = () => {
                   <div className="contact-info_widget">
                     <h3 className="xb-title">Egypt Office</h3>
                     <span className="xb-location">
-                      Cairo, Hadayek-Helwan <br />
-                      No 10, Sector-94,
+                      Cairo, Hadayek-Helwan
+                      {/* No 10, Sector-94, */}
                     </span>
                   </div>
 
                   <div className="contact-info_widget">
                     <h3 className="xb-title">Saudi Arabia Office</h3>
                     <span className="xb-location">
-                      12 Buckingham Rd, Example <br />
-                      Thwaite, HG3 4TY, SA
+                      Riyadh
                     </span>
                   </div>
 

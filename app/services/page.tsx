@@ -13,7 +13,7 @@ import icon from '@/public/images/icon/ser-01.svg';
 import sIcon from '@/public/images/icon/arrow-black.svg';
 import Image, { StaticImageData } from 'next/image';
 
-import fallbackImg from '@/public/images/service/service-img01.jpg';
+// import fallbackImg from '@/public/images/service/service-img01.jpg';
 
 interface Service {
   title?: string;
@@ -43,7 +43,7 @@ const ServicePage: React.FC = () => {
                       Main Services
                     </span>
                     <h2 className="title">
-                      Discover our comprehensive <br /> SEO services to boost your <br /> online presence
+                      Discover our comprehensive <br /> services to boost your <br /> online presence
                     </h2>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ const ServicePage: React.FC = () => {
                         <div className="xb-item--icon ul_li_between">
                           <div className="xb-item--img">
                             <Image
-                              src={service.sImg || fallbackImg}
+                              src={service.sImg || icon}
                               alt={service.title}
                               width={80}
                               height={80}

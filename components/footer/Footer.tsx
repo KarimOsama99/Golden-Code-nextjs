@@ -139,17 +139,28 @@ const Footer: React.FC<FooterProps> = () => {
               </li>
               <li>
                 <Link href="/">
-                  <i className="fab fa-twitter"></i>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
                   <i className="fab fa-facebook-f"></i>
                 </Link>
               </li>
               <li>
                 <Link href="/">
                   <i className="fab fa-linkedin-in"></i>
+                </Link>
+              </li>
+              <li>
+                <Link href="/" aria-label="Twitter">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 17 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.3872 0H15.9952L10.299 7.20048L17 17H11.7545L7.64298 11.0582L2.94415 17H0.332464L6.42395 9.29688L0 0H5.37853L9.09105 5.43101L13.3872 0ZM12.4711 15.2755H13.9155L4.5917 1.63462H3.0402L12.4711 15.2755Z"
+                      fill="#ffffff80"
+                    />
+                  </svg>
                 </Link>
               </li>
               <li>

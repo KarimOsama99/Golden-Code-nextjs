@@ -4,7 +4,8 @@ import Scrollbar from '../../components/scrollbar/scrollbar';
 import Footer from '../../components/footer/Footer';
 import CtaSection from '../../components/CtaSection/CtaSection';
 import icon from '@/public/images/icon/music-icon.svg';
-import bImg1 from '@/public/images/vectors/notfound.png';
+import bImg1 from '@/public/images/vectors/error.png';
+import bImg2 from '@/public/images/shape/brd_shape.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,8 +20,8 @@ const ErrorPage: React.FC = () => {
         >
           <div className="container">
             <div className="page-title-wrap sd-title-wrap">
-              <div className="row mt-none-30 align-items-end">
-                <div className="col-lg-9 mt-30">
+              <div className="row mt-none-30 align-items-center">
+                <div className="col-lg-8 mt-30">
                   <div className="page-title-box">
                     <span className="sub-title">
                       <Image src={icon} alt="Music Icon" /> 404 Error
@@ -30,9 +31,12 @@ const ErrorPage: React.FC = () => {
                     </h2>
                   </div>
                 </div>
-                <div className="col-lg-3 mt-30">
+                <div className="col-lg-4 mt-30">
                   <div className="sd-right-img pos-rel">
                     <Image src={bImg1} alt="404 Illustration" />
+                    <div className="sd-arrow-shape style-3">
+                      <Image className="xbzoominzoomup" src={bImg2} alt="Decorative Shape" />
+                    </div>
                   </div>
                 </div>
               </div>

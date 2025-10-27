@@ -20,22 +20,22 @@ interface ProcessItem {
 const Process: ProcessItem[] = [
   {
     id: "01",
-    title: 'Research niche',
-    subTitle: 'Identify your target market and understand customer needs to find competitive',
+    title: 'Consultation',
+    subTitle: 'Gather requirements, define objectives, and agree on success metrics.',
     icon: sIcon1,
     direction: 'one',
   },
   {
     id: "02",
-    title: 'Set up your team',
+    title: 'Set up the team',
     subTitle: 'Assemble a skilled team aligned with your business goals and objectives.',
     icon: sIcon2,
     direction: 'two',
   },
   {
     id: "03",
-    title: 'Create a game plan',
-    subTitle: 'Develop a detailed strategy objectives, audiences, and marketing approaches.',
+    title: 'Create a plan',
+    subTitle: 'Develop a tailored plan covering scope, timeline, resources management.',
     icon: sIcon3,
     direction: 'three',
   },
@@ -63,7 +63,7 @@ const WorkProcess: React.FC = () => {
           <Fade direction='up' triggerOnce={false} duration={1200} delay={9}>
             <div>
               <h2 className="title clr-white wow fadeInDown" data-wow-delay="150ms" data-wow-duration="600ms">
-                Our SEO workflow
+                Our Services workflow
               </h2>
             </div>
           </Fade>

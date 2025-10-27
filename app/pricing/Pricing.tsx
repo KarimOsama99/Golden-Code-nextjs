@@ -79,12 +79,12 @@ const PricingSection: React.FC = () => {
                           <Image src={picon} alt="Basic Icon" />
                         </div>
                         <div className="xb-item--right">
-                          <h3 className="xb-item--title">Basic</h3>
+                          <h3 className="xb-item--title">Free</h3>
                           <span className="xb-item--text">For businesses starting.</span>
                         </div>
                       </div>
                       <div className="xb-item--price">
-                        <h2 className="xb-item--number">$299</h2>
+                        <h2 className="xb-item--number">$0</h2>
                         <span className="xb-item--time">Per Year</span>
                       </div>
                       <div className="xb-item--line"></div>
@@ -97,7 +97,7 @@ const PricingSection: React.FC = () => {
                         <li className="deactive"><Image src={cross} alt="Cross" /> Weekly Reports & SEO Manager</li>
                       </ul>
                       <div className="pg-det-btn">
-                        <Link href="/contact" className="cp-btn">Choose your plan</Link>
+                        <Link href="/contact" className="thm-btn--aso thm-btn--aso_dark cp-btn">Choose your plan</Link>
                       </div>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ const PricingSection: React.FC = () => {
                         <li><Image src={check} alt="Check" /> Weekly Reports & SEO Manager</li>
                       </ul>
                       <div className="pg-det-btn">
-                        <Link href="/contact" className="cp-btn">Choose your plan</Link>
+                        <Link href="/contact" className="thm-btn--aso thm-btn--aso_dark cp-btn">Choose your plan</Link>
                       </div>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ const PricingSection: React.FC = () => {
                         <li><Image src={check} alt="Check" /> Weekly Reports & SEO Manager</li>
                       </ul>
                       <div className="pg-det-btn">
-                        <Link href="/contact" className="cp-btn">Choose your plan</Link>
+                        <Link href="/contact" className="thm-btn--aso thm-btn--aso_dark cp-btn">Choose your plan</Link>
                       </div>
                     </div>
                   </div>
@@ -184,12 +184,12 @@ const PricingSection: React.FC = () => {
                           <Image src={picon} alt="Basic Icon" />
                         </div>
                         <div className="xb-item--right">
-                          <h3 className="xb-item--title">Basic</h3>
+                          <h3 className="xb-item--title">Free</h3>
                           <span className="xb-item--text">For businesses starting.</span>
                         </div>
                       </div>
                       <div className="xb-item--price">
-                        <h2 className="xb-item--number">$29</h2>
+                        <h2 className="xb-item--number">$0</h2>
                         <span className="xb-item--time">Per Month</span>
                       </div>
                       <div className="xb-item--line"></div>
@@ -202,7 +202,7 @@ const PricingSection: React.FC = () => {
                         <li className="deactive"><Image src={cross} alt="Cross" /> Weekly Reports & SEO Manager</li>
                       </ul>
                       <div className="pg-det-btn">
-                        <Link href="/contact" className="cp-btn">Choose your plan</Link>
+                        <Link href="/contact" className="thm-btn--aso thm-btn--aso_dark cp-btn">Choose your plan</Link>
                       </div>
                     </div>
                   </div>
@@ -236,7 +236,7 @@ const PricingSection: React.FC = () => {
                         <li><Image src={check} alt="Check" /> Weekly Reports & SEO Manager</li>
                       </ul>
                       <div className="pg-det-btn">
-                        <Link href="/contact" className="cp-btn">Choose your plan</Link>
+                        <Link href="/contact" className="thm-btn--aso thm-btn--aso_dark cp-btn">Choose your plan</Link>
                       </div>
                     </div>
                   </div>
@@ -269,7 +269,7 @@ const PricingSection: React.FC = () => {
                         <li><Image src={check} alt="Check" /> Weekly Reports & SEO Manager</li>
                       </ul>
                       <div className="pg-det-btn">
-                        <Link href="/contact" className="cp-btn">Choose your plan</Link>
+                        <Link href="/contact" className="thm-btn--aso thm-btn--aso_dark cp-btn">Choose your plan</Link>
                       </div>
                     </div>
                   </div>

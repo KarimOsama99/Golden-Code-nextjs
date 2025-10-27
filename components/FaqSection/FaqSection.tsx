@@ -44,12 +44,21 @@ const FaqSection: React.FC = () => {
 
         <div className="row">
           <div className="col-lg-12">
-            <div className="xb-faq wow fadeInUp" data-wow-delay="200ms" data-wow-duration="600ms">
-              <Accordion open={open} toggle={toggle} className="accordion_box clearfix list-unstyled">
+            <div
+              className="xb-faq wow fadeInUp"
+              data-wow-delay="200ms"
+              data-wow-duration="600ms"
+            >
+              <Accordion
+                open={open}
+                toggle={toggle}
+                className="accordion_box clearfix list-unstyled"
+              >
                 {faqList.map(({ id, question, content }) => (
                   <AccordionItem className="block" key={id}>
                     <AccordionHeader targetId={id} className="acc-btn">
-                      <span className="number">{id}</span> _ {question}
+                      <span className="number no-small">{id}</span> <span className='no-small'>_</span>{" "}
+                      {question}
                       <span className="arrow"></span>
                     </AccordionHeader>
                     <AccordionBody accordionId={id} className="acc_body">

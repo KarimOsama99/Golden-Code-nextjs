@@ -26,8 +26,8 @@ const Teams = [
   {
     Id: "3",
     tImg: timg3,
-    name: "Fathy Ali",
-    slug: "Fathy Ali",
+    name: "Fathy Aly",
+    slug: "Fathy Aly",
     title: "Link Building Manager",
     exprience: "10 Years experience",
     rating: "4.8",
