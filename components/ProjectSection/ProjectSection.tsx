@@ -153,7 +153,7 @@ const ProjectSection: React.FC = () => {
                         </p>
                         <div className="xb-btn mt-50">
                           <Link
-                            href={"portfolio-details"}
+                            href={"portfolio"}
                             className="thm-btn thm-btn--border"
                           >
                             Read project details

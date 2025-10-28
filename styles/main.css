@@ -14668,7 +14668,7 @@ body[data-aos-easing="ease"] [data-aos] {
 
 .item-contact_form {
   margin: 0;
-  margin-right: 65px;
+  /* margin-right: 65px; */
   min-height: 708px;
   padding: 40px 50px 50px;
 }
@@ -14683,7 +14683,7 @@ body[data-aos-easing="ease"] [data-aos] {
 
 .item-contact_info {
   padding: 40px 50px;
-  margin-left: -40px;
+  /* margin-left: -40px; */
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -14691,6 +14691,15 @@ body[data-aos-easing="ease"] [data-aos] {
   -o-border-radius: 20px;
   border: 1px solid #e7e8ec;
   background: var(--color-white);
+}
+
+@media (min-width: 992px) {
+  .item-contact_form {
+    margin-right: 65px;
+  }
+  .item-contact_info {
+    margin-left: -40px;
+  }
 }
 
 .item-contact_info .xb-item--top {
