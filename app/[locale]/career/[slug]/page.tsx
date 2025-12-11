@@ -11,12 +11,12 @@ import Image from "next/image";
 import ApplyForm from "./applyForm";
 import { notFound } from "next/navigation";
 import jobListings from "@/api/careers";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export function generateStaticParams() {
@@ -28,10 +28,11 @@ export function generateStaticParams() {
   }));
 }
 
-const CareerSingle: React.FC<Props> = ({ params }) => {
-  const t = useTranslations('CareerJobs');
-  const tPage = useTranslations('CareerSlugPage');
-  const job = jobListings(t).find((item) => item.slug === params.slug);
+const CareerSingle: React.FC<Props> = async ({ params }) => {
+  const { slug } = await params;
+  const t = await getTranslations('CareerJobs');
+  const tPage = await getTranslations('CareerSlugPage');
+  const job = jobListings(t).find((item) => item.slug === slug);
 
   if (!job) {
     notFound();
