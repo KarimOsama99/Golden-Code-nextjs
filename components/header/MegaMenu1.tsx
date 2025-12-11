@@ -1,50 +1,54 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import Image from "next/image";
 
 import avatar from "@/public/images/bg/avatar.png";
 import quote from "@/public/images/icon/quote.png";
 
+import {useTranslations} from 'next-intl';
+
 const MegaMenu1: React.FC = () => {
+  const t = useTranslations('MegaMenu1');
+
   const items = [
     {
       href: "/about",
       icon: "/images/icon/m_01.svg",
-      title: "About Us",
-      desc: "Learn more about Golden Code",
+      title: t('aboutUs'),
+      desc: t('aboutDesc'),
     },
     {
       href: "/pricing",
       icon: "/images/icon/m_02.svg",
-      title: "Our Pricing",
-      desc: "Streamlined Pricing",
+      title: t('pricing'),
+      desc: t('pricingDesc'),
     },
     {
       href: "/team",
       icon: "/images/icon/m_03.svg",
-      title: "Our Team",
-      desc: "We are friendly. Join our team.",
+      title: t('team'),
+      desc: t('teamDesc'),
     },
     {
       href: "/services",
       icon: "/images/icon/m_04.svg",
-      title: "Services",
-      desc: "Happy to help you!",
+      title: t('services'),
+      desc: t('servicesDesc'),
     },
     // { href: '/service-single', icon: '/images/icon/m_05.svg', title: 'Services Details', desc: 'Happy to help you!' },
     {
       href: "/faq",
       icon: "/images/icon/m_06.svg",
-      title: "FAQ",
-      desc: "Frequently Asked Questions.",
+      title: t('faq'),
+      desc: t('faqDesc'),
     },
     {
       href: "/career",
       icon: "/images/icon/m_07.svg",
-      title: "Career",
-      desc: "Work with us!",
+      title: t('career'),
+      desc: t('careerDesc'),
     },
     // { href: '/career-details', icon: '/images/icon/m_08.svg', title: 'Career Details', desc: 'Open roles and more.' },
     // { href: '/portfolio-details', icon: '/images/icon/m_09.svg', title: 'Portfolio Details', desc: 'Detailed breakdowns.' },
@@ -101,12 +105,12 @@ const MegaMenu1: React.FC = () => {
                         href="/contact"
                         className="thm-btn thm-btn--aso megamenu-btn thm-btn--header-black"
                       >
-                        Get free consultation
+                        {t('freeConsultation')}
                       </Link>
                     </li>
 
                     <div className="social_inner ul_li">
-                      <h5>Follow Us:</h5>
+                      <h5>{t('followUs')}</h5>
                       <ul className="social_icons_block unordered_list">
                         <li>
                           <Link
@@ -163,17 +167,15 @@ const MegaMenu1: React.FC = () => {
                         </div>
                         <div className="author_box_content">
                           <h3 className="author_name text-white">
-                            Karim Osama
+                            {t('ceoName')}
                           </h3>
                           <span className="author_designation text-white">
-                            CEO at Golden Code
+                            {t('ceoTitle')}
                           </span>
                         </div>
                       </div>
                       <p className="mb-0 text-white">
-                        “As CEO at Golden Code, I’ve worked hard to clarify
-                        client requirements and deliver results efficiently
-                        without reinventing the wheel.”
+                        “{t('ceoQuote')}”
                       </p>
                       <div className="author_box_quote">
                         <Image

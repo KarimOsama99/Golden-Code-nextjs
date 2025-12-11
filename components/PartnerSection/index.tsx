@@ -50,14 +50,19 @@ const settings = {
   ],
 };
 
+import {useTranslations} from 'next-intl';
+
 const PartnerSection: React.FC = () => {
+  const t = useTranslations('Partner');
   return (
     <section className="brand pt-30 pb-140">
       <div className="container">
         <div className="o-hidden">
           <div className="brand-sub_title">
             <span>
-              Trusted by <b>500+</b> teams to empower <b>2,00,000+</b> people
+              {t.rich('trustedBy', {
+                b: (chunks) => <b>{chunks}</b>
+              })}
             </span>
           </div>
           <div className="brand-wrap brand-marquee">

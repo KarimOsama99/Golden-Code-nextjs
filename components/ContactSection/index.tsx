@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import ContactForm from "../ContactFrom/ContactForm";
 import icon1 from "@/public/images/icon/call-calling.svg";
 import icon2 from "@/public/images/icon/icon-sms.svg";
 import Image from "next/image";
 
+import {useTranslations} from 'next-intl';
+
 const ContactSection: React.FC = () => {
+  const t = useTranslations('ContactPage');
   return (
     <div>
       <div className="contact pt-85">
@@ -15,18 +18,18 @@ const ContactSection: React.FC = () => {
           <div className="row pb-130 mt-none-30">
             <div className="col-lg-8 mt-30">
               <div className="cs-contact-wrap cs-contact-form cd-contact-form item-contact_form">
-                <h2 className="xb-title">Send us a message</h2>
+                <h2 className="xb-title">{t('sendMessage')}</h2>
                 <p className="xb-content">
-                  Give us a chance to serve and bring magic to your brand.
+                  {t('sendMessageContent')}
                 </p>
                 <ContactForm />
               </div>
             </div>
-            <div className="col-lg-4 mt-30">
+            <div className="col-lg-4 mt-30 justify-content-center">
               <div className="item-contact_info">
                 <div className="xb-item--inner">
                   <div className="xb-item--top">
-                    <h3 className="xb-item--title">Contact Info</h3>
+                    <h3 className="xb-item--title">{t('contactInfo')}</h3>
                     <span className="xb-item--hotline">
                       <Image src={icon1} alt="Phone" /> +(20) 1124 762 799
                     </span>
@@ -77,25 +80,24 @@ const ContactSection: React.FC = () => {
                   </div>
 
                   <div className="contact-info_widget">
-                    <h3 className="xb-title">Egypt Office</h3>
+                    <h3 className="xb-title">{t('office1Title')}</h3>
                     <span className="xb-location">
-                      Cairo, Hadayek-Helwan
+                      {t('office1Location')}
                       {/* No 10, Sector-94, */}
                     </span>
                   </div>
 
                   <div className="contact-info_widget">
-                    <h3 className="xb-title">Saudi Arabia Office</h3>
-                    <span className="xb-location">Riyadh</span>
+                    <h3 className="xb-title">{t('office2Title')}</h3>
+                    <span className="xb-location">{t('office2Location')}</span>
                   </div>
 
                   <hr className="breack-line" />
 
                   <div className="contact-info_widget">
-                    <h3 className="xb-title">Our Office Hours</h3>
+                    <h3 className="xb-title">{t('officeHoursTitle')}</h3>
                     <span className="xb-location">
-                      Sun - Sat: 10.00 - 5.00 <br />
-                      Friday: Closed
+                      <span dangerouslySetInnerHTML={{ __html: t.raw('officeHoursContent') }} />
                     </span>
                   </div>
                 </div>

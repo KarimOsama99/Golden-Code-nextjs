@@ -6,8 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Fade } from "react-awesome-reveal";
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Teams from '../../api/team';
-import Link from "next/link";
+import getTeams from '../../api/team';
+import {Link} from '@/i18n/routing';
 import Image from 'next/image';
 
 import bg from '@/public/images/team/team-bg.jpg';
@@ -21,7 +21,12 @@ interface TeamMember {
   rating: string;
 }
 
+import {useTranslations} from 'next-intl';
+
 const TeamSection: React.FC = () => {
+  const t = useTranslations('Team');
+  const tData = useTranslations('TeamData');
+  const Teams = getTeams(tData);
   const prevRef = useRef<HTMLDivElement | null>(null);
   const nextRef = useRef<HTMLDivElement | null>(null);
   const swiperRef = useRef<any>(null);
@@ -46,7 +51,7 @@ const TeamSection: React.FC = () => {
                 data-wow-duration="600ms"
               >
                 <Image src={hicon} alt="Cap icon" />
-                Our specialists
+                {t('subtitle')}
               </div>
             </div>
           </Fade>
@@ -57,7 +62,7 @@ const TeamSection: React.FC = () => {
                 data-wow-delay="150ms"
                 data-wow-duration="600ms"
               >
-                Dedicated Professionals
+                {t('title')}
               </h2>
             </div>
           </Fade>
@@ -125,7 +130,7 @@ const TeamSection: React.FC = () => {
               href="/team"
               className="thm-btn thm-btn--aso thm-btn--aso_dark"
             >
-              Meet our all team member
+              {t('cta')}
             </Link>
           </div>
         </div>

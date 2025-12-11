@@ -1,0 +1,707 @@
+{
+  "HomePage": {
+    "title": "Golden Code",
+    "description": "Web & Mobile App Development"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "company": "Company",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "talk": "Let's talk"
+  },
+  "About": {
+    "subtitle": "We are golden code",
+    "title": "Modern Web Solutions for Ambitious Brands",
+    "coreValues": "Core values",
+    "val1Title": "Innovation:",
+    "val1Desc": "Continuously refining SEO to stay ahead of search engine updates.",
+    "val2Title": "Client Focus:",
+    "val2Desc": "Your success drives us; we craft custom SEO solutions for impact.",
+    "val3Title": "Transparency:",
+    "val3Desc": "Clear communication and honest reporting at every step.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "Our mission is to empower businesses by delivering cutting-edge web development solutions that drive growth, enhance user experiences, and foster innovation in the digital landscape.",
+    "visionTitle": "Our Vision",
+    "visionDesc": "Our vision is to empower businesses with innovative IT solutions that drive growth, efficiency, and long-term success.",
+    "cta": "Learn more about us"
+  },
+  "Services": {
+    "subtitle": "Feature-services",
+    "title": "Growth with <br/> Our services",
+    "content": "Accelerate growth through innovative web development and reliable product delivery today.",
+    "viewMore": "View more services"
+  },
+
+  "WorkProcess": {
+    "title": "Our 5-step workflow",
+    "description": "Our Golden Code Efficient Workflow in 5 Steps ensures streamlined IT solutions. We start by understanding your needs, then plan the project, design intuitive interfaces, build robust systems, and thoroughly test.",
+    "cta": "Learn more about us",
+    "step1Title": "Consultation & needs analysis",
+    "step1Desc": "We first understand your challenges to tailor a solution that fits your needs.",
+    "step2Title": "Planning & strategy development",
+    "step2Desc": "Our team crafts a strategic plan, defining the project roadmap and setting timelines.",
+    "step3Title": "Design & development",
+    "step3Desc": "Our designers create intuitive interfaces, while developers build scalable, robust systems.",
+    "step4Title": "Testing & quality assurance",
+    "step4Desc": "We rigorously test for security, performance resolving any issues before deployment.",
+    "step5Title": "Deployment & ongoing support",
+    "step5Desc": "We first understand your challenges to tailor a solution that fits your needs."
+  },
+  "MegaMenu1": {
+    "aboutUs": "About Us",
+    "aboutDesc": "Learn more about Golden Code",
+    "pricing": "Our Pricing",
+    "pricingDesc": "Streamlined Pricing",
+    "team": "Our Team",
+    "teamDesc": "We are friendly. Join our team.",
+    "services": "Services",
+    "servicesDesc": "Happy to help you!",
+    "faq": "FAQ",
+    "faqDesc": "Frequently Asked Questions.",
+    "career": "Career",
+    "careerDesc": "Work with us!",
+    "freeConsultation": "Get free consultation",
+    "followUs": "Follow Us:",
+    "ceoName": "Karim Osama",
+    "ceoTitle": "CEO at Golden Code",
+    "ceoQuote": "As CEO at Golden Code, I’ve worked hard to clarify client requirements and deliver results efficiently without reinventing the wheel."
+  },
+  "MegaMenu2": {
+    "careerPrompt": "Looking for new career?",
+    "hiring": "We’re Hiring",
+    "software": "Software",
+    "amazingServices": "Our Amazing Services"
+  },
+  "Industrie": {
+    "subtitle": "Industries we work",
+    "title": "Serving diverse industries",
+    "saas": "SaaS",
+    "lawyers": "Lawyers",
+    "realEstate": "Real estate",
+    "insurance": "Insurance",
+    "crypto": "Crypto",
+    "privateEquity": "Private equity",
+    "education": "Education",
+    "finance": "Finance",
+    "healthcare": "Healthcare",
+    "automotive": "Automotive",
+    "cta": "Book a free consultation"
+  },
+  "Testimonial": {
+    "subtitle": "99% positive feedback",
+    "title": "Feedback That Speaks",
+    "t1Des": "Working with Golden Code was fantastic! Their strategies improved our rankings and increased leads.",
+    "t1Sub": "Brand Strat at near",
+    "t2Des": "Golden Code exceeded all our expectations! Their expertise in SEO helped us achieve a remarkable 150%",
+    "t2Sub": "Branding at spinlet",
+    "t3Des": "Choosing Golden Code was a great decision. Their focus on trends helped us rank for competitive keywords, our success!",
+    "t3Sub": "Marketing Dir. at BUSD",
+    "t4Des": "Since partnering with Golden Code, our website's performance has improved remarkably. Their data-driven approach and top-notch!",
+    "t4Sub": "Project Manager at Kuda"
+  },
+  "Features": {
+    "subtitle": "Why we’re different",
+    "title": "Take a look at how we're different",
+    "col1": "Features",
+    "col3": "Other SEO agencies",
+    "row1": "Take on projects only if confident in delivery.",
+    "row2": "Tailor-made, revenue-boosting strategy.",
+    "row3": "100% focus on your project.",
+    "row4": "Transparent about meeting goals and deadlines.",
+    "row5": "Cares about long-term SEO success.",
+    "row6": "Knows that ROI is the most important metric.",
+    "row7": "Feels like an extension of your marketing team.",
+    "row8": "Crafts a results-driven strategy."
+  },
+  "Team": {
+    "subtitle": "Our specialists",
+    "title": "Dedicated Professionals",
+    "cta": "Meet our all team member"
+  },
+  "Faq": {
+    "subtitle": "FAQ’s",
+    "title": "Have a question? Look here",
+    "q1": "How long does it take to get results from SEO?",
+    "a1": "On average, our clients start to see initial results from SEO in 4–6 months. For competitive niches, it may take up to 1–2 years. The timeline depends on factors like:",
+    "a1p1": "The age and authority of your site.",
+    "a1p2": "Your on-page and off-page optimization.",
+    "a1p3": "Any penalties pulling your ranking down.",
+    "q2": "What SEO strategies do you implement for optimal results?",
+    "a2": "We implement a holistic SEO strategy tailored to your goals. Factors affecting the timeline include:",
+    "q3": "What part of the SEO process do you outsource?",
+    "a3": "We focus on keeping critical SEO activities in-house, but may outsource specialized tasks if it adds value. Timeline depends on:",
+    "q4": "Can you handle SEO for an enterprise-size company?",
+    "a4": "Absolutely! We’ve worked with enterprise clients across various sectors. However, timelines depend on:",
+    "q5": "Do you offer professional link-building services?",
+    "a5": "Yes, we provide white-hat link-building services aligned with your niche and goals. Results depend on:"
+  },
+  "FaqPage": {
+    "subTitle": "FAQ's",
+    "title": "Frequently Asked Questions.",
+    "updated": "Updated on : October 10th, 2025"
+  },
+  "WorkSection": {
+    "subTitle": "Why work with us",
+    "title": "Why people work with us",
+    "w1Title": "Endless career growth",
+    "w1Content": "We provide lots of career growth opportunities to our employees, which is reflected both financially and reputably.",
+    "w2Title": "Mentorship & learning",
+    "w2Content": "We support peer assistance and offer mentorship programs like IT Talks and in-house courses for different roles.",
+    "w3Title": "Cozy & fun offices",
+    "w3Content": "Our four R&D offices offer a gym, yoga mats, snacks, foosball, a VR set, and more for a comfortable workspace.",
+    "w4Title": "Competitive salary",
+    "w4Content": "Our projects belong to a wide variety of industries, which will make your professional background more diverse.",
+    "w5Title": "Career change option",
+    "w5Content": "No need to job hunt to learn new tech or switch roles—we'll support your transition within Golden Code.",
+    "w6Title": "Friendly atmosphere",
+    "w6Content": "We value people as Golden Code greatest asset and ensure hierarchy never works against our employees."
+  },
+  "CareerSlugPage": {
+    "subTitle": "Career",
+    "jobType": "Job Type :",
+    "location": "Location :",
+    "salary": "Salary :",
+    "basedOnExperience": "(Based on your experience)",
+    "deadline": "Deadline :",
+    "expRequired": "Experience Required :",
+    "yearsPlus": "5+ Years",
+    "description": "We're looking for a Technical Project Manager and knowledgeable Product Designer to join our technical team in Warsaw, Poland. You'll be expected to utilize bleeding-edge technology and robust techniques. You should be an excellent communicator and comfortable managing multiple tasks. You also need to be a team player and have a problem-solving aptitude.",
+    "description2": "Working quickly and creatively should come naturally to you, as well as being an innovative problem-solver who takes pride in producing logical, simple, and effective solutions to what are often very new and complex issues.",
+    "whatYouDo": "What you'll get to do...",
+    "requirement1": "6+ years of previous professional Proficient Project Management experience.",
+    "requirement2": "Technical Expertise: Solid understanding for effective communication.",
+    "requirement3": "Stakeholder Management: Track record of ensuring alignment and success.",
+    "requirement4": "Agile Methodologies: Hands-on experience in Agile frameworks.",
+    "requirement5": "Risk Management: Skill in identifying and mitigating project risks.",
+    "requirement6": "Team Leadership: Ability to motivate diverse teams.",
+    "requirement7": "Communication Skills: Strong ability to convey technical concepts.",
+    "requirement8": "Problem-Solving: Proactive approach to implement solutions.",
+    "requirement9": "Quality Assurance: Experience in ensuring deliverable standards.",
+    "youMightHave": "You might also have...",
+    "bonus1": "Experience with AWS.",
+    "bonus2": "Experience building CI/CD and server/deployment automation solutions",
+    "bonus3": "Experience with open-source puppet, infrastructure-as-code.",
+    "bonus4": "Passion for technology.",
+    "bonus5": "You have high standards and want to make a difference with your work.",
+    "bonus6": "You are always trying to improve.",
+    "benefits": "Great benefits...",
+    "benefit1": "Company-wide 401(k) plan.",
+    "benefit2": "Life & disability insurance offered.",
+    "benefit3": "Competitive compensation—salary, bonus, equity",
+    "benefit4": "Medical, dental, and vision; flex spending account.",
+    "benefit5": "Flexible paid time off & sick leave."
+  },
+  "WorkProcess": {
+    "subTitle": "Our working process",
+    "title": "Our Services workflow",
+    "p1Title": "Consultation",
+    "p1Desc": "Gather requirements, define objectives, and agree on success metrics.",
+    "p2Title": "Set up the team",
+    "p2Desc": "Assemble a skilled team aligned with your business goals and objectives.",
+    "p3Title": "Create a plan",
+    "p3Desc": "Develop a tailored plan covering scope, timeline, resources management.",
+    "p4Title": "Review and scale",
+    "p4Desc": "Analyze performance metrics regularly to optimize and grow your strategy effectively."
+  },
+  "ApplyForm": {
+    "title": "Apply for this job",
+    "description": "Golden Code doesn't accept unsolicited resumes from recruiters or employment agencies.",
+    "name": "Name*",
+    "email": "Email*",
+    "phone": "Phone*",
+    "address": "Address*",
+    "coverLetter": "Cover Letter",
+    "uploadResume": "Upload your resume / CV",
+    "acceptedTypes": "Accepted file types :",
+    "maxSize": "pdf, doc, jpg, Max. file size: 15 MB.",
+    "submitNow": "Submit now"
+  },
+  "BlogSlugPage": {
+    "subTitle": "Blog details"
+  },
+  "PortfolioSlugPage": {
+    "subTitle": "Real Online Project.",
+    "popularText": "our most popular",
+    "caseStudyText": "casestudy",
+    "client": "client :",
+    "category": "Category :",
+    "completedDate": "completed date :",
+    "framework": "Framework :",
+    "visit": "Visit",
+    "website": "Website"
+  },
+  "MobileMenu": {
+    "home": "Home",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "pricing": "Our Pricing",
+    "team": "Our team",
+    "faqs": "FAQ's",
+    "career": "Career",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "Cta": {
+    "title": "Stop wasting money on bad SEO.",
+    "content": "Book a free consultation for the SEO results you need.",
+    "button": "Book a free consultation"
+  },
+  "Partner": {
+     "trustedBy": "Trusted by <b>500+</b> teams to empower <b>2,00,000+</b> people"
+  },
+  "Footer": {
+    "writeToUs": "Write to us",
+    "callUs": "Call Us (EG)",
+    "ourOffice": "Our Office",
+    "address": "Cairo, Hadayek-Helwan",
+    "description": "Golden Code The best team specialized in designing and programming websites, blogs and online stores.",
+    "company": "Company",
+    "aboutUs": "About us",
+    "contact": "Contact",
+    "priceTable": "Price table",
+    "ourBlog": "Our blog",
+    "teamMember": "Team member",
+    "ourProjects": "Our Projects",
+    "ourServices": "Our Services",
+    "followUs": "Follow us :",
+    "copyright": "Copyright © 2025 <link>Golden Code</link>. All rights reserved."
+  },
+  "Hero": {
+    "titleLine1": "We Build Apps",
+    "titleLine2": "That <span>Users Love</span>",
+    "subtitle": "(Get a lightning-fast site built on modern frameworks.)",
+    "feature1": "Validate market fit",
+    "feature2": "Custom UI/UX Design",
+    "feature3": "High Performance",
+    "feature4": "Scale infrastructure & grow users",
+    "cta": "Book a free consultation"
+  },
+  "ContactPage": {
+    "subTitle": "Contact us",
+    "title": "Connect with our team for <br/> innovative solutions and <br/> your digital success",
+    "sendMessage": "Send us a message",
+    "sendMessageContent": "Give us a chance to serve and bring magic to your brand.",
+    "contactInfo": "Contact Info",
+    "office1Title": "Egypt Office",
+    "office1Location": "Cairo, Hadayek-Helwan",
+    "office2Title": "Saudi Arabia Office",
+    "office2Location": "Riyadh",
+    "officeHoursTitle": "Our Office Hours",
+    "officeHoursContent": "Sun - Sat: 10.00 - 5.00 <br/> Friday: Closed"
+  },
+  "ContactForm": {
+    "name": "Name*",
+    "email": "Email*",
+    "phone": "Phone*",
+    "message": "Message*",
+    "messagePlaceholder": "How can we help you?",
+    "submit": "Send us a message",
+    "success": "Form submitted successfully!"
+  },
+  "TeamPage": {
+    "subTitle": "Our team",
+    "title": "Meet the talented team driving innovation, expertise, and your digital success",
+    "countText": "Professional Team <br/> Members"
+  },
+  "TeamData": {
+    "t1Name": "Mohamed Samy",
+    "t1Title": "Back-End Developer",
+    "t1Exp": "10 Years experience",
+    "t2Name": "Karim Osama",
+    "t2Title": "Front-End Developer",
+    "t2Exp": "6 Years experience",
+    "t3Name": "Fathy Aly",
+    "t3Title": "Link Building Manager",
+    "t3Exp": "10 Years experience",
+    "t4Name": "Ragnar Lothbrok",
+    "t4Title": "Senior SEO Strategist",
+    "t4Exp": "18 Years experience"
+  },
+  "AboutPage": {
+    "subTitle": "About Golden Code",
+    "title": "Unlocking new heights of online success: how our SEO agency transforms visibility and growth",
+    "yearsExp": "Years of experience"
+  },
+  "AboutFeatures": {
+    "f1Title": "Deliver results",
+    "f1Content": "At Golden Code, delivering results means achieving success.",
+    "f2Title": "Being proactive",
+    "f2Content": "At Golden Code, being proactive means anticipating challenges.",
+    "f3Title": "Sustainable Growth",
+    "f3Content": "Sustainable growth means achieving long-term success.",
+    "f4Title": "Maximize Speed",
+    "f4Content": "We focus on delivering quick and efficient solutions."
+  },
+  "AboutWhyChoose": {
+    "subTitle": "Why choose us",
+    "title": "Customer-Centric Approach",
+    "item1": "We don’t make empty promises",
+    "item2": "If something goes wrong, we’ll quickly fix it.",
+    "item3": "We created our own SEO tools to fill in the gaps"
+  },
+  "AboutFunfact": {
+    "item1": "success stories",
+    "item2": "companies trust us",
+    "item3": "results guaranteed"
+  },
+  "AboutRoadmap": {
+    "subTitle": "Our Journey",
+    "title": "Our Journey 0 to 200 Clients",
+    "q1Title": "Golden Code was founded",
+    "q1Content": "Golden Code started in USA with only five employees...",
+    "q2Title": "We grew to 40 full-time employees",
+    "q2Content": "In 2014, Golden Code completed over 100 SEO audits...",
+    "q3Title": "Top 3 SEO Company",
+    "q3Content": "By 2016, our hard work was starting to be recognized...",
+    "q4Title": "Global Expertise",
+    "q4Content": "By 2018, Golden Code attracted international clients...",
+    "q5Title": "Present",
+    "q5Content": "Today, Golden Code has over 200 employees..."
+  },
+  "AboutAward": {
+    "subTitle": "Our awards",
+    "title": "We've got prestigious awards for our work",
+    "content": "Receiving prestigious awards for our work is a testament to our unwavering dedication and commitment to excellence. These accolades reflect the tireless efforts and passion.",
+    "cta": "Book a free consultation"
+  },
+  "Gallery": {
+    "subTitle": "Our gallery",
+    "title": "Explore stunning moments"
+  },
+  "ServiceSinglePage": {
+    "processTitle": "Services process",
+    "p1Title": "Consultation",
+    "p1Desc": "Gather requirements, define objectives, and agree on success metrics.",
+    "p2Title": "Planning",
+    "p2Desc": "Develop a tailored plan covering scope, timeline, resources management.",
+    "p3Title": "Implementation",
+    "p3Desc": "Execute the plan using best practices, quality checks, and collaboration.",
+    "p4Title": "Optimize & Support",
+    "p4Desc": "Monitor outcomes, iterate on improvements, and provide ongoing support.",
+    "orderTitle": "Order The Service !",
+    "contactBtn": "Contact Us to Arrange it"
+  },
+  "ServicePage": {
+    "subTitle": "Main Services",
+    "title": "Discover our comprehensive <br/> services to boost your <br/> online presence",
+    "countText": "Professional top <br/> services",
+    "cta": "Book a free consultation"
+  },
+  "ServiceData": {
+    "s1Title": "Web Development",
+    "s1Desc": "Web Development builds and maintains websites and web applications for the internet.",
+    "s1Heading": "Front-End & Back-End Expertise",
+    "s1Desc2": "We specialize in full-stack development, using modern frameworks like React, Angular, or Vue.js for the front-end, and Node.js, Python, or PHP for the back-end.",
+    
+    "s2Title": "Data Analysis",
+    "s2Desc": "Data Analysis examines data sets to draw conclusions about the information they contain.",
+    "s2Heading": "Actionable Insights",
+    "s2Desc2": "We transform raw data into clear, actionable insights using statistical methods and visualization tools (e.g., Tableau, Power BI) to inform your strategic decisions.",
+
+    "s3Title": "SEO audit",
+    "s3Desc": "An SEO audit evaluates a website identify improvements for better search rankings and visibility.",
+    "s3Heading": "Comprehensive Site Evaluation",
+    "s3Desc2": "Our audits cover technical SEO, on-page factors, off-page links, and content strategy to provide a holistic view of your search engine performance.",
+
+    "s4Title": "Cyber Security",
+    "s4Desc": "Cyber Security protects systems, networks, and programs from digital attacks.",
+    "s4Heading": "Proactive Threat Defense",
+    "s4Desc2": "We implement robust security protocols, including penetration testing, vulnerability management, and employee training to mitigate risks and ensure data integrity.",
+
+    "s5Title": "Custom CRM services",
+    "s5Desc": "Custom CRM services tailor customer relationship management solutions to fit specific business needs.",
+    "s5Heading": "Streamline Sales & Marketing",
+    "s5Desc2": "We build CRM systems that integrate seamlessly with your existing tools, automating workflows and providing a unified view of the customer journey.",
+
+    "s6Title": "Hosting",
+    "s6Desc": "Hosting services provide the infrastructure and support needed to host websites and applications.",
+    "s6Heading": "Reliable Cloud Solutions",
+    "s6Desc2": "Choose from dedicated, shared, or cloud hosting solutions optimized for speed, scalability, and 99.9% uptime for maximum performance.",
+
+    "s7Title": "Continuous Deployment",
+    "s7Desc": "Continuous Deployment automates software release process, ensuring rapid and reliable delivery to users.",
+    "s7Heading": "Rapid & Consistent Delivery",
+    "s7Desc2": "We set up automated CI/CD pipelines using tools like Jenkins, GitLab CI, or GitHub Actions to deploy verified code changes quickly and with minimal human error.",
+
+    "s8Title": "AI solution Design",
+    "s8Desc": "We design AI solutions that use your newly found insights to identify new opportunities for improvement.",
+    "s8Heading": "Machine Learning Integration",
+    "s8Desc2": "From predictive models to natural language processing, we design and deploy custom AI models that automate tasks and unlock strategic value in your operations."
+  },
+  "PricingPage": {
+    "subTitle": "Our best pricing",
+    "title": "We offered best pricing",
+    "billedYearly": "Billed yearly",
+    "billedMonthly": "Billed monthly",
+    "features": "Features",
+    "choosePlan": "Choose your plan",
+    "pageSubTitle": "Simple pricing",
+    "pageTitle": "Choose the SEO package <br/> that fits your business and <br/> drives real results",
+    "f1Title": "More website traffic",
+    "f1Content": "Our clients experience a 65% increase in organic traffic year-over-year.",
+    "f2Title": "Conversion rate growth",
+    "f2Content": "Clients grow their conversion rates by 48% annually with our SEO strategies.",
+    "f3Title": "Higher search rankings",
+    "f3Content": "Our clients see a 55% boost in search rankings within the first 6 months."
+  },
+  "PricingPlans": {
+    "freeTitle": "Free",
+    "freeText": "For businesses starting.",
+    "standardTitle": "Standard",
+    "standardText": "For businesses with more traffic.",
+    "premiumTitle": "Premium",
+    "premiumText": "For large enterprises.",
+    "perYear": "Per Year",
+    "perMonth": "Per Month",
+    "mostPopular": "Most popular ✨",
+    
+    "featKeyword": "In-depth Keyword Research",
+    "featOnPage": "On-Page SEO Optimization",
+    "featTechAudit": "Technical SEO Audits",
+    "featMonthlyRep": "Monthly Performance Reporting",
+    "featWeeklyRep": "Weekly Reports & SEO Manager",
+    
+    "featAllBasic": "All features of Basic SEO Package",
+    "featLocal": "Local SEO Strategy & Optimization",
+    "featContent": "Content Creation & Optimization",
+    "featLinkBuild": "High-Quality Link Building",
+    
+    "featAllAdv": "All features of Advanced SEO Package",
+    "featFullAudit": "Full Website & Technical SEO Audit",
+    "featCompAnalysis": "Competitor Analysis & Monitoring",
+    "featAdvLink": "Advanced Backlink Building Campaigns"
+  },
+  "CareerPage": {
+    "subTitle": "Careers",
+    "title": "Be a part of shaping the <br/> future & career opportunities <br/> at Golden Code today.",
+    "videoLabel": "Golden Code"
+  },
+  "CareerTeam": {
+    "subTitle": "Open Positions",
+    "title": "Join our team",
+    "viewJob": "View job",
+    "filterAll": "View All",
+    "filterDev": "Development",
+    "filterDesign": "Design",
+    "filterMarketing": "Marketing",
+    "filterSupport": "Customer Services",
+    "filterManagement": "Management"
+  },
+  "CareerProcess": {
+    "subTitle": "Hiring process",
+    "title": "Have a Our hiring process",
+    "s1Title": "Send your CV",
+    "s1Text": "Apply for a position by sending us your CV or providing a link to your LinkedIn profile, and take the first step toward joining our team.",
+    "s2Title": "Initial screening results?",
+    "s2Text": "Our recruiter will get back to you if your resume meets our requirements in order to introduce you to the role.",
+    "s3Title": "Job interview",
+    "s3Text": "You will meet a few of your potential colleagues to talk about your skills, background, and expectations in detail.",
+    "s4Title": "Test task",
+    "s4Text": "If needed, we’ll arrange a small test task. Depending on the project and role, this may be followed by a client interview.",
+    "s5Title": "You’re hired!",
+    "s5Text": "By deciding we are a good match for each other, we’ll agree the terms of you starting your career at Golden Code.."
+  },
+  "CareerJobs": {
+    "j1Title": "Enterprise SEO Consultant",
+    "j1Location": "Remote, (USA)",
+    "j2Title": "IT Infrastructure Manager",
+    "j2Location": "Remote, Colombia",
+    "j3Title": "Technical Project Manager",
+    "j3Location": "Warsaw, Poland",
+    "j4Title": "Cloud Solutions Architect",
+    "j4Location": "Bangalore (Hybrid)",
+    "j5Title": "IT Support Engineer",
+    "j5Location": "Remote, Argentina",
+    "j6Title": "Global Benefits Manager",
+    "j6Location": "Remote, Canada",
+    "fullTime": "Full time"
+  },
+  "BlogPage": {
+    "subTitle": "Blog",
+    "title": "Expert insights from our Web <br/> Development solutions."
+  },
+  "BlogList": {
+    "readMore": "Read more"
+  },
+  "BlogSidebar": {
+    "search": "Search",
+    "searchPlaceholder": "Search blog...",
+    "tags": "Tags"
+  },
+  "BlogData": {
+    "b1Title": "Website Design for Small Businesses: Essential Guide",
+    "b1Desc": "In the digital age, every business, whether large or small, is dependent on technology. Software solutions have become the backbone of modern business operations. From managing customer relationships to automating complex processes, software solutions can significantly enhance business productivity and efficiency.",
+    "b1Thumb": "Technology",
+    "b1AuthorTitle": "Sineor Consultant",
+    "b2Title": "Software Solutions: Revolutionizing Business Operations",
+    "b2Desc": "In today’s digital world, having an online presence is not just an option for small businesses—it’s a necessity. Website design for small businesses is one of the first steps in establishing that presence, and it plays a crucial role in how potential customers perceive your business. A well-designed website can make your small business stand out, create a professional image, and help build trust with your audience.",
+    "b2Thumb": "Branding",
+    "b2AuthorTitle": "Creative Director"
+  },
+  "PortfolioPage": {
+    "subTitle": "Our Projects",
+    "title": "Discover our case studies <br/> highlighting transformative <br/> Web Development and SEO solutions"
+  },
+  "CaseStudySection": {
+    "filterAll": "View All",
+    "filterDev": "Development",
+    "filterDesign": "Design",
+    "filterMarketing": "Marketing",
+    "filterBranding": "Branding",
+    "filterSEO": "SEO Services"
+  },
+  "Project": {
+    "subtitle": "Latest Project",
+    "title": "Uncover our latest succsess stories",
+    "viewMore": "View More Projects",
+    "readDetails": "Read Details"
+  },
+  "ProjectData": {
+    "p1Title": "Ezhalha",
+    "p1Desc": "Ezhalha is a ride-hailing marketplace that combines on-demand dispatch like Uber with passenger-driver fare negotiation like InDrive — giving users fast rides plus flexible pricing.",
+    "rtext": "ROI increase over 3 years",
+    "ttext": "In value due to increased team productivity",
+    "stext": "Saved due to reduced administration time",
+    "p2Title": "Salam Surgery Clinic",
+    "p2Desc": "Our experienced coaches are not just educators; they are partners in your journey..",
+    "p3Title": "UniGuide",
+    "p3Desc": "Cambridge expanded its reach with through targeted SEO solutions, boosting visibility and driving growth.",
+    "p4Title": "Monhamed in the Bible",
+    "p4Desc": "Targeted SEO strategies strengthened Madrids digital footprint,visibility and driving engagement.",
+    "p5Title": "Delivering remote solutions",
+    "p5Desc": "Delivering Remote Solutions provides teams with tools for effective and productivity from anywhere.",
+    "p6Title": "Real-time health monitoring..",
+    "p6Desc": "Real-Time Health Monitoring via Mobile App tracks logo vital signs, enabling early detection.",
+    "p7Title": "Simple time management..",
+    "p7Desc": "Simple Time Management boosts productivity by prioritizing tasks and reducing distractions."
+  },
+  "PrivacyPage": {
+    "subTitle": "Privacy Policy",
+    "title": "Golden Code website privacy <br/> policy your access and <br/> usage rights",
+    "updated": "Updated on : December 10th, 2024",
+    "contactHeading": "Contact",
+    "contactText": "<link>Click here</link> to contact us regarding this Privacy Policy or other related issues. You can also send us an e-mail on: <email>contact@Golden Code.com</email>"
+  },
+  "PrivacyData": [
+    {
+      "title": "Data controller and data collection",
+      "content": [
+        "Golden Code is committed to safeguarding your privacy...",
+        "Certain types of data may be necessary to access and utilize specific features..."
+      ]
+    },
+    {
+      "title": "User responsibilities",
+      "content": [
+        "Users are responsible for any third-party data shared via the Golden Code website..."
+      ]
+    },
+    {
+      "title": "Data processing and security",
+      "content": [
+        "Data is processed using secure IT systems at Golden Code’s operational offices..."
+      ]
+    },
+    {
+      "title": "Data storage and retention",
+      "content": [
+        "Personal data is retained only for as long as necessary..."
+      ]
+    },
+    {
+      "title": "Legal action",
+      "content": [
+        "Golden Code may disclose personal data to comply with legal obligations..."
+      ]
+    },
+    {
+      "title": "User rights",
+      "content": [
+        "Users have the right to access, update, or delete their personal data..."
+      ],
+      "list": [
+        "Users can request information about the personal data Golden Code holds.",
+        "Correct any inaccurate or incomplete data.",
+        "Request the deletion of their data when it’s no longer needed.",
+        "Request their data in a transferable format.",
+        "Limit the processing of their data in certain situations.",
+        "Object to the processing of their data for direct marketing or legitimate interests.",
+        "Withdraw consent for data processing at any time.",
+        "File a complaint with a supervisory authority if they feel their rights are violated."
+      ]
+    },
+    {
+      "title": "'Do not track' requests",
+      "content": [
+        "Golden Code does not currently support “Do Not Track” requests..."
+      ]
+    },
+    {
+      "title": "Policy updates",
+      "content": [
+        "Golden Code may update this Privacy Policy periodically..."
+      ]
+    },
+    {
+      "title": "Retargeting and ad cookies",
+      "content": [
+        "Golden Code uses cookies for advertising purposes through partners like AdRoll..."
+      ]
+    }
+  ],
+  "TermsPage": {
+    "subTitle": "Terms & Conditions",
+    "title": "Golden Code website terms & <br/> conditions your access and <br/> usage rights",
+    "updated": "Updated on: December 10th, 2024",
+    "contactHeading": "Contact",
+    "contactText": "<link>Click here</link> to contact us regarding this Terms & Conditions or other related issues. You can also send us an e-mail on: <email>contact@Golden Code.com</email>"
+  },
+  "TermsData": [
+    {
+      "title": "Copyright and intellectual property usage",
+      "content": [
+        "All content on this website, including text, graphics, logos, and trademarks, is the intellectual property of Golden Code...",
+        "Images on this website may include licensed stock photos..."
+      ]
+    },
+    {
+      "title": "Website usage terms",
+      "content": [
+        "By accessing this website, you agree to comply with the following terms...",
+        "Additionally, users must not submit or transmit any unlawful, abusive, defamatory...",
+        "This website may contain links to external sites..."
+      ]
+    },
+    {
+      "title": "Software and services",
+      "content": [
+        "Our services, provided on an 'as-is' and 'as-available' basis..."
+      ]
+    },
+    {
+      "title": "Personal information policy",
+      "content": [
+        "Golden Code adheres to ethical business practices and safeguards your personal information..."
+      ]
+    },
+    {
+      "title": "Disclaimer",
+      "content": [
+        "Information on this website is provided in good faith and sourced from reliable providers...",
+        "Golden Code disclaims all warranties, including those related to fitness for a particular purpose..."
+      ]
+    },
+    {
+      "title": "Limitation of liability",
+      "content": [
+        "Golden Code disclaims liability for any damages, including lost data or profits..."
+      ]
+    }
+  ]
+}

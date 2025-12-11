@@ -7,6 +7,7 @@ import about3 from "@/public/images/about/img-03.png";
 import aIcon1 from "@/public/images/icon/about-icon01.png";
 import aIcon2 from "@/public/images/icon/about-icon02.png";
 import aIcon3 from "@/public/images/icon/about-icon03.png";
+import { Link } from '@/i18n/routing';
 import Image, { StaticImageData } from "next/image";
 
 interface AboutItem {

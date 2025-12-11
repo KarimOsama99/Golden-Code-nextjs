@@ -1,29 +1,30 @@
 import React from "react";
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
+
+import { getBlogs } from "../../api/blogs";
+import getServices from "@/api/service";
+import SearchIcon from "@/public/images/icon/search-icon.svg";
+import authorIcon from "@/public/images/icon/profile-circle.svg";
+import {useTranslations} from 'next-intl';
 import Image from "next/image";
 
-import { blogs } from "../../api/blogs";
-import Services from "../../api/service";
-
-import searchIcon from "@/public/images/icon/search-icon.svg";
-import authorIcon from "@/public/images/icon/profile-circle.svg";
-
 const BlogSidebar = () => {
+    const t = useTranslations('BlogSidebar');
   return (
     <div className="col-lg-4 mt-30">
       <aside className="sidebar">
         {/* Search Widget */}
         <div className="sidebar_widget">
-          <h3 className="sidebar_widget_title">Search</h3>
+          <h3 className="sidebar_widget_title">{t('search')}</h3>
           <form className="form-group">
             <input
               className="form-control"
               type="search"
               name="search"
-              placeholder="Search blog..."
+              placeholder={t('searchPlaceholder')}
             />
             <button type="submit" className="search_icon" aria-label="Search">
-              <Image src={searchIcon} alt="Search icon" />
+              <Image src={SearchIcon} alt="Search icon" />
             </button>
           </form>
         </div>
@@ -73,7 +74,7 @@ const BlogSidebar = () => {
 
         {/* Tags */}
         <div className="sidebar_widget">
-          <h3 className="sidebar_widget_title">Tags</h3>
+          <h3 className="sidebar_widget_title">{t('tags')}</h3>
           <ul className="tags_block list-unstyled">
             {[
               "Cybersecurity",

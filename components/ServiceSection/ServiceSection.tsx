@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import Image, { StaticImageData } from "next/image";
 import { Fade } from "react-awesome-reveal";
+import {useTranslations} from 'next-intl';
 
-import Services from "@/api/service";
+import getServices from "@/api/service";
 import sIcon from "@/public/images/icon/arrow-black.svg";
 import hIcon from "@/public/images/icon/ser-01.svg";
 
@@ -21,8 +22,12 @@ interface ServiceSectionProps {
 }
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({
-  services = Services,
+  services,
 }) => {
+  const t = useTranslations('Services');
+  const tData = useTranslations('ServiceData');
+  const defaultServices = getServices(tData);
+  const finalServices = services || defaultServices;
   return (
     <section className="service pt-140 pb-140">
       <div className="container">
@@ -40,7 +45,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                   <div>
                     <span className="sub-title">
                       <Image src={hIcon} alt="Feature services icon" />
-                      Feature-services
+                      {t('subtitle')}
                     </span>
                   </div>
                 </Fade>
@@ -52,7 +57,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                 >
                   <div>
                     <h2 className="title">
-                      Growth with <br /> Our services
+                      <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
                     </h2>
                   </div>
                 </Fade>
@@ -64,8 +69,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                 >
                   <div>
                     <h3 className="content">
-                      Accelerate growth through innovative web development and
-                      reliable product delivery today.
+                      {t('content')}
                     </h3>
                   </div>
                 </Fade>
@@ -83,7 +87,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       href="/services"
                       className="thm-btn thm-btn--aso thm-btn--aso_yellow"
                     >
-                      View more services
+                      {t('viewMore')}
                     </Link>
                   </div>
                 </Fade>
@@ -94,7 +98,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           {/* Middle Column */}
           <div className="col-lg-4 col-md-6 mt-30">
             <div className="service-all_item">
-              {services.slice(0, 2).map((service, index) =>
+              {finalServices.slice(0, 2).map((service, index) =>
                 service.title ? (
                   <div className="service-box" key={`left-${index}`}>
                     <div className="service-item">
@@ -113,14 +117,14 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                           )}
                         </div>
                         <Link
-                          href={"/service-single"}
+                          href={`/services/${service.slug}`}
                           className="xb-item--arrow"
                         >
                           <Image src={sIcon} alt="Arrow icon" />
                         </Link>
                       </div>
                       <Link
-                        href={"/service-single"}
+                        href={`/services/${service.slug}`}
                         className="xb-overlay"
                       ></Link>
                     </div>
@@ -133,7 +137,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           {/* Right Column */}
           <div className="col-lg-4 col-md-6 mt-30">
             <div className="service-all_item">
-              {services.slice(2, 4).map((service, index) =>
+              {finalServices.slice(2, 4).map((service, index) =>
                 service.title ? (
                   <div className="service-box" key={`right-${index}`}>
                     <div className="service-item">
@@ -152,14 +156,14 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                           )}
                         </div>
                         <Link
-                          href={"/service-single"}
+                          href={`/services/${service.slug}`}
                           className="xb-item--arrow"
                         >
                           <Image src={sIcon} alt="Arrow icon" />
                         </Link>
                       </div>
                       <Link
-                        href={"/service-single"}
+                        href={`/services/${service.slug}`}
                         className="xb-overlay"
                       ></Link>
                     </div>

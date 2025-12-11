@@ -1,0 +1,353 @@
+/* Arabic (RTL) Specific Styles */
+
+[dir="rtl"] {
+  --font-body: 'Cairo', sans-serif;
+  --font-heading: 'Cairo', sans-serif;
+  --font-heading-two: 'Cairo', sans-serif;
+  --font-heading-three: 'Cairo', sans-serif;
+  --font-heading-four: 'Cairo', sans-serif;
+  --font-heading-five: 'Cairo', sans-serif;
+}
+
+[dir="rtl"] body,
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6,
+[dir="rtl"] span,
+[dir="rtl"] p,
+[dir="rtl"] a {
+  font-family: 'Cairo', sans-serif;
+}
+
+
+[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+/* Example: Mirroring margins/padding */
+[dir="rtl"] .some-class-with-left-margin {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+/* Fix for icons/arrows that need flipping */
+[dir="rtl"] .fa-arrow-right:before {
+  content: "\f060"; /* Changes arrow right to arrow left code */
+}
+
+/* Add your custom Arabic overrides below */
+
+[dir="rtl"] .main-menu ul li .submenu li a {
+    text-align: right;
+}
+[dir="rtl"] .main-menu ul li.menu-item-has-children > a span:after {
+    padding-left: unset;
+    padding-right: 6px;
+}
+[dir="rtl"] .mega_menu_wrapper .autpr_box {
+    margin-right: unset;
+    margin-left: -30px;
+}
+[dir="rtl"] .megamenu_case {
+    text-align: right;
+    margin-left: unset;
+    margin-right: -43px;
+}
+[dir="rtl"] .megamenu_widget_wrapper {
+    padding: 0 70px 0 0;
+}
+[dir="rtl"] .megamenu_widget_inner > .row {
+    text-align: right;
+    /* margin: 0 50px; */
+}
+[dir="rtl"] .blog_details_item .xb-item--img {
+    margin-right: unset;
+    margin-left: 50px;
+}
+[dir="rtl"] .sidebar {
+    margin-left: unset;
+    margin-right: 80px;
+}
+[dir="rtl"] .blog_details_item .xb-item--holder {
+    padding: 40px 0px 40px 45px;
+}
+[dir="rtl"] .mega_menu_wrapper .row:has( > [class*="col-"] > .megamenu_widget) > [class*="col-"]:not(:last-child) {
+    border-right-width: 0;
+    border-left-width: 1px;
+}
+[dir="rtl"] .header-style-one .header-bar-mobile, [dir="rtl"] .header-style-two .header-bar-mobile {
+    margin-right: auto;
+    margin-left: 30px;
+}
+[dir="rtl"] .header-style-two .header-contact {
+    margin-left: unset;
+    /* margin-right: 30px; */
+}
+[dir="rtl"] .thm-btn--header-black img {
+    margin-left: unset;
+    margin-right: 18px;
+}
+
+[dir="rtl"] .me-3,
+[dir="rtl"] .team-item .xb-item--social-link li:not(:last-child),
+[dir="rtl"] .footer-style-two .footer-copyright .footer-link li:not(:last-child) {
+    margin-right: unset;
+    margin-left: 1rem;
+}
+
+[dir="rtl"] .xb-faq .accordion_box .block .acc-btn .accordion-button .arrow {
+    right: unset;
+    left: 40px;
+}
+[dir="rtl"] .xb-faq .accordion_box .block .acc-btn .accordion-button .arrow:after {
+    left: 0;
+}
+[dir="rtl"] .xb-faq .accordion_box .block .content ul li i,
+[dir="rtl"] .tags_block li {
+    margin-right: unset;
+    margin-left: 10px;
+}
+[dir="rtl"] .xb-faq .accordion_box .block .content {
+    padding: 30px 40px 40px 140px;
+}
+[dir="rtl"] .footer-style-two .info-item:before {
+    left: unset;
+    right: -70px;
+}
+
+[dir="rtl"] .footer-style-two .info-item .xb-item--icon,
+[dir="rtl"] .about-left .about-item_box .xb-item--icon,
+[dir="rtl"] .hero-style-two .xb-hero .xb-item--item li i {
+    margin-right: unset;
+    margin-left: 20px;
+}
+[dir="rtl"] .footer-style-two .info-item .xb-item--title,
+[dir="rtl"] .blog-pagination {
+    direction: ltr;
+}
+
+[dir="rtl"] .sa-tes_button .sa-swiper-btn {
+    right: unset;
+    left: 42px;
+}
+[dir="rtl"] .sa-tes_button .sa-swiper-btn.swiper-button-prev,
+[dir="rtl"] .about-left:before,
+[dir="rtl"] .xb-menu-toggle, [dir="rtl"] .xb-menu-primary i {
+    right: unset;
+    left: 0;
+}
+[dir="rtl"] .mega_menu_wrapper .site_author p {
+    text-align: right;
+    padding-right: unset;
+    padding-left: 25px;
+}
+
+[dir="rtl"] .pg-pricing-item .xb-item--icon {
+    margin-right: unset;
+    margin-left: 25px;
+}
+[dir="rtl"] .xb-details-item .xb-details-content {
+    margin-left: unset;
+    margin-right: 25px;
+}
+[dir="rtl"] .pg-pricing-item .xb-item--list li img {
+    margin-right: unset;
+    margin-left: 4px;
+}
+
+[dir="rtl"] .csd-ser_inner .csd-item .xb-icon {
+    margin-right: unset;
+    margin-left: 8px;
+}
+
+[dir="rtl"] .col-lg-5.mt-30,
+[dir="rtl"] .col-lg-4.mt-30,
+[dir="rtl"] .col-lg-3.mt-30 {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+}
+[dir="rtl"] .blog-details_item .xb-item--det-btn i {
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] .cp-details-wrap {
+    padding-right: unset;
+    padding-left: 220px;
+}
+
+[dir="rtl"] .mega_menu_wrapper .author_box {
+    /* flex-direction: row-reverse; */
+    text-align: right;
+}
+[dir="rtl"] .author_box_quote {
+    right: unset;
+    left: 53px;
+}
+[dir="rtl"] .team-item .xb-item--reating i {
+    margin-right: unset;
+    margin-left: 5px;
+}
+[dir="rtl"] .team-item .xb-item--item {
+    right: unset;
+    left: 20px;
+}
+[dir="rtl"] .feature-table tr td:first-child, .feature-table tr th:first-child {
+    padding-left: unset;
+    padding-right: 60px;
+}
+[dir="rtl"] .feature-table tr:first-child td:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 20px;
+}
+
+[dir="rtl"] .xb-header-mobile-search .search-submit {
+    right: unset;
+    left: 10px;
+}
+
+[dir="rtl"] .cp-team-item .xb-item--meta:not(:last-child) {
+    margin-right: unset;
+    margin-left: 82px;
+}
+[dir="rtl"] .cp-team-item .xb-item--meta img {
+    margin-right: unset;
+    margin-left: 9px;
+}
+[dir="rtl"] .cp-process-right .xb-img {
+    margin-right: unset;
+    margin-left: -145px;
+}
+
+[dir="rtl"] .about-right {
+    margin-left: unset;
+    margin-right: 105px;
+}
+[dir="rtl"] .sec-title--two .sub-title img,
+[dir="rtl"] .page-title-box .sub-title img {
+    margin-right: unset;
+    margin-left: 6px;
+}
+
+[dir="rtl"] .sd-process-item {
+    margin-right: unset;
+    margin-left: 7px;
+    padding-left: unset;
+    padding-right: 60px;
+}
+
+[dir="rtl"] .sd-ser-content {
+    padding-right: unset;
+    padding-left: 75px;
+}
+
+[dir="rtl"] .form-group .search_icon {
+    right: unset;
+    left: 0;
+    border-radius: 10px 0 0 10px;
+}
+[dir="rtl"] .form-group .form-control {
+    padding-right: 1rem !important;
+}
+
+[dir="rtl"] .sd-process-item .xb-item--number {
+    left: unset;
+    right: -10px;
+}
+
+[dir="rtl"] .item-contact_info .xb-item--top span {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    direction: ltr;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .item-contact_info .xb-item--top span img {
+    margin-right: unset;
+    margin-left: 10px;
+}
+
+[dir="rtl"] .cs-contact-form .input-field .input-box textarea {
+    padding: 17px 20px 16px 46px;
+}
+
+[dir="rtl"] .cp-btn i,
+[dir="rtl"] .blog_details_item .xb-item--button a i {
+    margin-left: unset;
+    margin-right: 15px;
+    transform: rotate(45deg) !important;
+}
+
+[dir="rtl"] .hero-style-two .xb-hero .xb-item--title {
+    line-height: 100px;
+}
+
+@media (width <= 1199px) {
+    [dir="rtl"] .footer-style-two .info-item:before {
+        right: -47px;
+    }
+    [dir="rtl"] .hero-style-two .xb-hero .xb-item--title {
+        line-height: 80px;
+    }
+    [dir="rtl"] .about-right,
+    [dir="rtl"] .service-info {
+        margin-right: 8px;
+    }
+}
+@media (max-width: 991px) {
+    [dir="rtl"] .sd-ser-content {
+        padding-left: 0;
+        text-align: center;
+    }
+    [dir="rtl"] .sd-process-item .xb-item--number {
+        right: 0;
+    }
+}
+
+/* Mobile Menu RTL Overrides */
+[dir="rtl"] .xb-header-menu {
+    left: unset;
+    right: 0;
+    transform: translateX(100%);
+}
+
+[dir="rtl"] .xb-header-menu.active {
+    transform: translateX(0%);
+}
+
+[dir="rtl"] .xb-header-menu-scroll .xb-close {
+    right: unset;
+    left: 0px;
+}
+
+[dir="rtl"] .xb-header-menu-scroll .xb-menu-primary > li > a .left-icon {
+    margin-right: unset;
+    margin-left: 4px;
+}
+
+[dir="rtl"] .xb-menu-primary li a {
+    text-align: right;
+}
+
+[dir="rtl"] .xb-menu-toggle {
+    right: unset;
+    left: 0;
+}
+
+[dir="rtl"] .xb-menu-primary .sub-menu li a, 
+[dir="rtl"] .xb-menu-primary .children li a {
+    padding-left: unset;
+    padding-right: 14px;
+}
+
+[dir="rtl"] .xb-menu-primary .xb-heading {
+    padding-left: unset;
+    padding-right: 14px;
+    text-align: right;
+}

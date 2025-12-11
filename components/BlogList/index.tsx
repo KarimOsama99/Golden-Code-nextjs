@@ -2,14 +2,18 @@
 
 import React from "react";
 
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
 import Image from "next/image";
+import {useTranslations} from 'next-intl';
 
-import { blogs } from "../../api/blogs";
+import { getBlogs } from "../../api/blogs";
 import BlogSidebar from "../BlogSidebar";
 import fallbackImage from "@/public/images/blog/b-img01.jpg";
 
 const BlogList = () => {
+    const t = useTranslations('BlogList');
+    const tData = useTranslations('BlogData');
+    const blogs = getBlogs(tData);
   return (
     <div>
       {/* Blog List Section */}
@@ -61,7 +65,7 @@ const BlogList = () => {
                               "-"
                             )}`}
                         >
-                          Read more <i className="far fa-arrow-right text-white"></i>
+                          {t('readMore')} <i className="far fa-arrow-right text-white"></i>
                         </Link>
                       </div>
                     </div>

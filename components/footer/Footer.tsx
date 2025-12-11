@@ -1,7 +1,8 @@
 'use client';
 
 import React, { FormEvent } from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
+import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 import icon1 from '@/public/images/icon/sms-white.svg';
 import icon2 from '@/public/images/icon/call-white.svg';
@@ -17,6 +18,8 @@ const SubmitHandler = (e: FormEvent<HTMLFormElement>) => {
 };
 
 const Footer: React.FC<FooterProps> = () => {
+  const t = useTranslations('Footer');
+  const tServices = useTranslations('ServiceData');
   return (
     <footer
       className="footer footer-style-two pt-200 bg_img pos-rel"
@@ -33,7 +36,7 @@ const Footer: React.FC<FooterProps> = () => {
                 </span>
               </div>
               <div className="xb-item--holder">
-                <p className="xb-item--content">Write to us</p>
+                <p className="xb-item--content">{t('writeToUs')}</p>
                 <h4 className="xb-item--title">sales@goldencodee.com</h4>
               </div>
             </div>
@@ -44,7 +47,7 @@ const Footer: React.FC<FooterProps> = () => {
                 </span>
               </div>
               <div className="xb-item--holder">
-                <p className="xb-item--content">Call Us (EG)</p>
+                <p className="xb-item--content">{t('callUs')}</p>
                 <h4 className="xb-item--title">+(20) 1124 762 799</h4>
               </div>
             </div>
@@ -55,8 +58,8 @@ const Footer: React.FC<FooterProps> = () => {
                 </span>
               </div>
               <div className="xb-item--holder">
-                <p className="xb-item--content">Our Office</p>
-                <h4 className="xb-item--title">Cairo, Hadayek-Helwan</h4>
+                <p className="xb-item--content">{t('ourOffice')}</p>
+                <h4 className="xb-item--title">{t('address')}</h4>
               </div>
             </div>
           </div>
@@ -67,41 +70,40 @@ const Footer: React.FC<FooterProps> = () => {
             <div className="sa-newslatter footer-widget">
               <Image src={logo4} width={200} height={75} alt="Logo" />
               <p className="text-white mt-30">
-                Golden Code The best team specialized in designing and
-                programming websites, blogs and online stores.
+                {t('description')}
               </p>
             </div>
 
             {/* Company Links */}
             <div className="footer-widget">
-              <span className="xb-item--sub-title">Company</span>
+              <span className="xb-item--sub-title">{t('company')}</span>
               <ul className="xb-item--holder list-unstyled">
                 <li className="xb-item--list">
-                  <Link href="/about">About us</Link>
+                  <Link href="/about">{t('aboutUs')}</Link>
                 </li>
                 <li className="xb-item--list">
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact">{t('contact')}</Link>
                 </li>
                 <li className="xb-item--list">
-                  <Link href="/pricing">Price table</Link>
+                  <Link href="/pricing">{t('priceTable')}</Link>
                 </li>
                 <li className="xb-item--list">
-                  <Link href="/blog">Our blog</Link>
+                  <Link href="/blog">{t('ourBlog')}</Link>
                 </li>
                 <li className="xb-item--list">
-                  <Link href="/team">Team member</Link>
+                  <Link href="/team">{t('teamMember')}</Link>
                 </li>
                 <li className="xb-item--list">
-                  <Link href="/portfolio">Our Projects</Link>
+                  <Link href="/portfolio">{t('ourProjects')}</Link>
                 </li>
               </ul>
             </div>
 
             {/* Services */}
             <div className="footer-widget">
-              <span className="xb-item--sub-title">Our Services</span>
+              <span className="xb-item--sub-title">{t('ourServices')}</span>
               <ul className="xb-item--holder list-unstyled">
-                {Services.slice(0, 6).map((service) => (
+                {Services(tServices).slice(0, 6).map((service) => (
                   <li key={service.Id} className="xb-item--list">
                     {service.title && (
                       <Link href={`/services/${service.slug.toLowerCase()}`}>
@@ -130,12 +132,13 @@ const Footer: React.FC<FooterProps> = () => {
           {/* Footer Bottom */}
           <div className="footer-copyright mt-70 ul_li_between">
             <p className="copyright mt-20">
-              Copyright © 2025 <Link href="/">Golden Code</Link>. All rights
-              reserved.
+              {t.rich('copyright', {
+                link: (chunks) => <Link href="/">{chunks}</Link>
+              })}
             </p>
             <ul className="footer-link ul_li mt-20">
               <li>
-                <span>Follow us :</span>
+                <span>{t('followUs')}</span>
               </li>
               <li>
                 <Link

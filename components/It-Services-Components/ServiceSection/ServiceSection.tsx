@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 import Image, { StaticImageData } from 'next/image';
 import Services from '../../../api/service';
 

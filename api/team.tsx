@@ -4,43 +4,43 @@ import timg3 from "@/public/images/bg/avatar3.jpg";
 import timg4 from "@/public/images/bg/avatar4.jpg";
 
 
-const Teams = [
+const getTeams = (t: any) => [
   {
     Id: "1",
     tImg: timg1,
-    name: "Mohamed Samy",
+    name: t('t1Name'),
     slug: "Mohamed Samy",
-    title: "Back-End Developer",
-    exprience: "10 Years experience",
+    title: t('t1Title'),
+    exprience: t('t1Exp'),
     rating: "4.9",
   },
   {
     Id: "2",
     tImg: timg2,
-    name: "Karim Osama",
+    name: t('t2Name'),
     slug: "Karim Osama",
-    title: "Front-End Developer",
-    exprience: "6 Years experience",
+    title: t('t2Title'),
+    exprience: t('t2Exp'),
     rating: "4.8",
   },
   {
     Id: "3",
     tImg: timg3,
-    name: "Fathy Aly",
+    name: t('t3Name'),
     slug: "Fathy Aly",
-    title: "Link Building Manager",
-    exprience: "10 Years experience",
+    title: t('t3Title'),
+    exprience: t('t3Exp'),
     rating: "4.8",
   },
   {
     Id: "4",
     tImg: timg4,
-    name: "Ragnar Lothbrok",
+    name: t('t4Name'),
     slug: "Ragnar Lothbrok",
-    title: "Senior SEO Strategist",
-    exprience: "18 Years experience",
+    title: t('t4Title'),
+    exprience: t('t4Exp'),
     rating: "4.9",
   }
 ];
 
-export default Teams;
+export default getTeams;

@@ -70,117 +70,101 @@ export interface Service {
   description2?: string;
 }
 
-const Services: Service[] = [
+const getServices = (t: any): Service[] => [
   {
     Id: "1",
     sImg: icon2,
     sLogo: web,
     sCover: serviceImg01,
-    title: "Web Development",
+    title: t('s1Title'),
     slug: "web-development",
     thumb1: "Strategy",
     thumb2: "Consultation",
-    description:
-      "Web Development builds and maintains websites and web applications for the internet.",
-    heading: "Front-End & Back-End Expertise",
-    description2:
-      "We specialize in full-stack development, using modern frameworks like React, Angular, or Vue.js for the front-end, and Node.js, Python, or PHP for the back-end.",
+    description: t('s1Desc'),
+    heading: t('s1Heading'),
+    description2: t('s1Desc2'),
   },
   {
     Id: "2",
     sImg: icon8,
     sLogo: data,
     sCover: serviceImg02,
-    title: "Data Analysis",
+    title: t('s2Title'),
     slug: "data-analysis",
     thumb1: "Management",
     thumb2: "Transfer",
-    description:
-      "Data Analysis examines data sets to draw conclusions about the information they contain.",
-    heading: "Actionable Insights",
-    description2:
-      "We transform raw data into clear, actionable insights using statistical methods and visualization tools (e.g., Tableau, Power BI) to inform your strategic decisions.",
+    description: t('s2Desc'),
+    heading: t('s2Heading'),
+    description2: t('s2Desc2'),
   },
   {
     Id: "3",
     sImg: icon5,
     sLogo: seo,
     sCover: serviceImg03,
-    title: "SEO audit",
+    title: t('s3Title'),
     slug: "SEO-audit",
     thumb1: "Website",
     thumb2: "Mobile App",
-    description:
-      "An SEO audit evaluates a website identify improvements for better search rankings and visibility.",
-    heading: "Comprehensive Site Evaluation",
-    description2:
-      "Our audits cover technical SEO, on-page factors, off-page links, and content strategy to provide a holistic view of your search engine performance.",
+    description: t('s3Desc'),
+    heading: t('s3Heading'),
+    description2: t('s3Desc2'),
   },
   {
     Id: "4",
     sImg: icon6,
     sLogo: cyber,
     sCover: serviceImg04,
-    title: "Cyber Security",
+    title: t('s4Title'),
     slug: "cyber-security",
-    description:
-      "Cyber Security protects systems, networks, and programs from digital attacks.",
-    heading: "Proactive Threat Defense",
-    description2:
-      "We implement robust security protocols, including penetration testing, vulnerability management, and employee training to mitigate risks and ensure data integrity.",
+    description: t('s4Desc'),
+    heading: t('s4Heading'),
+    description2: t('s4Desc2'),
   },
   {
     Id: "5",
     sImg: icon7,
     sLogo: crm,
     sCover: serviceImg05,
-    title: "Custom CRM services",
+    title: t('s5Title'),
     slug: "Custom-CRM-services",
-    description:
-      "Custom CRM services tailor customer relationship management solutions to fit specific business needs.",
-    heading: "Streamline Sales & Marketing",
-    description2:
-      "We build CRM systems that integrate seamlessly with your existing tools, automating workflows and providing a unified view of the customer journey.",
+    description: t('s5Desc'),
+    heading: t('s5Heading'),
+    description2: t('s5Desc2'),
   },
   {
     Id: "6",
     sImg: icon3,
     sLogo: hosting,
     sCover: serviceImg06,
-    title: "Hosting",
+    title: t('s6Title'),
     slug: "Hosting",
-    description:
-      "Hosting services provide the infrastructure and support needed to host websites and applications.",
-    heading: "Reliable Cloud Solutions",
-    description2:
-      "Choose from dedicated, shared, or cloud hosting solutions optimized for speed, scalability, and 99.9% uptime for maximum performance.",
+    description: t('s6Desc'),
+    heading: t('s6Heading'),
+    description2: t('s6Desc2'),
   },
   {
     Id: "7",
     sImg: icon4,
     sLogo: deployment,
     sCover: serviceImg07,
-    title: "Continuous Deployment",
+    title: t('s7Title'),
     slug: "Continuous-Deployment",
-    description:
-      "Continuous Deployment automates software release process, ensuring rapid and reliable delivery to users.",
-    heading: "Rapid & Consistent Delivery",
-    description2:
-      "We set up automated CI/CD pipelines using tools like Jenkins, GitLab CI, or GitHub Actions to deploy verified code changes quickly and with minimal human error.",
+    description: t('s7Desc'),
+    heading: t('s7Heading'),
+    description2: t('s7Desc2'),
   },
   {
     Id: "8",
     sImg: icon1,
     sLogo: ai,
     sCover: serviceImg08,
-    title: "AI solution Design",
+    title: t('s8Title'),
     slug: "AI-solution",
-    description:
-      "We design AI solutions that use your newly found insights to identify new opportunities for improvement.",
-    heading: "Machine Learning Integration",
-    description2:
-      "From predictive models to natural language processing, we design and deploy custom AI models that automate tasks and unlock strategic value in your operations.",
+    description: t('s8Desc'),
+    heading: t('s8Heading'),
+    description2: t('s8Desc2'),
   },
 ];
 
-export default Services
+export default getServices;

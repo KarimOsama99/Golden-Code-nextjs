@@ -8,9 +8,8 @@ import cImg7 from "@/public/images/project/portfolio/ezhalha.png";
 import cImg8 from "@/public/images/project/portfolio/3lmni.png";
 import cImg9 from "@/public/images/project/almonasib.png";
 import cImg10 from "@/public/images/project/portfolio/portafoto.png";
-// import { daDK } from "@mui/material/locale";
 
-const caseStudies = [
+const getCases = () => [
   {
     id: 1,
     category: "cat2",
@@ -123,4 +122,4 @@ const caseStudies = [
   },
 ];
 
-export default caseStudies;
+export default getCases;

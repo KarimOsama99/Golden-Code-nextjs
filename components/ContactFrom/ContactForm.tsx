@@ -12,7 +12,10 @@ interface FormState {
   message: string;
 }
 
+import {useTranslations} from 'next-intl';
+
 const ContactForm: React.FC = () => {
+    const t = useTranslations('ContactForm');
   const [forms, setForms] = useState<FormState>({
     name: '',
     email: '',
@@ -46,7 +49,7 @@ const ContactForm: React.FC = () => {
 
     if (validator.current.allValid()) {
       validator.current.hideMessages();
-      alert('Form submitted successfully!'); // You can replace this with actual logic
+      alert(t('success')); // You can replace this with actual logic
 
       setForms({
         name: '',
@@ -67,7 +70,7 @@ const ContactForm: React.FC = () => {
       <div className="row">
         <div className="col-lg-6">
           <div className="input-field">
-            <label htmlFor="name">Name*</label>
+            <label htmlFor="name">{t('name')}</label>
             <div className="input-box">
               <input
                 value={forms.name}
@@ -85,7 +88,7 @@ const ContactForm: React.FC = () => {
 
         <div className="col-lg-6">
           <div className="input-field">
-            <label htmlFor="email">Email*</label>
+            <label htmlFor="email">{t('email')}</label>
             <div className="input-box">
               <input
                 value={forms.email}
@@ -103,7 +106,7 @@ const ContactForm: React.FC = () => {
 
         <div className="col-lg-12">
           <div className="input-field">
-            <label htmlFor="phone">Phone*</label>
+            <label htmlFor="phone">{t('phone')}</label>
             <div className="input-box">
               <input
                 value={forms.phone}
@@ -121,14 +124,14 @@ const ContactForm: React.FC = () => {
 
         <div className="col-lg-12">
           <div className="input-field text-field">
-            <label htmlFor="message">Message*</label>
+            <label htmlFor="message">{t('message')}</label>
             <div className="input-box">
               <textarea
                 value={forms.message}
                 name="message"
                 id="message"
                 className="form-control"
-                placeholder="How can we help you?"
+                placeholder={t('messagePlaceholder')}
                 onChange={changeHandler}
                 onBlur={changeHandler}
               ></textarea>
@@ -140,7 +143,7 @@ const ContactForm: React.FC = () => {
 
       <div className="cp-det-btn mt-20 d-grid">
         <button className="cp-btn thm-btn--aso thm-btn--aso_yellow" type="submit">
-          Send us a message <i className="fal fa-arrow-right text-white"></i>
+          {t('submit')} <i className="fal fa-arrow-right text-white"></i>
         </button>
       </div>
     </form>

@@ -4,63 +4,65 @@ import React, { Fragment, useState } from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Collapse from "@mui/material/Collapse";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 interface SubmenuItem {
   id: number;
-  title: string;
+  titleKey: string;
   link: string;
 }
 
 interface MenuItem {
   id: number;
-  title: string;
+  titleKey: string;
   link: string;
   submenu?: SubmenuItem[];
 }
 
-const menus: MenuItem[] = [
-  {
-    id: 1,
-    title: "Home",
-    link: "/home",
-  },
-  {
-    id: 3,
-    title: "Company",
-    link: "/about",
-    submenu: [
-      { id: 31, title: "About Us", link: "/about" },
-      { id: 3222, title: "Our Pricing", link: "/pricing" },
-      { id: 322, title: "Our team", link: "/team" },
-      { id: 3455, title: "FAQ's", link: "/faq" },
-      { id: 3457, title: "Career", link: "/career" },
-    ],
-  },
-  {
-    id: 5,
-    title: "Services",
-    link: "/services",
-  },
-  {
-    id: 7,
-    title: "Portfolio",
-    link: "/portfolio",
-  },
-  {
-    id: 6,
-    title: "Blog",
-    link: "/blog",
-  },
-  {
-    id: 88,
-    title: "Contact",
-    link: "/contact",
-  },
-];
-
 const MobileMenu: React.FC = () => {
+  const t = useTranslations('MobileMenu');
   const [openId, setOpenId] = useState<number | null>(null);
+
+  const menus: MenuItem[] = [
+    {
+      id: 1,
+      titleKey: "home",
+      link: "/home",
+    },
+    {
+      id: 3,
+      titleKey: "company",
+      link: "/about",
+      submenu: [
+        { id: 31, titleKey: "aboutUs", link: "/about" },
+        { id: 3222, titleKey: "pricing", link: "/pricing" },
+        { id: 322, titleKey: "team", link: "/team" },
+        { id: 3455, titleKey: "faqs", link: "/faq" },
+        { id: 3457, titleKey: "career", link: "/career" },
+      ],
+    },
+    {
+      id: 5,
+      titleKey: "services",
+      link: "/services",
+    },
+    {
+      id: 7,
+      titleKey: "portfolio",
+      link: "/portfolio",
+    },
+    {
+      id: 6,
+      titleKey: "blog",
+      link: "/blog",
+    },
+    {
+      id: 88,
+      titleKey: "contact",
+      link: "/contact",
+    },
+  ];
 
   const handleToggle = (id: number) => {
     setOpenId((prevId) => (prevId === id ? null : id));
@@ -73,7 +75,7 @@ const MobileMenu: React.FC = () => {
           {menu.submenu ? (
             <Fragment>
               <p onClick={() => handleToggle(menu.id)}>
-                {menu.title}
+                {t(menu.titleKey)}
                 <i
                   className={`fa ${
                     openId === menu.id ? "fa-angle-up" : "fa-angle-down"
@@ -85,7 +87,7 @@ const MobileMenu: React.FC = () => {
                   {menu.submenu.map((sub) => (
                     <ListItem key={sub.id}>
                       <Link href={sub.link} className="active">
-                        {sub.title}
+                        {t(sub.titleKey)}
                       </Link>
                     </ListItem>
                   ))}
@@ -94,7 +96,7 @@ const MobileMenu: React.FC = () => {
             </Fragment>
           ) : (
             <Link href={menu.link} className="active">
-              {menu.title}
+              {t(menu.titleKey)}
             </Link>
           )}
         </ListItem>

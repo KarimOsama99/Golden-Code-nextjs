@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Fade } from "react-awesome-reveal";
 import hicon from '@/public/images/icon/process-icon.svg';
@@ -8,47 +10,50 @@ import sIcon2 from '@/public/images/icon/user-icon.png';
 import sIcon3 from '@/public/images/icon/clipboar02.svg';
 import sIcon4 from '@/public/images/icon/medal-star.svg';
 import Image, { StaticImageData } from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface ProcessItem {
   id: string;
-  title: string;
-  subTitle: string;
+  titleKey: string;
+  subTitleKey: string;
   icon: StaticImageData | string; 
   direction: 'one' | 'two' | 'three' | 'four';
 }
 
-const Process: ProcessItem[] = [
-  {
-    id: "01",
-    title: 'Consultation',
-    subTitle: 'Gather requirements, define objectives, and agree on success metrics.',
-    icon: sIcon1,
-    direction: 'one',
-  },
-  {
-    id: "02",
-    title: 'Set up the team',
-    subTitle: 'Assemble a skilled team aligned with your business goals and objectives.',
-    icon: sIcon2,
-    direction: 'two',
-  },
-  {
-    id: "03",
-    title: 'Create a plan',
-    subTitle: 'Develop a tailored plan covering scope, timeline, resources management.',
-    icon: sIcon3,
-    direction: 'three',
-  },
-  {
-    id: "04",
-    title: 'Review and scale',
-    subTitle: 'Analyze performance metrics regularly to optimize and grow your strategy effectively.',
-    icon: sIcon4,
-    direction: 'four',
-  },
-];
-
 const WorkProcess: React.FC = () => {
+  const t = useTranslations('WorkProcess');
+  
+  const Process: ProcessItem[] = [
+    {
+      id: "01",
+      titleKey: 'p1Title',
+      subTitleKey: 'p1Desc',
+      icon: sIcon1,
+      direction: 'one',
+    },
+    {
+      id: "02",
+      titleKey: 'p2Title',
+      subTitleKey: 'p2Desc',
+      icon: sIcon2,
+      direction: 'two',
+    },
+    {
+      id: "03",
+      titleKey: 'p3Title',
+      subTitleKey: 'p3Desc',
+      icon: sIcon3,
+      direction: 'three',
+    },
+    {
+      id: "04",
+      titleKey: 'p4Title',
+      subTitleKey: 'p4Desc',
+      icon: sIcon4,
+      direction: 'four',
+    },
+  ];
+  
   return (
     <section className="process pt-130 pb-100 pos-rel" style={{ backgroundColor: "#0F55DC" }}>
       <div className="container">
@@ -56,14 +61,14 @@ const WorkProcess: React.FC = () => {
           <Fade direction='down' triggerOnce={false} duration={1000} delay={9}>
             <div>
               <div className="sub-title sub-title--strock wow fadeInDown" data-wow-duration="600ms">
-                <Image src={hicon} alt="Process icon" />Our working process
+                <Image src={hicon} alt="Process icon" />{t('subTitle')}
               </div>
             </div>
           </Fade>
           <Fade direction='up' triggerOnce={false} duration={1200} delay={9}>
             <div>
               <h2 className="title clr-white wow fadeInDown" data-wow-delay="150ms" data-wow-duration="600ms">
-                Our Services workflow
+                {t('title')}
               </h2>
             </div>
           </Fade>
@@ -88,10 +93,10 @@ const WorkProcess: React.FC = () => {
               {Process.map((process, index) => (
                 <div className={`process-item process-item--${process.direction}`} key={index}>
                   <div className="xb-item--icon">
-                    <Image src={process.icon} alt={`${process.title} icon`} />
+                    <Image src={process.icon} alt={`${t(process.titleKey)} icon`} />
                   </div>
-                  <h4 className="xb-item--title">{process.title}</h4>
-                  <p className="xb-item--contact">{process.subTitle}</p>
+                  <h4 className="xb-item--title">{t(process.titleKey)}</h4>
+                  <p className="xb-item--contact">{t(process.subTitleKey)}</p>
                   <span className="xb-item--number">{process.id}</span>
                 </div>
               ))}

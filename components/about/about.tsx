@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';;
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
 import icon from '@/public/images/icon/magic.png';
@@ -9,7 +9,10 @@ import about1 from '@/public/images/icon/airdrop.png';
 import about2 from '@/public/images/icon/people.png';
 import about3 from '@/public/images/icon/microphone.png';
 
+import {useTranslations} from 'next-intl';
+
 const About: React.FC = () => {
+  const t = useTranslations('About');
   return (
     <section id="about" className="about m-lr">
       <div className="about-wrapper sec-bg pos-rel pb-130 pt-130">
@@ -18,12 +21,12 @@ const About: React.FC = () => {
             <Fade direction="down" triggerOnce={false} duration={1000} delay={9}>
               <div className="sub-title wow fadeInDown" data-wow-duration="600ms">
                 <Image src={icon} alt="We are golden code" />
-                {' '}We are golden code
+                {' '}{t('subtitle')}
               </div>
             </Fade>
             <Fade direction="down" triggerOnce={false} duration={1500} delay={9}>
               <h2 className="title wow fadeInDown" data-wow-delay="150ms" data-wow-duration="600ms">
-                Modern Web Solutions for Ambitious Brands
+                {t('title')}
               </h2>
             </Fade>
           </div>
@@ -32,7 +35,7 @@ const About: React.FC = () => {
             {/* Left Column */}
             <div className="col-lg-6 mt-50">
               <div className="about-left">
-                <h2 className="title">Core values</h2>
+                <h2 className="title">{t('coreValues')}</h2>
 
                 <div className="about-item_box ul_li">
                   <div className="xb-item--icon">
@@ -40,7 +43,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="xb-item--holder">
                     <p className="xb-item--content">
-                      <span>Innovation:</span> Continuously refining SEO to stay ahead of search engine updates.
+                      <span>{t('val1Title')}</span> {t('val1Desc')}
                     </p>
                   </div>
                 </div>
@@ -51,7 +54,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="xb-item--holder">
                     <p className="xb-item--content">
-                      <span>Client Focus:</span> Your success drives us; we craft custom SEO solutions for impact.
+                      <span>{t('val2Title')}</span> {t('val2Desc')}
                     </p>
                   </div>
                 </div>
@@ -62,7 +65,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="xb-item--holder">
                     <p className="xb-item--content">
-                      <span>Transparency:</span> Clear communication and honest reporting at every step.
+                      <span>{t('val3Title')}</span> {t('val3Desc')}
                     </p>
                   </div>
                 </div>
@@ -73,15 +76,15 @@ const About: React.FC = () => {
             <div className="col-lg-6 mt-50">
               <div className="about-right">
                 <div className="xb-item--holder">
-                  <h3 className="xb-item--title">Our Mission</h3>
+                  <h3 className="xb-item--title">{t('missionTitle')}</h3>
                   <p className="xb-item--content">
-                    Our mission is to empower businesses by delivering cutting-edge web development solutions that drive growth, enhance user experiences, and foster innovation in the digital landscape.
+                    {t('missionDesc')}
                   </p>
                 </div>
                 <div className="xb-item--holder">
-                  <h3 className="xb-item--title">Our Vision</h3>
+                  <h3 className="xb-item--title">{t('visionTitle')}</h3>
                   <p className="xb-item--content">
-                    Our vision is to be a global leader in web development, recognized for our commitment to excellence, creativity, and transformative digital solutions that shape the future of online experiences.
+                    {t('visionDesc')}
                   </p>
                 </div>
               </div>
@@ -91,7 +94,7 @@ const About: React.FC = () => {
             <div className="xb-btn text-center mt-90 wow fadeInUp" data-wow-duration="600ms">
               <Fade direction="up" triggerOnce={false} duration={1500} delay={9}>
                 <Link href="/about" className="thm-btn thm-btn--aso thm-btn--aso_dark">
-                  Learn more about us
+                  {t('cta')}
                 </Link>
               </Fade>
             </div>

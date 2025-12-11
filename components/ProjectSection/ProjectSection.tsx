@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
-import Project from "../../api/project";
-import Link from "next/link";
+import getProjects from "../../api/project";
+import {Link} from '@/i18n/routing';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,7 +43,12 @@ type ServiceItem = {
 
 type ProjectItem = CaseStudyItem | ServiceItem;
 
+import {useTranslations} from 'next-intl';
+
 const ProjectSection: React.FC = () => {
+  const t = useTranslations('Project');
+  const tProData = useTranslations('ProjectData');
+  const Project = getProjects(tProData);
   const sliderRef = useRef<Slider | null>(null);
   const navSliderRef = useRef<Slider | null>(null);
 
@@ -104,12 +109,12 @@ const ProjectSection: React.FC = () => {
                 className="sub-title wow fadeInDown"
                 data-wow-duration="600ms"
               >
-                <Image src={icon} alt="" /> Portfolio
+                <Image src={icon} alt="" /> {t('subtitle')}
               </span>
             </Fade>
             <Fade direction="up" triggerOnce={false} duration={1000} delay={9}>
               <h2 className="title wow skewIn" data-wow-duration="600ms">
-                Our Recent Projects
+                {t('title')}
               </h2>
             </Fade>
           </div>
@@ -118,7 +123,7 @@ const ProjectSection: React.FC = () => {
               href={"/portfolio"}
               className="thm-btn thm-btn--aso thm-btn--aso_dark"
             >
-              View more Projects
+              {t('viewMore')}
             </Link>
           </Fade>
         </div>
@@ -153,10 +158,10 @@ const ProjectSection: React.FC = () => {
                         </p>
                         <div className="xb-btn mt-50">
                           <Link
-                            href={"portfolio"}
+                            href={"/portfolio"}
                             className="thm-btn thm-btn--border"
                           >
-                            Read project details
+                            {t('readDetails')}
                             <span>
                               <svg
                                 width="11"

@@ -11,6 +11,7 @@ import tImg2 from "@/public/images/testimonial/sa-tas01.png";
 import tImg3 from "@/public/images/testimonial/sa-tas02.png";
 import tImg4 from "@/public/images/testimonial/sa-tas03.png";
 
+import {Link} from '@/i18n/routing';
 import icon1 from "@/public/images/testimonial/tes-logo02.png";
 import icon2 from "@/public/images/testimonial/tes-logo01.png";
 import icon3 from "@/public/images/testimonial/tes-logo03.png";
@@ -31,63 +32,62 @@ interface TestimonialItem {
   country?: string;
 }
 
-const testimonial: TestimonialItem[] = [
-  {
-    id: "01",
-    tImg: tImg1,
-    logo: icon1,
-    Des: "Working with Golden Code was fantastic! Their strategies  improved our rankings and increased leads.",
-    Name: "Christopher Smith",
-    sub: "Brand Strat at near",
-    country: "Seattle, Ukraine",
-  },
-  {
-    id: "02",
-    tImg: tImg2,
-    logo: icon2,
-    Des: "Golden Code exceeded all our expectations! Their expertise in SEO helped us achieve a remarkable 150%",
-    Name: "Sarah Davis",
-    sub: "Branding at spinlet",
-  },
-  {
-    id: "03",
-    tImg: tImg3,
-    logo: icon3,
-    Des: "Choosing Golden Code was a great decision. Their focus on trends helped us rank for competitive keywords, our success!",
-    Name: "Robert Miller",
-    sub: "Marketing Dir. at BUSD",
-  },
-  {
-    id: "04",
-    tImg: tImg4,
-    logo: icon4,
-    Des: "Since partnering with Golden Code, our website's performance has improved remarkably. Their data-driven approach and top-notch!",
-    Name: "Jessica Martinez",
-    sub: "Project Manager at Kuda",
-  },
-  {
-    id: "05",
-    tImg: tImg3,
-    logo: icon5,
-    Des: "Since partnering with Golden Code, our website's performance has improved remarkably. Their data-driven approach and top-notch!",
-    Name: "Jessica Martinez",
-    sub: "Project Manager at Kuda",
-  },
-  {
-    id: "06",
-    tImg: tImg2,
-    logo: icon2,
-    Des: "Golden Code exceeded all our expectations! Their expertise in SEO helped us achieve a remarkable 150%",
-    Name: "Sarah Davis",
-    sub: "Branding at spinlet",
-  },
-];
-
-interface TestimonialProps {
-  tClass?: string;
-}
+import {useTranslations} from 'next-intl';
 
 const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
+  const t = useTranslations('Testimonial');
+
+  const testimonial: TestimonialItem[] = [
+    {
+      id: "01",
+      tImg: tImg1,
+      logo: icon1,
+      Des: t('t1Des'),
+      Name: "Christopher Smith",
+      sub: t('t1Sub'),
+      country: "Seattle, Ukraine",
+    },
+    {
+      id: "02",
+      tImg: tImg2,
+      logo: icon2,
+      Des: t('t2Des'),
+      Name: "Sarah Davis",
+      sub: t('t2Sub'),
+    },
+    {
+      id: "03",
+      tImg: tImg3,
+      logo: icon3,
+      Des: t('t3Des'),
+      Name: "Robert Miller",
+      sub: t('t3Sub'),
+    },
+    {
+      id: "04",
+      tImg: tImg4,
+      logo: icon4,
+      Des: t('t4Des'),
+      Name: "Jessica Martinez",
+      sub: t('t4Sub'),
+    },
+    {
+      id: "05",
+      tImg: tImg3,
+      logo: icon5,
+      Des: t('t4Des'),
+      Name: "Jessica Martinez",
+      sub: t('t4Sub'),
+    },
+    {
+      id: "06",
+      tImg: tImg2,
+      logo: icon2,
+      Des: t('t2Des'),
+      Name: "Sarah Davis",
+      sub: t('t2Sub'),
+    },
+  ];
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<any>(null);
@@ -118,7 +118,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
                   data-wow-duration="600ms"
                 >
                   <Image src={hicon} alt="Like icon" />
-                  99% positive feedback
+                  {t('subtitle')}
                 </div>
               </div>
             </Fade>
@@ -129,7 +129,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
                   data-wow-delay="150ms"
                   data-wow-duration="600ms"
                 >
-                  Feedback That Speaks
+                  {t('title')}
                 </h2>
               </div>
             </Fade>

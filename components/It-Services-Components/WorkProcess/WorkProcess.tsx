@@ -2,8 +2,9 @@
 
 import React from "react";
 import { Fade } from "react-awesome-reveal";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import Image, { StaticImageData } from "next/image";
+import {useTranslations} from 'next-intl';
 
 import pImg from "@/public/images/shape/process-shape01.png";
 import pImg2 from "@/public/images/shape/process-shape01.png";
@@ -21,50 +22,47 @@ interface ProcessItem {
   direction: string;
 }
 
-const Process: ProcessItem[] = [
-  {
-    id: "01",
-    title: "Consultation & needs analysis",
-    subTitle:
-      "We first understand your challenges to tailor a solution that fits your needs.",
-    icon: sIcon1,
-    direction: "one",
-  },
-  {
-    id: "02",
-    title: "Planning & strategy development",
-    subTitle:
-      "Our team crafts a strategic plan, defining the project roadmap and setting timelines.",
-    icon: sIcon2,
-    direction: "two",
-  },
-  {
-    id: "03",
-    title: "Design & development",
-    subTitle:
-      "Our designers create intuitive interfaces, while developers build scalable, robust systems.",
-    icon: sIcon3,
-    direction: "three",
-  },
-  {
-    id: "04",
-    title: "Testing & quality assurance",
-    subTitle:
-      "We rigorously test for security, performance resolving any issues before deployment.",
-    icon: sIcon4,
-    direction: "four",
-  },
-  {
-    id: "05",
-    title: "Deployment & ongoing support",
-    subTitle:
-      "We first understand your challenges to tailor a solution that fits your needs.",
-    icon: sIcon5,
-    direction: "four",
-  },
-];
-
 const WorkProcess: React.FC = () => {
+  const t = useTranslations('WorkProcess');
+
+  const Process: ProcessItem[] = [
+    {
+      id: "01",
+      title: t('step1Title'),
+      subTitle: t('step1Desc'),
+      icon: sIcon1,
+      direction: "one",
+    },
+    {
+      id: "02",
+      title: t('step2Title'),
+      subTitle: t('step2Desc'),
+      icon: sIcon2,
+      direction: "two",
+    },
+    {
+      id: "03",
+      title: t('step3Title'),
+      subTitle: t('step3Desc'),
+      icon: sIcon3,
+      direction: "three",
+    },
+    {
+      id: "04",
+      title: t('step4Title'),
+      subTitle: t('step4Desc'),
+      icon: sIcon4,
+      direction: "four",
+    },
+    {
+      id: "05",
+      title: t('step5Title'),
+      subTitle: t('step5Desc'),
+      icon: sIcon5,
+      direction: "four",
+    },
+  ];
+
   return (
     <section
       className="process pt-140 pb-40 pos-rel"
@@ -81,7 +79,7 @@ const WorkProcess: React.FC = () => {
                       className="title mb-40 wow fadeInUp"
                       data-wow-duration="600ms"
                     >
-                      Our 5-step workflow
+                      {t('title')}
                     </h2>
                   </div>
                 </Fade>
@@ -92,10 +90,7 @@ const WorkProcess: React.FC = () => {
                       data-wow-delay="200ms"
                       data-wow-duration="600ms"
                     >
-                      Our Golden Code Efficient Workflow in 5 Steps ensures
-                      streamlined IT solutions. We start by understanding your
-                      needs, then plan the project, design intuitive interfaces,
-                      build robust systems, and thoroughly test.
+                      {t('description')}
                     </span>
                   </div>
                 </Fade>
@@ -109,17 +104,17 @@ const WorkProcess: React.FC = () => {
                   >
                     <Link href="/about" className="thm-btn thm-btn--fill_icon">
                       <div className="xb-item--hidden-text">
-                        <span className="text">Learn more about us</span>
+                        <span className="text">{t('cta')}</span>
                       </div>
                       <div className="xb-item--holder">
                         <span className="xb-item--text">
-                          Learn more about us
+                          {t('cta')}
                         </span>
                         <div className="xb-item--icon">
                           <i className="far fa-long-arrow-right"></i>
                         </div>
                         <span className="xb-item--text">
-                          Learn more about us
+                          {t('cta')}
                         </span>
                       </div>
                     </Link>

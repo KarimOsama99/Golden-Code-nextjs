@@ -1,12 +1,15 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 import { Fade } from 'react-awesome-reveal';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Image from 'next/image';
 
+import {useTranslations} from 'next-intl';
+
 const Hero: React.FC = () => {
+  const t = useTranslations('Hero');
   return (
     <section
       className="hero o-hidden hero-style-two pos-rel pt-120 bg_img"
@@ -22,8 +25,10 @@ const Hero: React.FC = () => {
                     className="xb-item--title wow fadeInUp"
                     data-wow-duration="600ms"
                   >
-                    We Build Apps
-                    <br /> That <span>Users Love</span>
+                    {t('titleLine1')}
+                    <br /> {t.rich('titleLine2', {
+                      span: (chunks) => <span>{chunks}</span>
+                    })}
                   </h1>
                 </Fade>
 
@@ -33,7 +38,7 @@ const Hero: React.FC = () => {
                     data-wow-delay="100ms"
                     data-wow-duration="600ms"
                   >
-                    (Get a lightning-fast site built on modern frameworks.)
+                    {t('subtitle')}
                   </p>
                 </Fade>
 
@@ -44,17 +49,16 @@ const Hero: React.FC = () => {
                     data-wow-duration="600ms"
                   >
                     <li>
-                      <i className="far fa-check"></i> Validate market fit
+                      <i className="far fa-check"></i> {t('feature1')}
                     </li>
                     <li>
-                      <i className="far fa-check"></i> Custom UI/UX Design
+                      <i className="far fa-check"></i> {t('feature2')}
                     </li>
                     <li>
-                      <i className="far fa-check"></i> High Performance
+                      <i className="far fa-check"></i> {t('feature3')}
                     </li>
                     <li>
-                      <i className="far fa-check"></i> Scale infrastructure &
-                      grow users
+                      <i className="far fa-check"></i> {t('feature4')}
                     </li>
                   </ul>
                 </Fade>
@@ -69,7 +73,7 @@ const Hero: React.FC = () => {
                       href="/contact"
                       className="thm-btn thm-btn--aso thm-btn--aso_yellow"
                     >
-                      Book a free consultation
+                      {t('cta')}
                     </Link>
                   </div>
                 </Fade>

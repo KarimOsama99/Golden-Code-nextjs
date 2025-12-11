@@ -1,17 +1,15 @@
-import React, { FC } from "react";
-import { blogs } from "../../api/blogs";
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 
-interface Blog {
-  slug: string;
-  screens: any;
-  thumb?: string; // Optional
-  author?: string; // Optional
-  title: string;
-}
+import React, { FC } from "react";
+import { getBlogs, Blog } from "../../api/blogs";
+import {Link} from '@/i18n/routing';
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const RelatedBlog: FC = () => {
+  const t = useTranslations('BlogData');
+  const blogs = getBlogs(t);
+
   return (
     <div className="row mt-none-30">
       {blogs.slice(0, 3).map((blog: Blog) => (

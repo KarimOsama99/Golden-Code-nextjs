@@ -1,10 +1,15 @@
-import React from 'react'
-import Link from "next/link";
+import React from 'react';
+import {Link} from '@/i18n/routing';
 import mImg from "@/public/images/vectors/servMenu.png";
 import Image from 'next/image';
-import Services from '@/api/service';
+import getServices from '@/api/service'; 
+
+import {useTranslations} from 'next-intl';
 
 const MegaMenu2 = () => {
+    const t = useTranslations('MegaMenu2');
+    const tServices = useTranslations('ServiceData');
+    const services = getServices(tServices);
 
     return (
       <ul className="submenu">
@@ -19,7 +24,7 @@ const MegaMenu2 = () => {
                         <div className="col-xl-6">
                           <div className="megamenu_widget">
                             <ul className="icon_list unordered_list_block">
-                              {Services.slice(0, 3).map((service) => (
+                              {services.slice(0, 3).map((service) => (
                                 <li key={service.Id}>
                                   <Link
                                     href={`/services/${service.slug.toLowerCase()}`}
@@ -36,7 +41,7 @@ const MegaMenu2 = () => {
                         <div className="col-xl-6">
                           <div className="megamenu_widget">
                             <ul className="icon_list unordered_list_block">
-                              {Services.slice(3, 6).map((service) => (
+                              {services.slice(3, 6).map((service) => (
                                 <li key={service.Id}>
                                   <Link
                                     href={`/services/${service.slug.toLowerCase()}`}
@@ -54,15 +59,15 @@ const MegaMenu2 = () => {
                     </div>
                     <div className="social_area">
                       <p className="career_link m-0">
-                        Looking for new career?{" "}
-                        <Link href="/career">We’re Hiring</Link>
+                        {t('careerPrompt')}{" "}
+                        <Link href="/career">{t('hiring')}</Link>
                       </p>
                     </div>
                   </div>
                   <div className="col-xl-3">
                     <div className="megamenu_case">
-                      <h3>Software</h3>
-                      <h4>Our Amazing Services</h4>
+                      <h3>{t('software')}</h3>
+                      <h4>{t('amazingServices')}</h4>
                       <Image
                         src={mImg}
                         alt="services"

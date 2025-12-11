@@ -1,6 +1,6 @@
 import React from 'react';
 import cta from '@/public/images/cta/clip-bord.png';
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import { Fade } from "react-awesome-reveal";
 import Image from 'next/image';
 
@@ -8,7 +8,10 @@ interface CtaSectionProps {
     cClass?: string;
 }
 
+import {useTranslations} from 'next-intl';
+
 const CtaSection: React.FC<CtaSectionProps> = ({ cClass = '' }) => {
+    const t = useTranslations('Cta');
     return (
         <section className={`cta ${cClass}`}>
             <div className="container">
@@ -17,13 +20,13 @@ const CtaSection: React.FC<CtaSectionProps> = ({ cClass = '' }) => {
                         <Fade direction="left" triggerOnce={false} duration={1000} delay={9}>
                             <div>
                                 <div className="xb-item--holder wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="600ms">
-                                    <h2 className="xb-item--title">Stop wasting money on bad SEO.</h2>
+                                    <h2 className="xb-item--title">{t('title')}</h2>
                                     <span className="xb-item--content">
-                                        Book a free consultation for the SEO results you need.
+                                        {t('content')}
                                     </span>
                                     <div className="xb-btn mt-45">
                                         <Link href="/contact" className="thm-btn thm-btn--aso thm-btn--aso_white">
-                                            Book a free consultation
+                                            {t('button')}
                                         </Link>
                                     </div>
                                 </div>

@@ -1,16 +1,20 @@
 "use client";
 
 import React, { useState, useEffect, FormEvent } from "react";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import Image from "next/image";
 
 import MobileMenu from "../MobileMenu/MobileMenu";
 import MegaMenu1 from "./MegaMenu1";
 import MegaMenu2 from "./MegaMenu2";
+import LanguageSwitcher from "../LanguageSwitcher";
+import {useTranslations} from 'next-intl';
 
 const Header: React.FC = () => {
   const [mobailActive, setMobailState] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  // Translations
+  const t = useTranslations('Navigation');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,39 +78,39 @@ const Header: React.FC = () => {
                 <ul>
                   <li>
                     <Link href="/">
-                      <span>Home</span>
+                      <span>{t('home')}</span>
                     </Link>
                   </li>
 
                   <li className="menu-item-has-children megamenu">
                     <Link href="/">
-                      <span>Company</span>
+                      <span>{t('company')}</span>
                     </Link>
                     <MegaMenu1 />
                   </li>
 
                   <li className="menu-item-has-children megamenu">
                     <Link href="/services">
-                      <span>Services</span>
+                      <span>{t('services')}</span>
                     </Link>
                     <MegaMenu2 />
                   </li>
 
                   <li>
                     <Link href="/portfolio">
-                      <span>Portfolio</span>
+                      <span>{t('portfolio')}</span>
                     </Link>
                   </li>
 
                   <li>
                     <Link href="/blog">
-                      <span>Blog</span>
+                      <span>{t('blog')}</span>
                     </Link>
                   </li>
 
                   <li>
                     <Link href="/contact">
-                      <span>Contact</span>
+                      <span>{t('contact')}</span>
                     </Link>
                   </li>
                 </ul>
@@ -132,18 +136,20 @@ const Header: React.FC = () => {
                         />
                       </Link>
                     </div>
-                    <div className="xb-header-mobile-search xb-hide-xl">
-                      <form role="search" onSubmit={SubmitHandler}>
-                        <input
-                          type="text"
-                          placeholder="Search..."
-                          name="s"
-                          className="search-field"
+                    <div className="xb-header-mobile-search xb-hide-xl d-md-none d-flex gap-5 py-3">
+                      <LanguageSwitcher />
+                      <Link
+                        href="/contact"
+                        className="lang-toggle-btn talk thm-btn thm-btn--aso thm-btn--aso_yellow"
+                      >
+                        {t('talk')}
+                        <Image
+                          src="/images/icon/sms-white-icon01.svg"
+                          alt="Message Icon"
+                          width={20}
+                          height={20}
                         />
-                        <button className="search-submit" type="submit">
-                          <i className="far fa-search" />
-                        </button>
-                      </form>
+                      </Link>
                     </div>
                     <nav className="xb-header-nav">
                       <MobileMenu />
@@ -166,11 +172,14 @@ const Header: React.FC = () => {
 
             {/* CTA */}
             <div className="header-contact d-none d-md-block">
+                <div className="me-3 d-inline-block">
+                     <LanguageSwitcher />
+                </div>
               <Link
                 href="/contact"
-                className="thm-btn thm-btn--aso thm-btn--header-black"
+                className="lang-toggle-btn talk thm-btn thm-btn--aso thm-btn--aso_yellow"
               >
-                Let’s talk
+                {t('talk')}
                 <Image
                   src="/images/icon/sms-white-icon01.svg"
                   alt="Message Icon"

@@ -10,12 +10,12 @@ type Job = {
   categories: string[];
 };
 
-const jobListings: Job[] = [
+const getCareers = (t: any): Job[] => [
   {
     id: 1,
-    title: "Enterprise SEO Consultant",
-    location: "Remote, (USA)",
-    type: "Full time",
+    title: t('j1Title'),
+    location: t('j1Location'),
+    type: t('fullTime'),
     slug: "enterprise-seo-consultant",
     minSalary: 6000,
     maxSalary: 13000,
@@ -24,9 +24,9 @@ const jobListings: Job[] = [
   },
   {
     id: 2,
-    title: "IT Infrastructure Manager",
-    location: "Remote, Colombia",
-    type: "Full time",
+    title: t('j2Title'),
+    location: t('j2Location'),
+    type: t('fullTime'),
     slug: "it-infrastructure-manager",
     minSalary: 6000,
     maxSalary: 13000,
@@ -35,9 +35,9 @@ const jobListings: Job[] = [
   },
   {
     id: 3,
-    title: "Technical Project Manager",
-    location: "Warsaw, Poland",
-    type: "Full time",
+    title: t('j3Title'),
+    location: t('j3Location'),
+    type: t('fullTime'),
     slug: "technical-project-manager",
     minSalary: 6000,
     maxSalary: 13000,
@@ -46,9 +46,9 @@ const jobListings: Job[] = [
   },
   {
     id: 4,
-    title: "Cloud Solutions Architect",
-    location: "Bangalore (Hybrid)",
-    type: "Full time",
+    title: t('j4Title'),
+    location: t('j4Location'),
+    type: t('fullTime'),
     slug: "cloud-solutions-architect",
     minSalary: 6000,
     maxSalary: 13000,
@@ -57,9 +57,9 @@ const jobListings: Job[] = [
   },
   {
     id: 5,
-    title: "IT Support Engineer",
-    location: "Remote, Argentina",
-    type: "Full time",
+    title: t('j5Title'),
+    location: t('j5Location'),
+    type: t('fullTime'),
     slug: "it-support-engineer",
     minSalary: 6000,
     maxSalary: 13000,
@@ -68,9 +68,9 @@ const jobListings: Job[] = [
   },
   {
     id: 6,
-    title: "Global Benefits Manager",
-    location: "Remote, Canada",
-    type: "Full time",
+    title: t('j6Title'),
+    location: t('j6Location'),
+    type: t('fullTime'),
     slug: "global-benefits-manager",
     minSalary: 6000,
     maxSalary: 13000,
@@ -79,4 +79,4 @@ const jobListings: Job[] = [
   },
 ];
 
-export default jobListings;
+export default getCareers;
