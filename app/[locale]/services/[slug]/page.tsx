@@ -15,7 +15,7 @@ import sImg4 from "@/public/images/icon/sd-icon04.svg";
 import shape from "@/public/images/shape/sd-shape.png";
 import Image from "next/image";
 
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 export function generateStaticParams() {
   // Map your data source to an array of objects,
@@ -26,15 +26,14 @@ export function generateStaticParams() {
   }));
 }
 
-async function ServiceSinglePage({
+function ServiceSinglePage({
     params,
   }: {
-    params: Promise<{ slug: string }>
+    params: { slug: string }
   }) {
-    const { slug } = await params;
-    const t = await getTranslations('ServiceData');
-    const tSingle = await getTranslations('ServiceSinglePage');
-    const service = Services(t).find((s) => s.slug.toLowerCase() === slug.toLowerCase())
+    const t = useTranslations('ServiceData');
+    const tSingle = useTranslations('ServiceSinglePage');
+    const service = Services(t).find((s) => s.slug.toLowerCase() === params.slug.toLowerCase())
 
     if (!service) return notFound()
 
