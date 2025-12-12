@@ -14,7 +14,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogDetailsPage(props: Props) {
-  const params = props.params;
+  const params = await props.params;
   const { slug } = params;
   const t = await getTranslations('BlogData');
   const tPage = await getTranslations('BlogSlugPage');

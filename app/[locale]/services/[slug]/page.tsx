@@ -29,9 +29,9 @@ export function generateStaticParams() {
 async function ServiceSinglePage({
     params,
   }: {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
   }) {
-    const { slug } = params;
+    const { slug } = await params;
     const t = await getTranslations('ServiceData');
     const tSingle = await getTranslations('ServiceSinglePage');
     const service = Services(t).find((s) => s.slug.toLowerCase() === slug.toLowerCase())
