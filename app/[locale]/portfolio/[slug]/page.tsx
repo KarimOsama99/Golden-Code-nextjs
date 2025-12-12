@@ -16,9 +16,9 @@ import cIcon4 from "@/public/images/icon/check-mark.png";
 import cIcon from "@/public/images/icon/check-icon.svg";
 
 interface Props {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 }
 
 import { getTranslations } from "next-intl/server";
@@ -33,7 +33,7 @@ export function generateStaticParams() {
 }
 
 export default async function CaseStudySingle({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = params;
   const t = await getTranslations('PortfolioSlugPage');
   const study = getCases().find((item) => item.slug === slug);
 

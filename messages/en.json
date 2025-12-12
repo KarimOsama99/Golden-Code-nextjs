@@ -35,22 +35,6 @@
     "content": "Accelerate growth through innovative web development and reliable product delivery today.",
     "viewMore": "View more services"
   },
-
-  "WorkProcess": {
-    "title": "Our 5-step workflow",
-    "description": "Our Golden Code Efficient Workflow in 5 Steps ensures streamlined IT solutions. We start by understanding your needs, then plan the project, design intuitive interfaces, build robust systems, and thoroughly test.",
-    "cta": "Learn more about us",
-    "step1Title": "Consultation & needs analysis",
-    "step1Desc": "We first understand your challenges to tailor a solution that fits your needs.",
-    "step2Title": "Planning & strategy development",
-    "step2Desc": "Our team crafts a strategic plan, defining the project roadmap and setting timelines.",
-    "step3Title": "Design & development",
-    "step3Desc": "Our designers create intuitive interfaces, while developers build scalable, robust systems.",
-    "step4Title": "Testing & quality assurance",
-    "step4Desc": "We rigorously test for security, performance resolving any issues before deployment.",
-    "step5Title": "Deployment & ongoing support",
-    "step5Desc": "We first understand your challenges to tailor a solution that fits your needs."
-  },
   "MegaMenu1": {
     "aboutUs": "About Us",
     "aboutDesc": "Learn more about Golden Code",
