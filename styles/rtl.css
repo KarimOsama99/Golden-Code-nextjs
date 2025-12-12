@@ -284,6 +284,18 @@
     transform: rotate(45deg) !important;
 }
 
+[dir="rtl"] .post_meta .meta_label1:before {
+    right: unset;
+    left: -20px;
+}
+[dir="rtl"] .item_details-newslatter .xb-item--item-input_field input {
+    padding: 0 30px 0 140px;
+}
+[dir="rtl"] .item_details-newslatter .xb-item--item-input_field button {
+    right: unset;
+    left: 5px;
+}
+
 [dir="rtl"] .hero-style-two .xb-hero .xb-item--title {
     line-height: 100px;
 }
@@ -307,6 +319,9 @@
     }
     [dir="rtl"] .sd-process-item .xb-item--number {
         right: 0;
+    }
+    [dir="rtl"] .sidebar {
+        margin-right: 0;
     }
 }
 

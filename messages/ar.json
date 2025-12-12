@@ -228,10 +228,24 @@
     "phone": "الهاتف*",
     "address": "العنوان*",
     "coverLetter": "خطاب التغطية",
-    "uploadResume": "قم بتحميل سيرتك الذاتية / CV",
-    "acceptedTypes": "أنواع الملفات المقبولة:",
-    "maxSize": "pdf, doc, jpg, الحد الأقصى لحجم الملف: 15 ميجابايت.",
-    "submitNow": "أرسل الآن"
+    "cvLink": "رابط السيرة الذاتية (Google Drive, Dropbox, إلخ)*",
+    "submitNow": "أرسل الآن",
+    "sending": "جاري الإرسال...",
+    "successMessage": "✓ تم تقديم طلبك بنجاح! سنقوم بمراجعته والتواصل معك قريباً.",
+    "errorMessage": "❌ فشل تقديم الطلب: {error}. يرجى المحاولة مرة أخرى.",
+    "validationError": "يرجى ملء جميع الحقول المطلوبة بشكل صحيح.",
+    "envError": "خطأ: مفاتيح خدمة البريد الإلكتروني مفقودة في متغيرات البيئة.",
+    "cvLinkRequired": "رابط السيرة الذاتية مطلوب.",
+    "cvLinkInvalid": "يرجى إدخال رابط صالح (مثل: https://drive.google.com/...).",
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameAlphaSpace": "يجب أن يحتوي الاسم على حروف ومسافات فقط.",
+      "emailRequired": "البريد الإلكتروني مطلوب.",
+      "emailInvalid": "يجب أن يكون البريد الإلكتروني صالحاً.",
+      "phoneRequired": "رقم الهاتف مطلوب.",
+      "phoneInvalid": "رقم الهاتف غير صالح.",
+      "addressRequired": "العنوان مطلوب."
+    }
   },
   "BlogSlugPage": {
     "subTitle": "تفاصيل المقال"
@@ -283,7 +297,7 @@
     "ourProjects": "مشاريعنا",
     "ourServices": "خدماتنا",
     "followUs": "تابعنا :",
-    "copyright": "حقوق النشر © 2025 <link>جولدن كود</link>. جميع الحقوق محفوظة."
+    "copyright": "© 2026 <link>جولدن كود</link>. جميع الحقوق محفوظة."
   },
   "Hero": {
     "titleLine1": "نبني تطبيقات",
@@ -702,6 +716,20 @@
     "message": "الرسالة*",
     "messagePlaceholder": "كيف يمكننا مساعدتك؟",
     "submit": "أرسل الرسالة",
-    "success": "تم إرسال النموذج بنجاح!"
+    "success": "تم إرسال النموذج بنجاح!",
+    "sending": "جاري الإرسال...",
+    "successMessage": "✓ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",
+    "errorMessage": "❌ فشل إرسال الرسالة: {error}. يرجى المحاولة مرة أخرى.",
+    "validationError": "يرجى ملء جميع الحقول المطلوبة بشكل صحيح.",
+    "envError": "خطأ: مفاتيح خدمة البريد الإلكتروني مفقودة في متغيرات البيئة.",
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameAlphaSpace": "يجب أن يحتوي الاسم على حروف ومسافات فقط.",
+      "emailRequired": "البريد الإلكتروني مطلوب.",
+      "emailInvalid": "يجب أن يكون البريد الإلكتروني صالحاً.",
+      "phoneRequired": "رقم الهاتف مطلوب.",
+      "phoneInvalid": "رقم الهاتف غير صالح.",
+      "messageRequired": "الرسالة مطلوبة."
+    }
   }
 }

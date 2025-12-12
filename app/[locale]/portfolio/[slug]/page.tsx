@@ -16,12 +16,12 @@ import cIcon4 from "@/public/images/icon/check-mark.png";
 import cIcon from "@/public/images/icon/check-icon.svg";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export function generateStaticParams() {
   // Map your data source to an array of objects,
@@ -32,9 +32,10 @@ export function generateStaticParams() {
   }));
 }
 
-export default function CaseStudySingle({ params }: Props) {
-  const t = useTranslations('PortfolioSlugPage');
-  const study = getCases().find((item) => item.slug === params.slug);
+export default async function CaseStudySingle({ params }: Props) {
+  const { slug } = await params;
+  const t = await getTranslations('PortfolioSlugPage');
+  const study = getCases().find((item) => item.slug === slug);
 
   if (!study) {
     notFound();

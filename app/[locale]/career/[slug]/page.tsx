@@ -148,7 +148,7 @@ const CareerSingle: React.FC<Props> = async ({ params }) => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <ApplyForm />
+                  <ApplyForm jobTitle={job.title} />
                 </div>
               </div>
             </div>

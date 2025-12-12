@@ -215,10 +215,24 @@
     "phone": "Phone*",
     "address": "Address*",
     "coverLetter": "Cover Letter",
-    "uploadResume": "Upload your resume / CV",
-    "acceptedTypes": "Accepted file types :",
-    "maxSize": "pdf, doc, jpg, Max. file size: 15 MB.",
-    "submitNow": "Submit now"
+    "cvLink": "CV/Resume Link (Google Drive, Dropbox, etc.)*",
+    "submitNow": "Submit now",
+    "sending": "Sending...",
+    "successMessage": "✓ Your application has been submitted successfully! We will review it and contact you soon.",
+    "errorMessage": "❌ Failed to submit application: {error}. Please try again.",
+    "validationError": "Please fill out all required fields correctly.",
+    "envError": "Error: Email service keys are missing in environment variables.",
+    "cvLinkRequired": "CV/Resume link is required.",
+    "cvLinkInvalid": "Please enter a valid URL (e.g., https://drive.google.com/...).",
+    "validation": {
+      "nameRequired": "Name is required.",
+      "nameAlphaSpace": "Name must contain only letters and spaces.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Email must be a valid email address.",
+      "phoneRequired": "Phone is required.",
+      "phoneInvalid": "Phone number is invalid.",
+      "addressRequired": "Address is required."
+    }
   },
   "BlogSlugPage": {
     "subTitle": "Blog details"
@@ -270,7 +284,7 @@
     "ourProjects": "Our Projects",
     "ourServices": "Our Services",
     "followUs": "Follow us :",
-    "copyright": "Copyright © 2025 <link>Golden Code</link>. All rights reserved."
+    "copyright": "© 2026 <link>Golden Code</link>. All rights reserved."
   },
   "Hero": {
     "titleLine1": "We Build Apps",
@@ -302,7 +316,21 @@
     "message": "Message*",
     "messagePlaceholder": "How can we help you?",
     "submit": "Send us a message",
-    "success": "Form submitted successfully!"
+    "success": "Form submitted successfully!",
+    "sending": "Sending...",
+    "successMessage": "✓ Your message has been sent successfully! We will contact you soon.",
+    "errorMessage": "❌ Failed to send message: {error}. Please try again.",
+    "validationError": "Please fill out all required fields correctly.",
+    "envError": "Error: Email service keys are missing in environment variables.",
+    "validation": {
+      "nameRequired": "Name is required.",
+      "nameAlphaSpace": "Name must contain only letters and spaces.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Email must be a valid email address.",
+      "phoneRequired": "Phone is required.",
+      "phoneInvalid": "Phone number is invalid.",
+      "messageRequired": "Message is required."
+    }
   },
   "TeamPage": {
     "subTitle": "Our team",
