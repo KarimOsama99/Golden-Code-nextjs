@@ -18,13 +18,19 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 export function generateStaticParams() {
-  // Map your data source to an array of objects,
-  // where each object contains the dynamic segment key (slug)
+  const locales = ["en", "ar"];
   const services = getRawServices();
-  return services.map((item) => ({
-    // The key MUST match the folder name: [slug]
-    slug: item.slug,
-  }));
+
+  const params = [];
+  for (const locale of locales) {
+    for (const service of services) {
+      params.push({
+        locale,
+        slug: service.slug,
+      });
+    }
+  }
+  return params;
 }
 
 async function ServiceSinglePage({

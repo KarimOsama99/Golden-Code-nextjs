@@ -18,7 +18,19 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return getBlogsStaticParams();
+  const locales = ["en", "ar"];
+  const blogs = getBlogsStaticParams();
+
+  const params = [];
+  for (const locale of locales) {
+    for (const blog of blogs) {
+      params.push({
+        locale,
+        slug: blog.slug,
+      });
+    }
+  }
+  return params;
 }
 
 export default async function BlogDetailsPage(props: Props) {

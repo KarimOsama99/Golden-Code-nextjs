@@ -24,12 +24,19 @@ interface Props {
 import { getTranslations } from "next-intl/server";
 
 export function generateStaticParams() {
-  // Map your data source to an array of objects,
-  // where each object contains the dynamic segment key (slug)
-  return getCases().map((item) => ({
-    // The key MUST match the folder name: [slug]
-    slug: item.slug,
-  }));
+  const locales = ["en", "ar"];
+  const cases = getCases();
+
+  const params = [];
+  for (const locale of locales) {
+    for (const caseItem of cases) {
+      params.push({
+        locale,
+        slug: caseItem.slug,
+      });
+    }
+  }
+  return params;
 }
 
 export default async function CaseStudySingle({ params }: Props) {

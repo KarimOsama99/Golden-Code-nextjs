@@ -20,12 +20,19 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  // Map your data source to an array of objects,
-  // where each object contains the dynamic segment key (slug)
-  return getRawCareers().map((item) => ({
-    // The key MUST match the folder name: [slug]
-    slug: item.slug,
-  }));
+  const locales = ["en", "ar"];
+  const careers = getRawCareers();
+
+  const params = [];
+  for (const locale of locales) {
+    for (const career of careers) {
+      params.push({
+        locale,
+        slug: career.slug,
+      });
+    }
+  }
+  return params;
 }
 
 const CareerSingle: React.FC<Props> = async ({ params }) => {
