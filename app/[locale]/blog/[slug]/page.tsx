@@ -5,7 +5,7 @@ import Footer from "@/components/footer/Footer";
 import CtaSection from "@/components/CtaSection/CtaSection";
 import BlogSingle from "@/components/BlogDetails/BlogDetails";
 import { notFound } from "next/navigation";
-import { getBlogs } from "@/api/blogs";
+import { getBlogs, getRawBlogs } from "@/api/blogs";
 import type { Blog } from "@/api/blogs";
 import icon from "@/public/images/icon/cap.svg";
 import Image1 from "@/public/images/vectors/web.png";
@@ -18,7 +18,8 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return getBlogs((key: string) => key).map((blog) => ({
+  const blogs = getRawBlogs();
+  return blogs.map((blog) => ({
     slug: blog.slug,
   }));
 }
@@ -26,8 +27,8 @@ export async function generateStaticParams() {
 export default async function BlogDetailsPage(props: Props) {
   const params = await props.params;
   const { slug } = params;
-  const t = await getTranslations('BlogData');
-  const tPage = await getTranslations('BlogSlugPage');
+  const t = await getTranslations("BlogData");
+  const tPage = await getTranslations("BlogSlugPage");
   const blogs = getBlogs(t);
   const blog: Blog | undefined = blogs.find(
     (b) =>
@@ -53,11 +54,9 @@ export default async function BlogDetailsPage(props: Props) {
                 <div className="col-lg-8 mt-30">
                   <div className="page-title-box">
                     <span className="sub-title">
-                      <Image src={icon} alt="Icon" /> {tPage('subTitle')}
+                      <Image src={icon} alt="Icon" /> {tPage("subTitle")}
                     </span>
-                    <h2 className="title">
-                      {blog.title}
-                    </h2>
+                    <h2 className="title">{blog.title}</h2>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

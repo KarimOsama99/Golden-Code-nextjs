@@ -8,6 +8,8 @@ import cImg7 from "@/public/images/project/portfolio/ezhalha.png";
 import cImg8 from "@/public/images/project/portfolio/3lmni.png";
 import cImg9 from "@/public/images/project/almonasib.png";
 import cImg10 from "@/public/images/project/portfolio/portafoto.png";
+import cImg11 from "@/public/images/project/3m.png";
+import cImg12 from "@/public/images/project/payship.png";
 
 const getCases = () => [
   {
@@ -100,7 +102,7 @@ const getCases = () => [
   },
   {
     id: 9,
-    category: "cat5",
+    category: "cat3",
     img: cImg9,
     title: "AL-Monasib",
     slug: "almonasib-marketing-organization",
@@ -120,6 +122,28 @@ const getCases = () => [
     framework: "React JS",
     link: "https://portafoto.net/",
   },
+  {
+    id: 11,
+    category: "cat4",
+    img: cImg11,
+    title: "3M",
+    slug: "3m-Chemicals-Group",
+    cat: "Chemicals Company",
+    date: "20-11-2025",
+    framework: "React JS",
+    link: "https://3m-chem.com/",
+  },
+  {
+    id: 12,
+    category: "cat4",
+    img: cImg12,
+    title: "PayShip",
+    slug: "Logistics-Technologies-Platform",
+    cat: "Logistics Platform",
+    date: "15-1-2023",
+    framework: "Angular JS",
+    link: "https://payship.biz/",
+  }
 ];
 
 export default getCases;

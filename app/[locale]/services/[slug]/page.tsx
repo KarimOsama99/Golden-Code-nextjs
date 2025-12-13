@@ -4,8 +4,8 @@ import Header from "@/components/header/Header";
 import Scrollbar from "@/components/scrollbar/scrollbar";
 import Footer from "@/components/footer/Footer";
 import CtaSection from "@/components/CtaSection/CtaSection";
-import Services from "@/api/service";
-import {Link} from '@/i18n/routing';
+import Services, { getRawServices } from "@/api/service";
+import { Link } from "@/i18n/routing";
 import icon from "@/public/images/icon/ser-01.svg";
 import vImg from "@/public/images/service/hosting.jpeg";
 import sImg1 from "@/public/images/icon/sd-icon01.svg";
@@ -20,23 +20,26 @@ import { getTranslations } from "next-intl/server";
 export function generateStaticParams() {
   // Map your data source to an array of objects,
   // where each object contains the dynamic segment key (slug)
-  return Services((key: string) => key).map((item) => ({
+  const services = getRawServices();
+  return services.map((item) => ({
     // The key MUST match the folder name: [slug]
     slug: item.slug,
   }));
 }
 
 async function ServiceSinglePage({
-    params,
-  }: {
-    params: Promise<{ slug: string }>
-  }) {
-    const { slug } = await params;
-    const t = await getTranslations('ServiceData');
-    const tSingle = await getTranslations('ServiceSinglePage');
-    const service = Services(t).find((s) => s.slug.toLowerCase() === slug.toLowerCase())
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const t = await getTranslations("ServiceData");
+  const tSingle = await getTranslations("ServiceSinglePage");
+  const service = Services(t).find(
+    (s) => s.slug.toLowerCase() === slug.toLowerCase()
+  );
 
-    if (!service) return notFound()
+  if (!service) return notFound();
 
   return (
     <Fragment>
@@ -85,12 +88,8 @@ async function ServiceSinglePage({
           <div className="sd-ser-content_wrap pb-110">
             <div className="container">
               <div className="sd-ser-content">
-                <h2 className="sd-title">
-                  {service.heading}
-                </h2>
-                <p className="sd-content lead">
-                  {service.description2}
-                </p>
+                <h2 className="sd-title">{service.heading}</h2>
+                <p className="sd-content lead">{service.description2}</p>
               </div>
             </div>
           </div>
@@ -98,17 +97,15 @@ async function ServiceSinglePage({
           <div className="sd-process_warp">
             <div className="container">
               <div className="sd-heading">
-                <h2 className="sd-title">{tSingle('processTitle')}</h2>
+                <h2 className="sd-title">{tSingle("processTitle")}</h2>
               </div>
               <div className="sd-process_inner ul_li">
                 <div className="sd-process-item">
                   <div className="xb-item--icon">
                     <Image src={sImg4} alt="" />
                   </div>
-                  <h3 className="xb-item--title">{tSingle('p1Title')}</h3>
-                  <p className="xb-item--contact">
-                    {tSingle('p1Desc')}
-                  </p>
+                  <h3 className="xb-item--title">{tSingle("p1Title")}</h3>
+                  <p className="xb-item--contact">{tSingle("p1Desc")}</p>
                   <span className="xb-item--number">01</span>
                 </div>
 
@@ -116,10 +113,8 @@ async function ServiceSinglePage({
                   <div className="xb-item--icon">
                     <Image src={sImg2} alt="" />
                   </div>
-                  <h3 className="xb-item--title">{tSingle('p2Title')}</h3>
-                  <p className="xb-item--contact">
-                    {tSingle('p2Desc')}
-                  </p>
+                  <h3 className="xb-item--title">{tSingle("p2Title")}</h3>
+                  <p className="xb-item--contact">{tSingle("p2Desc")}</p>
                   <span className="xb-item--number">02</span>
                 </div>
 
@@ -127,10 +122,8 @@ async function ServiceSinglePage({
                   <div className="xb-item--icon">
                     <Image src={sImg3} alt="" />
                   </div>
-                  <h3 className="xb-item--title">{tSingle('p3Title')}</h3>
-                  <p className="xb-item--contact">
-                    {tSingle('p3Desc')}
-                  </p>
+                  <h3 className="xb-item--title">{tSingle("p3Title")}</h3>
+                  <p className="xb-item--contact">{tSingle("p3Desc")}</p>
                   <span className="xb-item--number">03</span>
                 </div>
 
@@ -138,10 +131,8 @@ async function ServiceSinglePage({
                   <div className="xb-item--icon">
                     <Image src={sImg1} alt="" />
                   </div>
-                  <h3 className="xb-item--title">{tSingle('p4Title')}</h3>
-                  <p className="xb-item--contact">
-                    {tSingle('p4Desc')}
-                  </p>
+                  <h3 className="xb-item--title">{tSingle("p4Title")}</h3>
+                  <p className="xb-item--contact">{tSingle("p4Desc")}</p>
                   <span className="xb-item--number">04</span>
                 </div>
 
@@ -155,14 +146,16 @@ async function ServiceSinglePage({
           <div className="sd-service_wrap pt-115 pb-130">
             <div className="container">
               <div className="sd-heading">
-                <h2 className="sd-title text-center">{tSingle('orderTitle')}</h2>
+                <h2 className="sd-title text-center">
+                  {tSingle("orderTitle")}
+                </h2>
               </div>
               <div className="cp-det-btn mt-20 d-flex">
                 <Link
-                  href={'/contact'}
+                  href={"/contact"}
                   className="cp-btn thm-btn thm-btn--aso thm-btn--aso_yellow m-auto"
                 >
-                  {tSingle('contactBtn')}
+                  {tSingle("contactBtn")}
                   <i className="fal fa-arrow-right text-white"></i>
                 </Link>
               </div>
@@ -175,6 +168,6 @@ async function ServiceSinglePage({
       <Scrollbar />
     </Fragment>
   );
-};
+}
 
 export default ServiceSinglePage;

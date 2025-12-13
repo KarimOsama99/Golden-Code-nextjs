@@ -72,9 +72,7 @@ const CaseStudySection: React.FC = () => {
                   <motion.div
                     key={study.id}
                     className={`col-lg-${
-                      study.id === 2 || study.id === 7
-                        ? "8"
-                        : study.category === "cat3"
+                      study.id === 2 || study.id === 7 || study.id === 12
                         ? "8"
                         : "4"
                     } col-md-6 grid-item ${study.category} mt-30`}
@@ -86,20 +84,20 @@ const CaseStudySection: React.FC = () => {
                     <div className="casestudy-item">
                       <div className="casestudy-img">
                         <Link
-                          href={`/portfolio/${study.slug
-                            .toLowerCase()}`}
+                          href={`/portfolio/${study.slug.toLowerCase()}`}
                           passHref
                         >
                           <Image src={study.img} alt={study.title} />
                         </Link>
                         <div className="content_wrap">
                           <h3 className="item_title">{study.title}</h3>
-                          <span className="item_tag">{study.slug.replace(/-/g, " ")}</span>
+                          <span className="item_tag">
+                            {study.slug.replace(/-/g, " ")}
+                          </span>
                         </div>
                       </div>
                       <Link
-                        href={`/portfolio/${study.slug
-                          .toLowerCase()}`}
+                        href={`/portfolio/${study.slug.toLowerCase()}`}
                         passHref
                       >
                         <span className="xb-overlay"></span>
