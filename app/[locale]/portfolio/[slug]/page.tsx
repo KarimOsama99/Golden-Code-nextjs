@@ -34,7 +34,6 @@ export function generateStaticParams() {
 
 export default async function CaseStudySingle({ params }: Props) {
   const { slug } = await params;
-  const t = await getTranslations("PortfolioSlugPage");
   const study = getCases().find(
     (item) => item.slug.toLowerCase() === slug.toLowerCase()
   );
@@ -42,6 +41,8 @@ export default async function CaseStudySingle({ params }: Props) {
   if (!study) {
     notFound();
   }
+
+  const t = await getTranslations("PortfolioSlugPage");
   return (
     <div className="body_wrap sco_agency">
       <Header />

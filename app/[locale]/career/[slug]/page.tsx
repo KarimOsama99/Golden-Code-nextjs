@@ -32,7 +32,8 @@ const CareerSingle: React.FC<Props> = async ({ params }) => {
   const { slug } = await params;
   const t = await getTranslations("CareerJobs");
   const tPage = await getTranslations("CareerSlugPage");
-  const job = jobListings(t).find((item) => item.slug === slug);
+  const allJobs = jobListings(t);
+  const job = allJobs.find((item) => item.slug === slug);
 
   if (!job) {
     notFound();

@@ -35,7 +35,8 @@ async function ServiceSinglePage({
   const { slug } = await params;
   const t = await getTranslations("ServiceData");
   const tSingle = await getTranslations("ServiceSinglePage");
-  const service = Services(t).find(
+  const allServices = Services(t);
+  const service = allServices.find(
     (s) => s.slug.toLowerCase() === slug.toLowerCase()
   );
 

@@ -5,7 +5,7 @@ import Footer from "@/components/footer/Footer";
 import CtaSection from "@/components/CtaSection/CtaSection";
 import BlogSingle from "@/components/BlogDetails/BlogDetails";
 import { notFound } from "next/navigation";
-import { getBlogs, getRawBlogs } from "@/api/blogs";
+import { getBlogs, getRawBlogs, getBlogsStaticParams } from "@/api/blogs";
 import type { Blog } from "@/api/blogs";
 import icon from "@/public/images/icon/cap.svg";
 import Image1 from "@/public/images/vectors/web.png";
@@ -18,10 +18,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const blogs = getRawBlogs();
-  return blogs.map((blog) => ({
-    slug: blog.slug,
-  }));
+  return getBlogsStaticParams();
 }
 
 export default async function BlogDetailsPage(props: Props) {

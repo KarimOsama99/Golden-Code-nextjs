@@ -60,6 +60,13 @@ const RAW_BLOGS: Blog[] = [
 // Get raw blogs without translations (for static generation)
 export const getRawBlogs = (): Blog[] => RAW_BLOGS;
 
+// Get static params with normalized slugs
+export const getBlogsStaticParams = () => {
+  return RAW_BLOGS.map((blog) => ({
+    slug: blog.slug.toLowerCase().replace(/\s+/g, "-"),
+  }));
+};
+
 // Get blogs with translations (for rendering)
 export const getBlogs = (t: any): Blog[] => [
   {
