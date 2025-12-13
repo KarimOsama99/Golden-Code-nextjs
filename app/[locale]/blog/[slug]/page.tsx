@@ -14,7 +14,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {

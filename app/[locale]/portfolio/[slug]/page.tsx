@@ -17,6 +17,7 @@ import cIcon from "@/public/images/icon/check-icon.svg";
 
 interface Props {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 }

@@ -116,10 +116,7 @@ const BlogSingle: React.FC<BlogSingleProps> = ({ blog }) => {
                 </button>
               </div> */}
 
-              <h3 className="item_details_info_heading">
-                Revolutionizing business efficiency navigating growth <br />{" "}
-                with optimal IT infrastructure enhancement
-              </h3>
+              <h3 className="item_details_info_heading">{blog.heading}</h3>
 
               <div className="row mb-4">
                 <div className="col-md-6 col-sm-6">
@@ -134,14 +131,8 @@ const BlogSingle: React.FC<BlogSingleProps> = ({ blog }) => {
                 </div>
               </div>
 
-              <p>
-                Gain exclusive insights into the world of IT solutions with
-                Golden Code's distinguished thought leaders...
-              </p>
-              <p>
-                Embark on an illuminating journey into the world of IT solutions
-                with our esteemed thought leaders...
-              </p>
+              <p>{blog.introContent}</p>
+              <p>{blog.introContent2}</p>
 
               <div className="blog-details-video mt-70">
                 <iframe
@@ -155,8 +146,8 @@ const BlogSingle: React.FC<BlogSingleProps> = ({ blog }) => {
                 />
               </div>
 
-              <Description />
-              <OtherDescription />
+              <Description blog={blog} />
+              <OtherDescription blog={blog} />
             </div>
           </div>
 

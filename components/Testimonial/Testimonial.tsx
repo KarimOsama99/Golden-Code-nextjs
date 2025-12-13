@@ -11,7 +11,7 @@ import tImg2 from "@/public/images/testimonial/sa-tas01.png";
 import tImg3 from "@/public/images/testimonial/sa-tas02.png";
 import tImg4 from "@/public/images/testimonial/sa-tas03.png";
 
-import {Link} from '@/i18n/routing';
+import { Link } from "@/i18n/routing";
 import icon1 from "@/public/images/testimonial/tes-logo02.png";
 import icon2 from "@/public/images/testimonial/tes-logo01.png";
 import icon3 from "@/public/images/testimonial/tes-logo03.png";
@@ -32,60 +32,64 @@ interface TestimonialItem {
   country?: string;
 }
 
-import {useTranslations} from 'next-intl';
+interface TestimonialProps {
+  tClass?: string;
+}
+
+import { useTranslations } from "next-intl";
 
 const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
-  const t = useTranslations('Testimonial');
+  const t = useTranslations("Testimonial");
 
   const testimonial: TestimonialItem[] = [
     {
       id: "01",
       tImg: tImg1,
       logo: icon1,
-      Des: t('t1Des'),
-      Name: "Christopher Smith",
-      sub: t('t1Sub'),
+      Des: t("t1Des"),
+      Name: "Ahmed Ali",
+      sub: t("t1Sub"),
       country: "Seattle, Ukraine",
     },
     {
       id: "02",
       tImg: tImg2,
       logo: icon2,
-      Des: t('t2Des'),
-      Name: "Sarah Davis",
-      sub: t('t2Sub'),
+      Des: t("t2Des"),
+      Name: "Omar Farouk",
+      sub: t("t2Sub"),
     },
     {
       id: "03",
       tImg: tImg3,
       logo: icon3,
-      Des: t('t3Des'),
-      Name: "Robert Miller",
-      sub: t('t3Sub'),
+      Des: t("t3Des"),
+      Name: "Mahmoud Mansour",
+      sub: t("t3Sub"),
     },
     {
       id: "04",
       tImg: tImg4,
       logo: icon4,
-      Des: t('t4Des'),
-      Name: "Jessica Martinez",
-      sub: t('t4Sub'),
+      Des: t("t4Des"),
+      Name: "Mohamed Abdelsalam",
+      sub: t("t4Sub"),
     },
     {
       id: "05",
       tImg: tImg3,
       logo: icon5,
-      Des: t('t4Des'),
-      Name: "Jessica Martinez",
-      sub: t('t4Sub'),
+      Des: t("t4Des"),
+      Name: "Ibrahim Mohamed",
+      sub: t("t4Sub"),
     },
     {
       id: "06",
       tImg: tImg2,
       logo: icon2,
-      Des: t('t2Des'),
-      Name: "Sarah Davis",
-      sub: t('t2Sub'),
+      Des: t("t2Des"),
+      Name: "Saif Mohamed",
+      sub: t("t2Sub"),
     },
   ];
   const prevRef = useRef<HTMLDivElement>(null);
@@ -118,7 +122,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
                   data-wow-duration="600ms"
                 >
                   <Image src={hicon} alt="Like icon" />
-                  {t('subtitle')}
+                  {t("subtitle")}
                 </div>
               </div>
             </Fade>
@@ -129,7 +133,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
                   data-wow-delay="150ms"
                   data-wow-duration="600ms"
                 >
-                  {t('title')}
+                  {t("title")}
                 </h2>
               </div>
             </Fade>
@@ -182,9 +186,9 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
                       <div className="xb-item--author">
                         <h3 className="xb-item--name">{item.Name}</h3>
                         <span className="xb-item--desig">{item.sub}</span>
-                        <div className="xb-item--logo">
-                          <Image src={item.logo} alt={`${item.Name} logo`} />
-                        </div>
+                        {/* <div className="xb-item--logo"> */}
+                          {/* <Image src={item.logo} alt={`${item.Name} logo`} /> */}
+                        {/* </div> */}
                       </div>
                     </div>
                   </div>

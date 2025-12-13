@@ -5,10 +5,13 @@ import blog5 from "@/public/images/blog/blog_details-img04.jpg";
 import icon7 from "@/public/images/icon/icon-left.png";
 import icon8 from "@/public/images/icon/profile-circle.svg";
 import icon9 from "@/public/images/icon/icon-right.png";
+import { Blog } from "@/api/blogs";
 
-interface OtherDescriptionProps {}
+interface OtherDescriptionProps {
+  blog?: Blog;
+}
 
-const OtherDescription: FC<OtherDescriptionProps> = () => {
+const OtherDescription: FC<OtherDescriptionProps> = ({ blog }) => {
   return (
     <div>
       {/* <div className="postabmin_block ul_li">
@@ -143,7 +146,12 @@ const OtherDescription: FC<OtherDescriptionProps> = () => {
 
         <div className="xb-item--item-input_field pos-rel">
           <input type="email" placeholder="Golden-Code@example.com" />
-          <button type="submit" className="thm-btn thm-btn--aso thm-btn--aso_yellow">Subscribe</button>
+          <button
+            type="submit"
+            className="thm-btn thm-btn--aso thm-btn--aso_yellow"
+          >
+            Subscribe
+          </button>
         </div>
       </div>
     </div>

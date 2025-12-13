@@ -4846,6 +4846,10 @@ body[data-aos-easing="ease"] [data-aos] {
   color: var(--color-black);
   background: transparent;
 }
+.header-style-two .stricked-menu .main-menu__wrap .main-menu > ul > li > a:hover {
+  color: var(--color-primary-two);
+  transition: .2s !important;
+}
 
 @media (max-width: 1199px) {
   .header-style-one .stricked-menu .main-menu__wrap .main-menu > ul > li > a,

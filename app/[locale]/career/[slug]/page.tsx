@@ -15,6 +15,7 @@ import { getTranslations } from "next-intl/server";
 
 interface Props {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 }
@@ -106,49 +107,33 @@ const CareerSingle: React.FC<Props> = async ({ params }) => {
                       <span>{tPage("expRequired")}</span> {tPage("yearsPlus")}
                     </li>
                   </ul>
-                  <p className="xb-item--content">
-                    {tPage("description")}
-                    <br />
-                    <br />
-                    {tPage("description2")}
-                  </p>
+                  <p className="xb-item--content">{job?.description}</p>
                 </div>
 
                 <div className="xb-details-item">
                   <h3 className="xb-item--title">{tPage("whatYouDo")}</h3>
                   <ul className="xb-details-content">
-                    <li>{tPage("requirement1")}</li>
-                    <li>{tPage("requirement2")}</li>
-                    <li>{tPage("requirement3")}</li>
-                    <li>{tPage("requirement4")}</li>
-                    <li>{tPage("requirement5")}</li>
-                    <li>{tPage("requirement6")}</li>
-                    <li>{tPage("requirement7")}</li>
-                    <li>{tPage("requirement8")}</li>
-                    <li>{tPage("requirement9")}</li>
+                    {job?.requirements?.map((req, idx) => (
+                      <li key={idx}>{req}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="xb-details-item">
                   <h3 className="xb-item--title">{tPage("youMightHave")}</h3>
                   <ul className="xb-details-content">
-                    <li>{tPage("bonus1")}</li>
-                    <li>{tPage("bonus2")}</li>
-                    <li>{tPage("bonus3")}</li>
-                    <li>{tPage("bonus4")}</li>
-                    <li>{tPage("bonus5")}</li>
-                    <li>{tPage("bonus6")}</li>
+                    {job?.bonusSkills?.map((bonus, idx) => (
+                      <li key={idx}>{bonus}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="xb-details-item">
                   <h3 className="xb-item--title">{tPage("benefits")}</h3>
                   <ul className="xb-details-content">
-                    <li>{tPage("benefit1")}</li>
-                    <li>{tPage("benefit2")}</li>
-                    <li>{tPage("benefit3")}</li>
-                    <li>{tPage("benefit4")}</li>
-                    <li>{tPage("benefit5")}</li>
+                    {job?.benefits?.map((benefit, idx) => (
+                      <li key={idx}>{benefit}</li>
+                    ))}
                   </ul>
                 </div>
               </div>

@@ -296,8 +296,13 @@
     left: 5px;
 }
 
+[dir="rtl"] .iconlist_block {
+    padding-left: unset;
+    padding-right: 38px;
+}
+
 [dir="rtl"] .hero-style-two .xb-hero .xb-item--title {
-    line-height: 100px;
+    line-height: 85px;
 }
 
 @media (width <= 1199px) {
@@ -305,7 +310,7 @@
         right: -47px;
     }
     [dir="rtl"] .hero-style-two .xb-hero .xb-item--title {
-        line-height: 80px;
+        line-height: 70px;
     }
     [dir="rtl"] .about-right,
     [dir="rtl"] .service-info {

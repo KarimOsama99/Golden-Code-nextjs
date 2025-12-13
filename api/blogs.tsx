@@ -19,6 +19,15 @@ export interface BlogBase {
   comment?: string;
   thumb?: string;
   blClass?: string;
+  heading?: string;
+  introContent?: string;
+  introContent2?: string;
+  sectionHeading?: string;
+  sectionContent?: string;
+  sectionPoints?: string[];
+  conclusionHeading?: string;
+  conclusionContent?: string;
+  conclusionPoints?: string[];
 }
 
 export interface ReadableBlog extends BlogBase {
@@ -81,6 +90,15 @@ export const getBlogs = (t: any): Blog[] => [
     comment: "35",
     thumb: t("b1Thumb"),
     blClass: "format-standard-image",
+    heading: t("b1Heading"),
+    introContent: t("b1IntroContent"),
+    introContent2: t("b1IntroContent2"),
+    sectionHeading: t("b1SectionHeading"),
+    sectionContent: t("b1SectionContent"),
+    sectionPoints: [t("b1Point1"), t("b1Point2"), t("b1Point3"), t("b1Point4")],
+    conclusionHeading: t("b1ConclusionHeading"),
+    conclusionContent: t("b1ConclusionContent"),
+    conclusionPoints: [t("b1ConcPoint1"), t("b1ConcPoint2"), t("b1ConcPoint3")],
   },
   {
     id: "2",
@@ -94,5 +112,14 @@ export const getBlogs = (t: any): Blog[] => [
     comment: "80",
     thumb: t("b2Thumb"),
     blClass: "format-standard-image",
+    heading: t("b2Heading"),
+    introContent: t("b2IntroContent"),
+    introContent2: t("b2IntroContent2"),
+    sectionHeading: t("b2SectionHeading"),
+    sectionContent: t("b2SectionContent"),
+    sectionPoints: [t("b2Point1"), t("b2Point2"), t("b2Point3"), t("b2Point4")],
+    conclusionHeading: t("b2ConclusionHeading"),
+    conclusionContent: t("b2ConclusionContent"),
+    conclusionPoints: [t("b2ConcPoint1"), t("b2ConcPoint2"), t("b2ConcPoint3")],
   },
 ];

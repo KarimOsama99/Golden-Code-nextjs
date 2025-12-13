@@ -1,24 +1,21 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import blog4 from "@/public/images/blog/blog_details-img03.jpg";
+import { Blog } from "@/api/blogs";
 
-interface DescriptionProps {}
+interface DescriptionProps {
+  blog?: Blog;
+}
 
-const Description: FC<DescriptionProps> = () => {
+const Description: FC<DescriptionProps> = ({ blog }) => {
   return (
     <div>
       <h3 className="item_details_info_heading">
-        Optimizing growth with IT infrastructure
+        {blog?.sectionHeading || "Optimizing growth with IT infrastructure"}
       </h3>
       <p>
-        They provide a comprehensive and in-depth analysis that goes beyond
-        surface-level. Join us as we uncover the secrets of IT solutions, guided
-        by the wisdom and expertise of Golden Code thought leaders. Prepare to
-        be inspired, informed, and empowered to navigate the ever-landscape of
-        technology with confidence and clarity. you&apos;ll gain access to
-        unparalleled expertise and discover new possibilities for success in the
-        ever-evolving world of technology success in the ever-evolving world of
-        technology.y.
+        {blog?.sectionContent ||
+          "They provide a comprehensive and in-depth analysis that goes beyond surface-level. Join us as we uncover the secrets of IT solutions, guided by the wisdom and expertise of Golden Code thought leaders."}
       </p>
 
       <div className="row mb-90 align-items-center mt-none-30">
@@ -29,57 +26,75 @@ const Description: FC<DescriptionProps> = () => {
         </div>
         <div className="col-md-6 mt-30">
           <ul className="iconlist_block">
-            <li>
-              <span className="iconlist_text">
-                Unveiling Emerging Technologies.
-              </span>
-            </li>
-            <li>
-              <span className="iconlist_text">
-                Navigating Complex Challenges.
-              </span>
-            </li>
-            <li>
-              <span className="iconlist_text">Forecasting Future Trends.</span>
-            </li>
-            <li>
-              <span className="iconlist_text">
-                Driving Innovation Strategies.
-              </span>
-            </li>
-            <li>
-              <span className="iconlist_text">
-                Exploring Industry Practices.
-              </span>
-            </li>
-            <li>
-              <span className="iconlist_text">Empowering Transformation.</span>
-            </li>
+            {blog?.sectionPoints && blog.sectionPoints.length > 0 ? (
+              blog.sectionPoints.map((point, idx) => (
+                <li key={idx}>
+                  <span className="iconlist_text">{point}</span>
+                </li>
+              ))
+            ) : (
+              <>
+                <li>
+                  <span className="iconlist_text">
+                    Unveiling Emerging Technologies.
+                  </span>
+                </li>
+                <li>
+                  <span className="iconlist_text">
+                    Navigating Complex Challenges.
+                  </span>
+                </li>
+                <li>
+                  <span className="iconlist_text">
+                    Forecasting Future Trends.
+                  </span>
+                </li>
+                <li>
+                  <span className="iconlist_text">
+                    Driving Innovation Strategies.
+                  </span>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
 
       <h3 className="item_details_info_heading">
-        3 Reasons to investing at this moment
+        {blog?.conclusionHeading || "3 Reasons to investing at this moment"}
       </h3>
       <p>
-        Here are three key reasons emphasizing the importance of optimizing ICO
-        infrastructure <br /> for efficiency and growth:
+        {blog?.conclusionContent ||
+          "Here are three key reasons emphasizing the importance of optimizing ICO infrastructure for efficiency and growth:"}
       </p>
       <ul className="iconlist_block numlist_block list-unstyled">
-        <li>
-          <span className="iconlist_text">
-            1. Enhanced Operational Agility.
-          </span>
-        </li>
-        <li>
-          <span className="iconlist_text">
-            2. Resource Optimization & Cost Efficiency.
-          </span>
-        </li>
-        <li>
-          <span className="iconlist_text">3. Scalability and Innovation.</span>
-        </li>
+        {blog?.conclusionPoints && blog.conclusionPoints.length > 0 ? (
+          blog.conclusionPoints.map((point, idx) => (
+            <li key={idx}>
+              <span className="iconlist_text">
+                {idx + 1}. {point}
+              </span>
+            </li>
+          ))
+        ) : (
+          <>
+            <li>
+              <span className="iconlist_text">
+                1. Enhanced Operational Agility.
+              </span>
+            </li>
+            <li>
+              <span className="iconlist_text">
+                2. Resource Optimization & Cost Efficiency.
+              </span>
+            </li>
+            <li>
+              <span className="iconlist_text">
+                3. Scalability and Innovation.
+              </span>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );
