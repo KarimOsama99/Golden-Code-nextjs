@@ -24,6 +24,20 @@ export async function generateStaticParams() {
 export default async function BlogDetailsPage(props: Props) {
   const params = await props.params;
   const { slug } = params;
+
+  // First, find the blog using raw data (no translations needed)
+  const rawBlogs = getRawBlogs();
+  const rawBlog = rawBlogs.find(
+    (b) =>
+      b.slug.toLowerCase().replace(/\s+/g, "-") ===
+      slug.toLowerCase().replace(/\s+/g, "-")
+  );
+
+  if (!rawBlog) {
+    notFound();
+  }
+
+  // Now get translations for rendering
   const t = await getTranslations("BlogData");
   const tPage = await getTranslations("BlogSlugPage");
   const blogs = getBlogs(t);
@@ -32,10 +46,6 @@ export default async function BlogDetailsPage(props: Props) {
       b.slug.toLowerCase().replace(/\s+/g, "-") ===
       slug.toLowerCase().replace(/\s+/g, "-")
   );
-
-  if (!blog) {
-    notFound();
-  }
 
   return (
     <Fragment>

@@ -30,14 +30,20 @@ export function generateStaticParams() {
 
 const CareerSingle: React.FC<Props> = async ({ params }) => {
   const { slug } = await params;
+
+  // First, find the job using raw data (no translations needed)
+  const rawJobs = getRawCareers();
+  const rawJob = rawJobs.find((item) => item.slug === slug);
+
+  if (!rawJob) {
+    notFound();
+  }
+
+  // Now get translations for rendering
   const t = await getTranslations("CareerJobs");
   const tPage = await getTranslations("CareerSlugPage");
   const allJobs = jobListings(t);
   const job = allJobs.find((item) => item.slug === slug);
-
-  if (!job) {
-    notFound();
-  }
   return (
     <Fragment>
       <div className="body_wrap sco_agency">

@@ -33,14 +33,22 @@ async function ServiceSinglePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  // First, find the service using raw data (no translations needed)
+  const rawServices = getRawServices();
+  const rawService = rawServices.find(
+    (s) => s.slug.toLowerCase() === slug.toLowerCase()
+  );
+
+  if (!rawService) return notFound();
+
+  // Now get translations for rendering
   const t = await getTranslations("ServiceData");
   const tSingle = await getTranslations("ServiceSinglePage");
   const allServices = Services(t);
   const service = allServices.find(
     (s) => s.slug.toLowerCase() === slug.toLowerCase()
   );
-
-  if (!service) return notFound();
 
   return (
     <Fragment>

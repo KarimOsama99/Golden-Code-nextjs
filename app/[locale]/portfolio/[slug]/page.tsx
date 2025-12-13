@@ -34,7 +34,10 @@ export function generateStaticParams() {
 
 export default async function CaseStudySingle({ params }: Props) {
   const { slug } = await params;
-  const study = getCases().find(
+
+  // First, find the case study using raw data (no translations needed)
+  const allCases = getCases();
+  const study = allCases.find(
     (item) => item.slug.toLowerCase() === slug.toLowerCase()
   );
 
@@ -42,6 +45,7 @@ export default async function CaseStudySingle({ params }: Props) {
     notFound();
   }
 
+  // Now get translations for rendering
   const t = await getTranslations("PortfolioSlugPage");
   return (
     <div className="body_wrap sco_agency">
