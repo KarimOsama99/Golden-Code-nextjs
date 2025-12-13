@@ -69,9 +69,9 @@ const ContactSection: React.FC = () => {
                       </li>
                       <li>
                         <Link
-                          href="https://www.instagram.com/goldencodee/"
+                          href="https://www.instagram.com/goldencoode/"
                           target="_blank"
-                          area-label="instagram"
+                          aria-label="instagram"
                         >
                           <i className="fab fa-instagram"></i>
                         </Link>

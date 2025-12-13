@@ -170,7 +170,7 @@ const Footer: React.FC<FooterProps> = () => {
                 </Link>
               </li>
               <li>
-                <Link href="https://www.instagram.com/goldencodee/" target='_blank'>
+                <Link href="https://www.instagram.com/goldencoode/" target='_blank'>
                   <i className="fab fa-instagram"></i>
                 </Link>
               </li>
