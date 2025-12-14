@@ -22,7 +22,7 @@ const WhyChoose: React.FC<WhyChooseProps> = () => {
           <h2 className="title">{t('title')}</h2>
         </div>
         <div className="row mt-none-30">
-          <div className="col-lg-4 col-md-6 mt-30">
+          <div className="col-lg-4 col-md-6 mt-30 center-card">
             <div className="ap-fea-item pos-rel">
               <div className="xb-item--img">
                 <Image src={sIcon2} alt="No empty promises" />
@@ -30,7 +30,7 @@ const WhyChoose: React.FC<WhyChooseProps> = () => {
               <h3 className="xb-item--content">{t('item1')}</h3>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 mt-30">
+          <div className="col-lg-4 col-md-6 mt-30 center-card">
             <div className="ap-fea-item pos-rel">
               <div className="xb-item--img">
                 <Image src={sIcon3} alt="Quick fixes" />
@@ -38,7 +38,7 @@ const WhyChoose: React.FC<WhyChooseProps> = () => {
               <h3 className="xb-item--content">{t('item2')}</h3>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 mt-30">
+          <div className="col-lg-4 col-md-6 mt-30 center-card">
             <div className="ap-fea-item pos-rel">
               <div className="xb-item--img">
                 <Image src={sIcon4} alt="Custom SEO tools" />

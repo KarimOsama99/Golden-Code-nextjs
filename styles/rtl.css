@@ -355,9 +355,9 @@
         display: flex;
         justify-content: flex-start;
     }
-    [dir="rtl"] .col-lg-5.mt-30.price-card,
-    [dir="rtl"] .col-lg-4.mt-30.price-card,
-    [dir="rtl"] .col-lg-3.mt-30.price-card {
+    [dir="rtl"] .col-lg-5.mt-30.center-card,
+    [dir="rtl"] .col-lg-4.mt-30.center-card,
+    [dir="rtl"] .col-lg-3.mt-30.center-card {
         display: flex;
         justify-content: center;
     }
@@ -369,6 +369,15 @@
     }
     [dir="rtl"] .xb-faq .accordion_box .block .acc-btn .accordion-button .arrow {
         left: 20px;
+    }
+
+    [dir="rtl"] .sa-tes_button .sa-swiper-btn {
+    right: unset !important;
+    left: 42px !important;
+    }
+    [dir="rtl"] .sa-tes_button .sa-swiper-btn.swiper-button-prev {
+        left: unset !important;
+        right: 42px !important;
     }
 }
 
