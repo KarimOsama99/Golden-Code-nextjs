@@ -301,8 +301,18 @@
     padding-right: 38px;
 }
 
+[dir="rtl"] .tp-work-item .xb-item--icon {
+    margin-right: unset;
+    margin-left: 30px;
+}
+
 [dir="rtl"] .hero-style-two .xb-hero .xb-item--title {
     line-height: 85px;
+}
+
+[dir="rtl"] ul.smothscroll {
+    right: unset;
+    left: 30px;
 }
 
 @media (width <= 1199px) {
@@ -316,6 +326,9 @@
     [dir="rtl"] .service-info {
         margin-right: 8px;
     }
+    [dir="rtl"] .cp-process-right .xb-img {
+        margin-left: 0;
+    }
 }
 @media (max-width: 991px) {
     [dir="rtl"] .sd-ser-content {
@@ -327,6 +340,35 @@
     }
     [dir="rtl"] .sidebar {
         margin-right: 0;
+    }
+    [dir="rtl"] .xb-faq .accordion_box .block .acc-btn .accordion-button {
+        text-align: right;
+    }
+    [dir="rtl"] .cp-details-wrap {
+        padding-left: 0;
+    }
+}
+@media (max-width: 767px) {
+    [dir="rtl"] .col-lg-5.mt-30,
+    [dir="rtl"] .col-lg-4.mt-30,
+    [dir="rtl"] .col-lg-3.mt-30 {
+        display: flex;
+        justify-content: flex-start;
+    }
+    [dir="rtl"] .col-lg-5.mt-30.price-card,
+    [dir="rtl"] .col-lg-4.mt-30.price-card,
+    [dir="rtl"] .col-lg-3.mt-30.price-card {
+        display: flex;
+        justify-content: center;
+    }
+    [dir="rtl"] .xb-faq .accordion_box .block .content {
+        padding: 20px;
+    }
+    [dir="rtl"] .xb-faq .accordion_box .block .acc-btn .accordion-button {
+        padding: 20px 20px 20px 75px
+    }
+    [dir="rtl"] .xb-faq .accordion_box .block .acc-btn .accordion-button .arrow {
+        left: 20px;
     }
 }
 

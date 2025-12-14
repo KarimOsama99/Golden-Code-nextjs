@@ -137,7 +137,7 @@ const PricingSection: React.FC = () => {
                             <TabPane tabId={tabId} key={tabId}>
                                 <Row className="mt-none-30">
                                     {plans.map((plan, index) => (
-                                        <Col lg="4" className="mt-30" key={index}>
+                                        <Col lg="4" className="mt-30 price-card" key={index}>
                                             <div className={`pg-pricing-item ${plan.isActive ? 'active' : ''} pos-rel`}>
                                                 {plan.isActive && <span className="xb-item--top-text">{plan.badge}</span>}
                                                 <div className="xb-item--inner o-hidden pos-rel">

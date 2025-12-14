@@ -9088,6 +9088,9 @@ body[data-aos-easing="ease"] [data-aos] {
   .sd-ser-content .sd-title {
     font-size: 28px;
   }
+  .lang-toggle-btn.talk {
+    padding: 15px 20px !important;
+  }
 }
 
 .sd-ser-content .sd-content {
@@ -10695,6 +10698,9 @@ body[data-aos-easing="ease"] [data-aos] {
     display: inline-flex;
     margin-top: 0;
     top: 20px;
+  }
+  .sa-team.pos-rel .row {
+    gap: 1.5rem;
   }
 }
 
