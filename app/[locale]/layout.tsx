@@ -10,6 +10,7 @@ import "../../styles/animate.css";
 import "../../styles/cursor.css";
 import "../../styles/custom-font.css";
 import "../../styles/main.css";
+import "../../styles/xb-project-cards.css";
 import "../../styles/rtl.css";
 
 

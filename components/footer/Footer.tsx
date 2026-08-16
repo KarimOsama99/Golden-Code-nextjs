@@ -37,7 +37,9 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('writeToUs')}</p>
-                <h4 className="xb-item--title">sales@goldencodee.com</h4>
+                <h4 className="xb-item--title">
+                  <a href="mailto:sales@goldencodee.com" className="xb-contact-link">sales@goldencodee.com</a>
+                </h4>
               </div>
             </div>
             <div className="info-item ul_li">
@@ -48,7 +50,9 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('callUs')}</p>
-                <h4 className="xb-item--title">+(20) 1124 762 799</h4>
+                <h4 className="xb-item--title">
+                  <a href="tel:+201124762799" className="xb-contact-link">+(20) 1124 762 799</a>
+                </h4>
               </div>
             </div>
             <div className="info-item ul_li">
@@ -59,7 +63,16 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('ourOffice')}</p>
-                <h4 className="xb-item--title">{t('address')}</h4>
+                <h4 className="xb-item--title">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Hadayek+Helwan%2C+Cairo%2C+Egypt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="xb-contact-link"
+                  >
+                    {t('address')}
+                  </a>
+                </h4>
               </div>
             </div>
           </div>

@@ -720,7 +720,10 @@
     "filterDesign": "Design",
     "filterMarketing": "Marketing",
     "filterBranding": "Branding",
-    "filterSEO": "SEO Services"
+    "filterSEO": "SEO Services",
+    "visitSite": "Visit live site",
+    "viewCase": "View case study",
+    "noResults": "No projects in this category yet."
   },
   "Project": {
     "subtitle": "Latest Project",
@@ -735,17 +738,21 @@
     "ttext": "In value due to increased team productivity",
     "stext": "Saved due to reduced administration time",
     "p2Title": "Salam Surgery Clinic",
-    "p2Desc": "Our experienced coaches are not just educators; they are partners in your journey..",
+    "p2Desc": "A trusted bariatric and general surgery clinic — the site gives patients clear procedure info, real outcomes, and an easy way to book a consultation.",
     "p3Title": "UniGuide",
-    "p3Desc": "Cambridge expanded its reach with through targeted SEO solutions, boosting visibility and driving growth.",
-    "p4Title": "Monhamed in the Bible",
-    "p4Desc": "Targeted SEO strategies strengthened Madrids digital footprint,visibility and driving engagement.",
+    "p3Desc": "UniGuide helps students find and compare universities that fit their goals, turning a confusing search into a guided, confident decision.",
+    "p4Title": "Mohamed in the Bible",
+    "p4Desc": "A dedicated resource exploring references to Prophet Muhammad in earlier scriptures, presented in a clean, easy-to-read reading experience.",
     "p5Title": "Delivering remote solutions",
     "p5Desc": "Delivering Remote Solutions provides teams with tools for effective and productivity from anywhere.",
     "p6Title": "Real-time health monitoring..",
     "p6Desc": "Real-Time Health Monitoring via Mobile App tracks logo vital signs, enabling early detection.",
     "p7Title": "Simple time management..",
-    "p7Desc": "Simple Time Management boosts productivity by prioritizing tasks and reducing distractions."
+    "p7Desc": "Simple Time Management boosts productivity by prioritizing tasks and reducing distractions.",
+    "p10Title": "ALNAJJAR",
+    "p10Desc": "A clean, modern business website built to present ALNAJJAR professionally and make it easy for customers to reach out.",
+    "p11Title": "3M Chemicals Group",
+    "p11Desc": "A trusted partner in chemicals and solvents across Egypt, the Middle East & Africa — the site positions 3M as a reliable, established supplier."
   },
   "PrivacyPage": {
     "subTitle": "Privacy Policy",

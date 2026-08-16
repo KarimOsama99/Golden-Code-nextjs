@@ -1,0 +1,497 @@
+/* =========================================================
+   Golden Code — Project sections redesign
+   Used by: components/ProjectSection (home carousel) and
+            app/[locale]/portfolio/CaseSection (portfolio grid)
+
+   Accent colors reuse the theme's own tokens:
+   --color-yellow      : #19283f  (this is actually the theme's NAVY — the
+                          template mislabels it, see styles/main.css :root)
+   --color-primary-two : #c98015  (the theme's GOLD)
+   ========================================================= */
+
+/* ---------- shared ---------- */
+.gc-card-arrow-icon {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[dir="rtl"] .gc-card-arrow-icon {
+  transform: scaleX(-1);
+}
+
+.xb-contact-link {
+  color: inherit;
+  transition: color 0.25s ease;
+}
+.xb-contact-link:hover {
+  color: var(--color-primary-two);
+}
+
+/* =========================================================
+   HOME — project carousel
+   ========================================================= */
+.hp-carousel {
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .hp-carousel {
+    margin-inline: -12px;
+  }
+  .hp-slide {
+    border-radius: 0;
+  }
+}
+
+.hp-slide {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 22px 50px -22px rgba(12, 17, 29, 0.4);
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.hp-slide:active {
+  cursor: grabbing;
+}
+
+.hp-slide-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  background: var(--color-heading-two);
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .hp-slide-media {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+.hp-slide-img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hp-slide-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 17, 29, 0) 30%, rgba(12, 17, 29, 0.6) 70%, rgba(12, 17, 29, 0.95) 100%);
+}
+
+.hp-slide-body {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 28px 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+@media (max-width: 575px) {
+  .hp-slide-body {
+    padding: 26px 24px 30px;
+  }
+}
+
+.hp-slide-title {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 575px) {
+  .hp-slide-title {
+    font-size: 25px;
+  }
+}
+
+.hp-slide-desc {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 575px) {
+  .hp-slide-desc {
+    font-size: 14.5px;
+  }
+}
+
+.hp-slide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-heading-two);
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease, gap 0.3s ease;
+  pointer-events: auto;
+}
+
+.hp-slide-cta:hover {
+  background: var(--color-primary-two);
+  color: #fff;
+  gap: 14px;
+}
+
+.hp-slide-cta:hover .gc-card-arrow-icon {
+  transform: translateX(3px);
+}
+[dir="rtl"] .hp-slide-cta:hover .gc-card-arrow-icon {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* Indicators (brand logos double as carousel controls) */
+.hp-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  padding-top: 28px;
+  border-top: 1px solid #e9e9ec;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 575px) {
+  .hp-indicators {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 30px;
+    overflow-x: auto;
+    padding-inline: 12px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .hp-indicators::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.hp-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 2px;
+  width: 110px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.hp-indicator-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  opacity: 0.45;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 575px) {
+  .hp-indicator-logo {
+    height: 34px;
+  }
+}
+
+.hp-indicator-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+}
+
+.hp-indicator:hover .hp-indicator-logo,
+.hp-indicator.is-active .hp-indicator-logo {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: translateY(-2px);
+}
+
+.hp-indicator-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: #ececef;
+  overflow: hidden;
+}
+
+.hp-indicator-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--color-primary-two);
+  border-radius: 999px;
+  animation-name: hpIndicatorProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hpIndicatorProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   PORTFOLIO — case studies grid (symmetric, light cards)
+   ========================================================= */
+.pf-section {
+  background-color: #f6f6f8;
+}
+
+.pf-filter-row {
+  display: flex;
+  justify-content: center;
+}
+
+.pf-filter-scroller {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.pf-filter-pill {
+  border: 1px solid #e2e2e6;
+  background: #fff;
+  color: #202020;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.pf-filter-pill:hover {
+  border-color: var(--color-yellow);
+  color: var(--color-yellow);
+  transform: translateY(-1px);
+}
+
+.pf-filter-pill.is-active {
+  background: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(25, 40, 63, 0.3);
+}
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 540px));
+  justify-content: center;
+  gap: 32px;
+  position: relative;
+}
+
+.pf-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #7b7b7b;
+  padding: 60px 0;
+}
+
+.pf-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 14px 34px -16px rgba(17, 17, 17, 0.32);
+}
+
+@media (max-width: 575px) {
+  .pf-card {
+    aspect-ratio: 4 / 3.4;
+  }
+}
+
+.pf-card-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.pf-card-media {
+  position: absolute;
+  inset: 0;
+}
+
+.pf-card-img {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+}
+
+.pf-card:hover .pf-card-img {
+  transform: scale(1.08);
+  filter: brightness(0.75);
+}
+
+.pf-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 17, 29, 0.1) 0%, rgba(12, 17, 29, 0.02) 30%, rgba(12, 17, 29, 0.78) 100%);
+  transition: background 0.45s ease;
+  pointer-events: none;
+}
+
+.pf-card:hover .pf-card-scrim {
+  background: linear-gradient(180deg, rgba(12, 17, 29, 0.15) 0%, rgba(12, 17, 29, 0.35) 45%, rgba(12, 17, 29, 0.92) 100%);
+}
+
+.pf-card-badge {
+  position: absolute;
+  top: 18px;
+  inset-inline-start: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-yellow);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 6px 16px rgba(17, 17, 17, 0.16);
+}
+
+.pf-visit-btn {
+  position: absolute;
+  top: 16px;
+  inset-inline-end: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.85);
+  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.2);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pf-card:hover .pf-visit-btn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.pf-visit-btn:hover {
+  background: var(--color-primary-two);
+  color: #fff;
+  transform: scale(1.1) !important;
+}
+
+.pf-card-info {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 24px 26px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pf-card-cat {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-two);
+  margin-bottom: 9px;
+}
+
+.pf-card-title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #fff;
+  transition: margin 0.4s ease;
+}
+
+.pf-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12.5px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+.pf-card:hover .pf-card-meta {
+  max-height: 24px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.pf-card-meta-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.pf-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-heading-two);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(6px);
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease, margin-top 0.4s ease, background 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+}
+
+.pf-card:hover .pf-card-cta {
+  max-height: 40px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 14px;
+  pointer-events: auto;
+}
+
+.pf-card-cta:hover {
+  background: var(--color-primary-two);
+  color: #fff;
+}
+
+.pf-card-cta:hover .gc-card-arrow-icon {
+  transform: translateX(3px);
+}
+[dir="rtl"] .pf-card-cta:hover .gc-card-arrow-icon {
+  transform: scaleX(-1) translateX(3px);
+}

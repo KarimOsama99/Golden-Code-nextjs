@@ -10,6 +10,7 @@ import cImg9 from "@/public/images/project/almonasib.png";
 import cImg10 from "@/public/images/project/portfolio/portafoto.png";
 import cImg11 from "@/public/images/project/3m.png";
 import cImg12 from "@/public/images/project/payship.png";
+import cImg13 from "@/public/images/project/alnajjar.png";
 
 const getCases = () => [
   {
@@ -143,6 +144,18 @@ const getCases = () => [
     date: "15-1-2023",
     framework: "Angular JS",
     link: "https://payship.biz/",
+  },
+  {
+    id: 13,
+    category: "cat1",
+    img: cImg13,
+    title: "ALNAJJAR",
+    titleAr: "النجار",
+    slug: "alnajjar",
+    cat: "Business Website",
+    date: "13-8-2026",
+    framework: "Next JS",
+    link: "#",
   }
 ];
 

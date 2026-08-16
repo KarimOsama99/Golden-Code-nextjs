@@ -41,7 +41,7 @@ export function generateStaticParams() {
 }
 
 export default async function CaseStudySingle({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
 
   // First, find the case study using raw data (no translations needed)
   const allCases = getCases();
@@ -52,6 +52,11 @@ export default async function CaseStudySingle({ params }: Props) {
   if (!study) {
     notFound();
   }
+
+  const displayTitle =
+    locale === "ar" && (study as { titleAr?: string }).titleAr
+      ? (study as { titleAr?: string }).titleAr!
+      : study.title;
 
   // Now get translations for rendering
   const t = await getTranslations("PortfolioSlugPage");
@@ -71,7 +76,7 @@ export default async function CaseStudySingle({ params }: Props) {
                     <Image src={icon} alt="" width={20} height={20} />
                     {t("subTitle")}
                   </span>
-                  <h2 className="title">{study.title}</h2>
+                  <h2 className="title">{displayTitle}</h2>
                 </div>
               </div>
               <div className="col-lg-3 mt-30">
@@ -155,7 +160,7 @@ export default async function CaseStudySingle({ params }: Props) {
               rel="noopener noreferrer"
               className="cp-btn thm-btn--aso thm-btn--aso_yellow m-auto"
             >
-              {t("visit")} {study.title} {t("website")}
+              {t("visit")} {displayTitle} {t("website")}
               <i className="fal fa-arrow-right text-white"></i>
             </Link>
           </div>
