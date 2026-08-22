@@ -1,0 +1,761 @@
+/* =========================================================
+   Golden Code — Mobile "app shell" layer
+   Makes small screens feel like a native app/PWA: a cleaner
+   nav drawer, tighter vertical rhythm, comfortable tap targets,
+   and a compact page header — without changing desktop at all.
+   Everything in this file is scoped to mobile breakpoints.
+   ========================================================= */
+
+/* =========================================================
+   1. Nav drawer — bottom sheet (not a sidebar)
+   Slides up from the bottom like a native app sheet. Same
+   vertical motion in both LTR and RTL, so no direction logic
+   is needed — this also sidesteps the RTL slide-direction
+   quirks a side drawer would need.
+   ========================================================= */
+@media (max-width: 1199px) {
+
+  .gc-app-drawer,
+  [dir="rtl"] .gc-app-drawer {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 82vh;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    border-radius: 22px 22px 0 0;
+    background: #fff;
+    box-shadow: 0 -16px 44px rgba(12, 17, 29, 0.28);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    transform: translateY(100%);
+    overflow: visible;
+  }
+
+  .gc-app-drawer.active,
+  [dir="rtl"] .gc-app-drawer.active {
+    transform: translateY(0%);
+  }
+
+  .xb-header-menu-backdrop {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .gc-app-drawer-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 20px 10px;
+    flex-shrink: 0;
+  }
+
+  .gc-app-drawer-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #e2e2e6;
+  }
+
+  .gc-app-drawer-close {
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 16px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #f3f3f5;
+    color: var(--color-heading-two);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .gc-app-drawer-close:hover {
+    background: var(--color-primary-two);
+    color: #ffffff;
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  /* Subtle fade hinting there's more to scroll below */
+  .gc-app-drawer-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 16px 14px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+  }
+
+  .gc-app-drawer-footer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid #eee;
+    background: #fafafb;
+  }
+
+  .gc-app-drawer-footer .thm-btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 46px;
+  }
+
+  /* Nav list: bigger rows, brand-colored active state, tidy dividers */
+  .gc-app-drawer .xb-menu-primary>li {
+    margin-bottom: 1px;
+  }
+
+  .gc-app-drawer .xb-menu-primary>li:not(:last-child) {
+    border-bottom: 1px solid #f4f4f6;
+  }
+
+  .gc-app-drawer .xb-menu-primary>li>a,
+  .gc-app-drawer .xb-menu-primary>li>p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--color-heading-two);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .gc-app-drawer .xb-menu-primary>li>a:active,
+  .gc-app-drawer .xb-menu-primary>li>p:active {
+    background: #f7f4ec;
+  }
+
+  .gc-app-drawer .xb-menu-primary>li.active>p {
+    background: #f7f4ec;
+    color: var(--color-yellow);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+
+    .gc-app-drawer .xb-menu-primary>li>a:hover,
+    .gc-app-drawer .xb-menu-primary>li>p:hover {
+      background: #f7f4ec;
+      color: var(--color-yellow);
+    }
+  }
+
+  .gc-app-drawer .xb-menu-primary>li i {
+    transition: transform 0.3s ease;
+    font-size: 13px;
+    color: #9a9a9f;
+  }
+
+  .gc-app-drawer .xb-menu-primary .menu-item.menu-item-has-children {
+    padding: 2px 8px 10px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+  }
+
+  .gc-app-drawer .xb-menu-primary .menu-item.menu-item-has-children::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 10px;
+    top: 4px;
+    bottom: 10px;
+    width: 2px;
+    background: #f0f0f2;
+    border-radius: 2px;
+  }
+
+  .gc-app-drawer .xb-menu-primary .menu-item.menu-item-has-children a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #6b6b70;
+    border-radius: 10px;
+    padding: 0 12px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .gc-app-drawer .xb-menu-primary .menu-item.menu-item-has-children a:active {
+    background: #f3f3f5;
+    color: var(--color-heading-two);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .gc-app-drawer .xb-menu-primary .menu-item.menu-item-has-children a:hover {
+      background: #f3f3f5;
+      color: var(--color-heading-two);
+    }
+  }
+
+  /* Staggered entrance for nav rows when the sheet opens */
+  .gc-app-drawer.active .xb-menu-primary>li {
+    animation: gcDrawerItemIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  .gc-app-drawer.active .xb-menu-primary>li:nth-child(1) {
+    animation-delay: 0.06s;
+  }
+
+  .gc-app-drawer.active .xb-menu-primary>li:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .gc-app-drawer.active .xb-menu-primary>li:nth-child(3) {
+    animation-delay: 0.14s;
+  }
+
+  .gc-app-drawer.active .xb-menu-primary>li:nth-child(4) {
+    animation-delay: 0.18s;
+  }
+
+  .gc-app-drawer.active .xb-menu-primary>li:nth-child(5) {
+    animation-delay: 0.22s;
+  }
+
+  .gc-app-drawer.active .xb-menu-primary>li:nth-child(6) {
+    animation-delay: 0.26s;
+  }
+}
+
+@keyframes gcDrawerItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   2. Sticky header — compact "app bar" on scroll
+   ========================================================= */
+@media (max-width: 767px) {
+  .xb-header.stricked-menu.stricky-fixed {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 16px rgba(12, 17, 29, 0.08);
+  }
+
+  .header-bar-mobile .xb-nav-mobile {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   3. Tighter vertical rhythm site-wide on mobile
+   Large desktop section paddings feel heavy and "un-app-like"
+   on a phone screen — scale them down without touching every page.
+   ========================================================= */
+@media (max-width: 767px) {
+  .pt-200 {
+    padding-top: 90px;
+  }
+
+  .pt-190,
+  .pt-180,
+  .pt-170,
+  .pt-160,
+  .pt-150,
+  .pt-145,
+  .pt-140 {
+    padding-top: 60px;
+  }
+
+  .pt-135,
+  .pt-130,
+  .pt-125,
+  .pt-120,
+  .pt-115,
+  .pt-110,
+  .pt-105,
+  .pt-100 {
+    padding-top: 50px;
+  }
+
+  .pt-95,
+  .pt-90,
+  .pt-85,
+  .pt-80 {
+    padding-top: 44px;
+  }
+
+  .pt-75,
+  .pt-70,
+  .pt-65 {
+    padding-top: 38px;
+  }
+
+  .pb-200 {
+    padding-bottom: 90px;
+  }
+
+  .pb-190,
+  .pb-180,
+  .pb-170,
+  .pb-160,
+  .pb-150,
+  .pb-145,
+  .pb-140 {
+    padding-bottom: 60px;
+  }
+
+  .pb-135,
+  .pb-130,
+  .pb-125,
+  .pb-120,
+  .pb-115,
+  .pb-110,
+  .pb-105,
+  .pb-100 {
+    padding-bottom: 50px;
+  }
+
+  .pb-95,
+  .pb-90,
+  .pb-85,
+  .pb-80 {
+    padding-bottom: 44px;
+  }
+
+  .pb-75,
+  .pb-70,
+  .pb-65 {
+    padding-bottom: 38px;
+  }
+
+  .mt-90,
+  .mt-80,
+  .mt-70 {
+    margin-top: 36px;
+  }
+
+  .mt-60,
+  .mt-50 {
+    margin-top: 28px;
+  }
+}
+
+/* =========================================================
+   4. Compact page-title banner on mobile
+   Every inner page opens with a big hero banner — shrink it so
+   real content shows sooner, like a screen header, not a splash page.
+   ========================================================= */
+@media (max-width: 767px) {
+  .page-title {
+    padding-top: 84px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .page-title-box .sub-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .page-title-box .title {
+    font-size: 24px !important;
+    line-height: 34px !important;
+  }
+}
+
+/* The header is absolutely positioned OVER the hero (transparent header
+   pattern), so the hero needs enough top clearance to clear it — the
+   generic pt-120 mobile reduction below isn't enough here specifically. */
+@media (max-width: 767px) {
+  .hero.pt-120 {
+    padding-top: 100px !important;
+  }
+}
+
+/* =========================================================
+   5. Comfortable tap targets
+   ========================================================= */
+@media (max-width: 767px) {
+  .thm-btn {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* =========================================================
+   6. "Our process" overlapping-card effect — keep it on mobile
+   too instead of collapsing to a flat list, just scaled down.
+   All four cards share the exact same sticky point so each one
+   cleanly covers the last as it arrives — no gaps, no slivers.
+   ========================================================= */
+@media (max-width: 991px) {
+
+  .sa-process_left .process-item,
+  .sa-process_left .process-item--two,
+  .sa-process_left .process-item--three,
+  .sa-process_left .process-item--four {
+    position: sticky;
+    top: 84px;
+    margin: 0 auto 24px;
+  }
+
+  .sa-process_left .process-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Shrink + tuck the number badge into the true corner so it doesn't
+     land on top of the icon on narrow cards */
+  .sa-process_left .process-item .xb-item--number {
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .sa-process_left .process-item {
+    padding: 26px 22px;
+    min-height: auto;
+  }
+
+  .sa-process_left .process-item .xb-item--title {
+    font-size: 20px;
+    margin: 14px 0 8px;
+  }
+}
+
+/* =========================================================
+   7. Footer contact rows — more breathing room on mobile
+   ========================================================= */
+@media (max-width: 767px) {
+  .footer-style-two .info-item {
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    align-items: center;
+  }
+
+  .footer-style-two .info-item:first-child {
+    border-top: none;
+  }
+
+  .footer-style-two .info-item .xb-item--icon {
+    margin-right: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Without min-width:0 a flex child can't shrink below its content's
+     natural width — that was letting the email/phone text push past
+     the icon instead of wrapping onto its own line cleanly. */
+  .footer-style-two .info-item .xb-item--holder {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .footer-style-two .info-item .xb-item--title,
+  .footer-style-two .info-item .xb-item--title a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .footer-style-two .info-item .xb-item--title {
+    font-size: 18px;
+  }
+}
+
+/* The CTA banner right above the footer intentionally overlaps it with a
+   large negative margin (-220px, fixed at every screen size) — the
+   generic pt-200 mobile reduction below undid that clearance and let the
+   footer's first row render hidden behind the CTA card. Give the footer
+   its own explicit exception. */
+@media (max-width: 767px) {
+  .footer.pt-200 {
+    padding-top: 210px !important;
+  }
+}
+
+/* =========================================================
+   8. Scroll-to-top button — safe-area aware, doesn't crowd
+   other fixed mobile UI
+   ========================================================= */
+@media (max-width: 767px) {
+  ul.smothscroll {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+  }
+
+  ul.smothscroll a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 6px 16px rgba(12, 17, 29, 0.25);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   10. Industries card hover — you asked for this to stay
+   working on small screens, just with a smaller shape instead
+   of being removed. overflow:hidden on the card is a safety
+   net so the shape can never poke past the rounded corners
+   regardless of exact size.
+   ========================================================= */
+@media (max-width: 767px) {
+  .indus-item::before {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+  }
+
+  /* A real touch device has no persistent :hover — give a brief,
+     honest flash of the same effect on the tap itself instead */
+  .indus-item:active {
+    transform: scale(1.1);
+  }
+
+  .indus-item:active::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* =========================================================
+   11. Company dropdown inside the drawer — the chevron toggle
+   was a faint, barely-visible box, AND the original CSS makes
+   this icon `position: absolute`, which takes it out of the
+   flex row entirely — so the label text was rendering full-width
+   underneath it. Reserve space for it and make it visible.
+   ========================================================= */
+@media (max-width: 1199px) {
+  .gc-app-drawer .xb-menu-primary>li>p {
+    position: relative;
+    padding-inline-end: 46px;
+  }
+
+  .gc-app-drawer .xb-menu-primary>li>p i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f3f3f5;
+    color: var(--color-heading-two);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    top: 50%;
+    margin-top: -15px;
+  }
+
+  .gc-app-drawer .xb-menu-primary>li.active>p i {
+    background: var(--color-primary-two);
+    color: #fff;
+    transform: rotate(180deg);
+  }
+}
+
+/* =========================================================
+   12. Keep card z-index contained to the card itself so
+   nothing (animated arrow buttons, framer-motion layout
+   transitions, etc.) can ever stack above the sticky header.
+   ========================================================= */
+.pf-card,
+.hp-slide,
+.gc-compare-card {
+  isolation: isolate;
+}
+
+
+@media (max-width: 767px) {
+  .feature-table {
+    display: none;
+  }
+
+  .gc-compare-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .gc-compare-card {
+    background: #fff;
+    border: 1px solid #ececef;
+    border-radius: 16px;
+    padding: 18px 20px;
+  }
+
+  .gc-compare-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-heading-two);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .gc-compare-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  .gc-compare-row+.gc-compare-row {
+    border-top: 1px solid #f2f2f4;
+  }
+
+  .gc-compare-row-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #6b6b70;
+  }
+
+  .gc-compare-row.is-us .gc-compare-row-label {
+    color: var(--color-heading-two);
+  }
+
+  .gc-compare-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .gc-compare-icon.is-yes {
+    background: rgba(34, 197, 94, 0.12);
+    color: #16a34a;
+  }
+
+  .gc-compare-icon.is-no {
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+  }
+}
+
+@media (min-width: 768px) {
+  .gc-compare-cards {
+    display: none;
+  }
+}
+
+/* =========================================================
+   14. Prevent header wrap on very small screens
+   ========================================================= */
+@media (max-width: 767px) {
+  .header__wrap {
+    flex-wrap: nowrap !important;
+  }
+
+  .header-logo img {
+    max-width: 160px;
+    height: auto;
+  }
+}
+
+  /* =========================================================
+   15. Hide footer info borders on smaller screens
+   ========================================================= */
+  @media (max-width: 991px) {
+    .footer-style-two .info-item::before {
+      display: none !important;
+    }
+    
+    .footer-info.ul_li_between {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 30px !important;
+    }
+    
+    .footer-info .info-item {
+      width: 100% !important;
+    }
+  }
+
+  /* =========================================================
+   16. Blog list card image stretching & stacking
+   ========================================================= */
+  .blog_details_item.ul_li {
+    align-items: stretch !important;
+    flex-direction: column;
+  }
+  
+  .blog_details_item .xb-item--img,
+  .blog_details_item .xb-item--img a {
+    display: flex;
+    flex: 1;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto;
+  }
+  
+  .blog_details_item .xb-item--img img {
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    object-fit: cover;
+    margin: 0 !important;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .blog_details_item .xb-item--holder {
+    width: 100% !important;
+    padding: 24px !important;
+  }
+  
+  /* Fix RTL footer contact text alignment on mobile */
+  [dir="rtl"] .footer-style-two .info-item .xb-item--holder {
+    text-align: right !important;
+  }
+  [dir="rtl"] .footer-style-two .info-item .xb-item--icon {
+    margin-right: 0 !important;
+    margin-left: 16px !important;
+  }
+  
+  /* Fix visit website button wrap issue */
+  .cp-det-btn .cp-btn {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .cp-det-btn .cp-btn i {
+    margin: 0 !important;
+  }
+  
+  /* Active tab color in sticky header */
+  .stricky-fixed .main-menu ul li.active > a {
+    color: var(--color-primary-two) !important;
+  }

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import type { Metadata } from 'next';
 import icon from '@/public/images/icon/cap.svg';
 import Image1 from '@/public/images/vectors/blog.png';
 import Header from '@/components/header/Header';
@@ -8,6 +9,23 @@ import CtaSection from '@/components/CtaSection/CtaSection';
 import BlogList from '@/components/BlogList';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
+import {getTranslations} from 'next-intl/server';
+import { buildMetadata } from '@/lib/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Meta.Blog' });
+  return buildMetadata({
+    locale,
+    path: '/blog',
+    title: t('title'),
+    description: t('description'),
+  });
+}
 
 const BlogPage: React.FC = () => {
     const t = useTranslations('BlogPage');
@@ -24,9 +42,9 @@ const BlogPage: React.FC = () => {
                                         <span className="sub-title">
                                             <Image src={icon} alt="Blog Icon" /> {t('subTitle')}
                                         </span>
-                                        <h2 className="title">
+                                        <h1 className="title">
                                             <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-                                        </h2>
+                                        </h1>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 mt-30">

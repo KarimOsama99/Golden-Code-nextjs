@@ -1,6 +1,7 @@
 // "use client";
 
 import React, { Fragment } from "react";
+import type { Metadata } from "next";
 import Header from "@/components/header/Header";
 import Scrollbar from "@/components/scrollbar/scrollbar";
 import Footer from "@/components/footer/Footer";
@@ -12,6 +13,7 @@ import ApplyForm from "./applyForm";
 import { notFound } from "next/navigation";
 import jobListings, { getRawCareers } from "@/api/careers";
 import { getTranslations } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{
@@ -34,6 +36,30 @@ export function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "CareerJobs" });
+  const allJobs = jobListings(t);
+  const job = allJobs.find((item) => item.slug === slug);
+
+  if (!job) {
+    return buildMetadata({
+      locale,
+      path: `/career/${slug}`,
+      title: "Job Not Found",
+      description: "This job listing could not be found.",
+      noIndex: true,
+    });
+  }
+
+  return buildMetadata({
+    locale,
+    path: `/career/${job.slug}`,
+    title: job.title,
+    description: job.description ?? job.title,
+  });
 }
 
 const CareerSingle: React.FC<Props> = async ({ params }) => {
@@ -68,7 +94,7 @@ const CareerSingle: React.FC<Props> = async ({ params }) => {
                     <span className="sub-title">
                       <Image src={icon} alt="icon" /> {tPage("subTitle")}
                     </span>
-                    <h2 className="title">{job.title}</h2>
+                    <h1 className="title">{job.title}</h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

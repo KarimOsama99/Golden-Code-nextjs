@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
+import type { Metadata } from 'next';
 import {Link} from '@/i18n/routing';
 import getTeams from '@/api/team'
 import {useTranslations} from 'next-intl';
+import {getTranslations} from 'next-intl/server';
 import Header from '@/components/header/Header';
 import Scrollbar from '@/components/scrollbar/scrollbar'
 import Footer from '@/components/footer/Footer';
@@ -10,6 +12,22 @@ import icon from '@/public/images/icon/cap.svg'
 import bg from "@/public/images/team/team-bg.jpg";
 import WorkSection from './work';
 import Image from 'next/image';
+import { buildMetadata } from '@/lib/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Meta.Team' });
+  return buildMetadata({
+    locale,
+    path: '/team',
+    title: t('title'),
+    description: t('description'),
+  });
+}
 
 const TeamPage = () => {
     const t = useTranslations('TeamPage');
@@ -26,7 +44,7 @@ const TeamPage = () => {
                                 <div className="col-lg-7 mt-30">
                                     <div className="page-title-box">
                                         <span className="sub-title"><Image src={icon} alt="" />{t('subTitle')}</span>
-                                        <h2 className="title">{t('title')}</h2>
+                                        <h1 className="title">{t('title')}</h1>
                                     </div>
                                 </div>
                                 <div className="col-lg-5 mt-30">

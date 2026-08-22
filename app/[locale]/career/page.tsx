@@ -10,7 +10,6 @@ import gImg1 from "@/public/images/vectors/Job offers-bro.png";
 import Process from "./Process";
 import CareerTeam from "./CareerTeam";
 import WorkSection from "../team/work";
-import GallerySection from "./Gallery";
 import Image from "next/image";
 import {useTranslations} from 'next-intl';
 
@@ -33,9 +32,9 @@ const CareerPage: React.FC = () => {
                     <span className="sub-title">
                       <Image src={icon} alt="Careers Icon" /> {t('subTitle')}
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-                    </h2>
+                    </h1>
                   </div>
                 </div>
 
@@ -73,7 +72,6 @@ const CareerPage: React.FC = () => {
           </div>
         </div>
 
-        <GallerySection />
         <CtaSection />
       </div>
 

@@ -35,9 +35,9 @@ const FaqSection: React.FC = () => {
       content: {
         text: t('a2'),
         points: [
-         t('a1p1'),
-          t('a1p2'),
-          t('a1p3')
+          t('a2p1'),
+          t('a2p2'),
+          t('a2p3')
         ]
       }
     },
@@ -47,9 +47,9 @@ const FaqSection: React.FC = () => {
       content: {
         text: t('a3'),
         points: [
-         t('a1p1'),
-          t('a1p2'),
-          t('a1p3')
+          t('a3p1'),
+          t('a3p2'),
+          t('a3p3')
         ]
       }
     },
@@ -59,9 +59,9 @@ const FaqSection: React.FC = () => {
       content: {
         text: t('a4'),
         points: [
-          t('a1p1'),
-          t('a1p2'),
-          t('a1p3')
+          t('a4p1'),
+          t('a4p2'),
+          t('a4p3')
         ]
       }
     },
@@ -71,9 +71,9 @@ const FaqSection: React.FC = () => {
       content: {
         text: t('a5'),
         points: [
-         t('a1p1'),
-          t('a1p2'),
-          t('a1p3')
+          t('a5p1'),
+          t('a5p2'),
+          t('a5p3')
         ]
       }
     }

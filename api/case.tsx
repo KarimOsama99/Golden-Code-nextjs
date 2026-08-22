@@ -9,7 +9,6 @@ import cImg8 from "@/public/images/project/portfolio/3lmni.png";
 import cImg9 from "@/public/images/project/almonasib.png";
 import cImg10 from "@/public/images/project/portfolio/portafoto.png";
 import cImg11 from "@/public/images/project/3m.png";
-import cImg12 from "@/public/images/project/payship.png";
 import cImg13 from "@/public/images/project/alnajjar.png";
 
 const getCases = () => [
@@ -133,17 +132,6 @@ const getCases = () => [
     date: "20-11-2025",
     framework: "React JS",
     link: "https://3m-chem.com/",
-  },
-  {
-    id: 12,
-    category: "cat4",
-    img: cImg12,
-    title: "PayShip",
-    slug: "Logistics-Technologies-Platform",
-    cat: "Logistics Platform",
-    date: "15-1-2023",
-    framework: "Angular JS",
-    link: "https://payship.biz/",
   },
   {
     id: 13,

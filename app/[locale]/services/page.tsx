@@ -46,9 +46,9 @@ const ServicePage: React.FC = () => {
                       <Image src={icon} alt="Icon" />
                       {t('subTitle')}
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-                    </h2>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-lg-3 mt-30">

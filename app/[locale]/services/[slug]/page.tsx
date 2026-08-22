@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/header/Header";
 import Scrollbar from "@/components/scrollbar/scrollbar";
@@ -14,6 +15,7 @@ import sImg3 from "@/public/images/icon/sd-icon03.svg";
 import sImg4 from "@/public/images/icon/sd-icon04.svg";
 import shape from "@/public/images/shape/sd-shape.png";
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 
 import { getTranslations } from "next-intl/server";
 
@@ -26,11 +28,41 @@ export function generateStaticParams() {
     for (const service of services) {
       params.push({
         locale,
-        slug: service.slug,
+        slug: service.slug.toLowerCase(),
       });
     }
   }
   return params;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "ServiceData" });
+  const allServices = Services(t);
+  const service = allServices.find(
+    (s) => s.slug.toLowerCase() === slug.toLowerCase()
+  );
+
+  if (!service) {
+    return buildMetadata({
+      locale,
+      path: `/services/${slug}`,
+      title: "Service Not Found",
+      description: "This service could not be found.",
+      noIndex: true,
+    });
+  }
+
+  return buildMetadata({
+    locale,
+    path: `/services/${service.slug.toLowerCase()}`,
+    title: service.title,
+    description: service.description,
+  });
 }
 
 async function ServiceSinglePage({
@@ -71,9 +103,9 @@ async function ServiceSinglePage({
                   <div className="col-lg-8 mt-30">
                     <div className="page-title-box">
                       <span className="sub-title">
-                        <Image src={icon} alt="" /> {service.title}
+                        <Image src={icon} alt="" /> {tSingle('subTitle')}
                       </span>
-                      <h2 className="title">{service.description}</h2>
+                      <h1 className="title">{service.title}</h1>
                     </div>
                   </div>
                   <div className="col-lg-4 mt-30">

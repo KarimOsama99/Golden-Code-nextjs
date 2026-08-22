@@ -10,8 +10,7 @@ import FeaturesSection from "./Features";
 import WhyChoose from "./WhyChoose";
 import FunfactSection from "./Funfact";
 import Roadmap from "./Roadmap";
-import AwardSection from "./AwardSection";
-import GallerySection from "../career/Gallery";
+import ScrollTextReveal from "@/components/ScrollTextReveal/ScrollTextReveal";
 import Image from "next/image";
 import {useTranslations} from 'next-intl';
 
@@ -34,13 +33,13 @@ const AboutUsPage: React.FC = () => {
                       <Image src={icon} alt="Magic Icon" />
                       {t('subTitle')}
                     </span>
-                    <h2 className="title">{t('title')}</h2>
+                    <h1 className="title">{t('title')}</h1>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-4 mt-30">
                   <div className="count-box">
                     <h2 className="number">
-                      12 <span className="suffix">+</span>
+                      10 <span className="suffix">+</span>
                     </h2>
                     <span className="text">{t('yearsExp')}</span>
                   </div>
@@ -64,8 +63,7 @@ const AboutUsPage: React.FC = () => {
           <FunfactSection />
         </div>
         <Roadmap />
-        <AwardSection />
-        <GallerySection pClass="pt-130" />
+        <ScrollTextReveal variant="About" />
         <CtaSection />
       </div>
       <Footer />

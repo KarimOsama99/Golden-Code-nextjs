@@ -3,8 +3,8 @@
 import { StaticImageData } from "next/image";
 
 // Import all images
-import blogImg1 from "@/public/images/blog/da-img01.webp";
-import blogImg2 from "@/public/images/blog/da-img02.webp";
+import blogImg1 from "@/public/images/service/web.webp";
+import blogImg2 from "@/public/images/service/software.webp";
 
 // Base blog interface without read time
 export interface BlogBase {

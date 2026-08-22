@@ -13,7 +13,7 @@ import shape3 from "@/public/images/shape/pattern02.png";
 import shape4 from "@/public/images/shape/monitor-shape.png";
 import shape5 from "@/public/images/shape/blur-shape.png";
 import icon from "@/public/images/icon/process-icon.svg";
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 
 interface RoadmapItem {
   quarter: string;
@@ -57,6 +57,8 @@ const getRoadmapData = (t: any) => [
 
 const RoadmapSlider: React.FC = () => {
   const t = useTranslations('AboutRoadmap');
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
   const roadmapData = getRoadmapData(t);
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
@@ -86,10 +88,10 @@ const RoadmapSlider: React.FC = () => {
           </div>
           <div className="sa-tes_button roadmap-button">
             <div className="sa-swiper-btn swiper-button-prev" ref={prevRef}>
-              <i className="fal fa-angle-left"></i>
+              <i className="fal fa-angle-left gc-swiper-arrow-icon"></i>
             </div>
             <div className="sa-swiper-btn swiper-button-next" ref={nextRef}>
-              <i className="fal fa-angle-right"></i>
+              <i className="fal fa-angle-right gc-swiper-arrow-icon"></i>
             </div>
           </div>
         </div>
@@ -98,6 +100,8 @@ const RoadmapSlider: React.FC = () => {
       <div className="roadmap-slider-container">
         <Swiper
           modules={[Navigation, Autoplay]}
+          dir={isRtl ? 'rtl' : 'ltr'}
+          key={locale}
           loop
           spaceBetween={50}
           speed={400}

@@ -87,12 +87,6 @@ const ContactSection: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="contact-info_widget">
-                    <h3 className="xb-title">{t('office2Title')}</h3>
-                    <span className="xb-location">{t('office2Location')}</span>
-                  </div>
-
-                  <hr className="breack-line" />
 
                   <div className="contact-info_widget">
                     <h3 className="xb-title">{t('officeHoursTitle')}</h3>

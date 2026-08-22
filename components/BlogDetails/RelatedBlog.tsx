@@ -6,9 +6,19 @@ import {Link} from '@/i18n/routing';
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-const RelatedBlog: FC = () => {
+interface RelatedBlogProps {
+  currentSlug: string;
+}
+
+const RelatedBlog: FC<RelatedBlogProps> = ({ currentSlug }) => {
   const t = useTranslations('BlogData');
-  const blogs = getBlogs(t);
+  const tDetails = useTranslations('BlogDetails');
+  
+  const blogs = getBlogs(t).filter(
+    (b) =>
+      b.slug.toLowerCase().replace(/\s+/g, "-") !==
+      currentSlug.toLowerCase().replace(/\s+/g, "-")
+  );
 
   return (
     <div className="row mt-none-30">
@@ -35,7 +45,7 @@ const RelatedBlog: FC = () => {
                     {blog.thumb ?? "No category"}
                   </span>
                   <span className="xb-item--meta_label">
-                    By {blog.author ?? "Unknown"}
+                    {tDetails('by')} {blog.author ?? "Unknown"}
                   </span>
                 </div>
                 <h3 className="item_details_info_heading border-effect line-clamp-2">
@@ -51,7 +61,7 @@ const RelatedBlog: FC = () => {
                   href={`/blog/${blog.slug.toLowerCase().replace(/\s+/g, "-")}`}
                   className="xb-item--det-btn"
                 >
-                  Read more <i className="far fa-long-arrow-right"></i>
+                  {tDetails('readMore')} <i className="far fa-long-arrow-right"></i>
                 </Link>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -6,6 +7,7 @@ import Scrollbar from "@/components/scrollbar/scrollbar";
 import CtaSection from "@/components/CtaSection/CtaSection";
 import { notFound } from "next/navigation";
 import getCases from "@/api/case";
+import { buildMetadata } from "@/lib/seo";
 
 import icon from "@/public/images/icon/eye-icon.svg";
 // import caseImg from "@/public/images/service/cd-image.jpg";
@@ -33,11 +35,41 @@ export function generateStaticParams() {
     for (const caseItem of cases) {
       params.push({
         locale,
-        slug: caseItem.slug,
+        slug: caseItem.slug.toLowerCase(),
       });
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const allCases = getCases();
+  const study = allCases.find(
+    (item) => item.slug.toLowerCase() === slug.toLowerCase()
+  );
+
+  if (!study) {
+    return buildMetadata({
+      locale,
+      path: `/portfolio/${slug}`,
+      title: "Project Not Found",
+      description: "This project could not be found.",
+      noIndex: true,
+    });
+  }
+
+  const title =
+    locale === "ar" && (study as { titleAr?: string }).titleAr
+      ? (study as { titleAr?: string }).titleAr!
+      : study.title;
+
+  return buildMetadata({
+    locale,
+    path: `/portfolio/${study.slug.toLowerCase()}`,
+    title,
+    description: `${title} — a ${study.cat} built with ${study.framework}. See how Golden Code delivered this project.`,
+  });
 }
 
 export default async function CaseStudySingle({ params }: Props) {
@@ -76,7 +108,7 @@ export default async function CaseStudySingle({ params }: Props) {
                     <Image src={icon} alt="" width={20} height={20} />
                     {t("subTitle")}
                   </span>
-                  <h2 className="title">{displayTitle}</h2>
+                  <h1 className="title">{displayTitle}</h1>
                 </div>
               </div>
               <div className="col-lg-3 mt-30">

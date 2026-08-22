@@ -24,8 +24,8 @@ import Image, { StaticImageData } from "next/image";
 
 interface TestimonialItem {
   id: string;
-  tImg: StaticImageData | string;
-  logo: StaticImageData | string;
+  tImg?: StaticImageData | string;
+  logo?: StaticImageData | string;
   Des: string;
   Name: string;
   sub: string;
@@ -36,60 +36,49 @@ interface TestimonialProps {
   tClass?: string;
 }
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
   const t = useTranslations("Testimonial");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
 
   const testimonial: TestimonialItem[] = [
     {
       id: "01",
-      tImg: tImg1,
-      logo: icon1,
       Des: t("t1Des"),
-      Name: "Ahmed Ali",
+      Name: t("t1Name"),
       sub: t("t1Sub"),
-      country: "Seattle, Ukraine",
     },
     {
       id: "02",
-      tImg: tImg2,
-      logo: icon2,
       Des: t("t2Des"),
-      Name: "Omar Farouk",
+      Name: t("t2Name"),
       sub: t("t2Sub"),
     },
     {
       id: "03",
-      tImg: tImg3,
-      logo: icon3,
       Des: t("t3Des"),
-      Name: "Mahmoud Mansour",
+      Name: t("t3Name"),
       sub: t("t3Sub"),
     },
     {
       id: "04",
-      tImg: tImg4,
-      logo: icon4,
       Des: t("t4Des"),
-      Name: "Mohamed Abdelsalam",
+      Name: t("t4Name"),
       sub: t("t4Sub"),
     },
     {
       id: "05",
-      tImg: tImg3,
-      logo: icon5,
-      Des: t("t4Des"),
-      Name: "Ibrahim Mohamed",
-      sub: t("t4Sub"),
+      Des: t("t5Des"),
+      Name: t("t5Name"),
+      sub: t("t5Sub"),
     },
     {
       id: "06",
-      tImg: tImg2,
-      logo: icon2,
-      Des: t("t2Des"),
-      Name: "Saif Mohamed",
-      sub: t("t2Sub"),
+      Des: t("t6Des"),
+      Name: t("t6Name"),
+      sub: t("t6Sub"),
     },
   ];
   const prevRef = useRef<HTMLDivElement>(null);
@@ -140,13 +129,13 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
           </div>
           <div className="sa-tes_button">
             <div className="sa-swiper-btn swiper-button-prev" ref={prevRef}>
-              <i className="fal fa-angle-left"></i>
+              <i className="fal fa-angle-left gc-swiper-arrow-icon"></i>
             </div>
             <div
               className="sa-swiper-btn active swiper-button-next"
               ref={nextRef}
             >
-              <i className="fal fa-angle-right"></i>
+              <i className="fal fa-angle-right gc-swiper-arrow-icon"></i>
             </div>
           </div>
         </div>
@@ -155,6 +144,8 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
         <div className="sa-testimonial-slider">
           <Swiper
             modules={[Navigation]}
+            dir={isRtl ? "rtl" : "ltr"}
+            key={locale}
             spaceBetween={50}
             slidesPerView={5}
             loop={true}
@@ -180,12 +171,11 @@ const Testimonial: React.FC<TestimonialProps> = ({ tClass = "" }) => {
                     </div>
                     <p className="xb-item--content">&quot;{item.Des}&quot;</p>
                     <div className="xb-item--holder ul_li">
-                      <div className="xb-item--avatar">
-                        <Image src={item.tImg} alt={`${item.Name} avatar`} />
+                      <div className="xb-item--avatar d-flex align-items-center justify-content-center" style={{width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(25, 40, 63, 0.05)', color: 'var(--color-yellow, #19283f)', fontSize: '24px', border: '1px solid rgba(25, 40, 63, 0.1)'}}>
+                        <i className="far fa-user"></i>
                       </div>
                       <div className="xb-item--author">
                         <h3 className="xb-item--name">{item.Name}</h3>
-                        <span className="xb-item--desig">{item.sub}</span>
                         {/* <div className="xb-item--logo"> */}
                           {/* <Image src={item.logo} alt={`${item.Name} logo`} /> */}
                         {/* </div> */}

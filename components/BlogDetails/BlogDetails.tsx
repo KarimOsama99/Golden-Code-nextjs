@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import blog1 from "@/public/images/blog/cd-image.webp";
 import blog2 from "@/public/images/blog/blog_details-img01.jpg";
 import blog3 from "@/public/images/blog/blog_details-img02.jpg";
 
@@ -15,22 +14,23 @@ import icon4 from "@/public/images/icon/icon_eye.svg";
 import icon5 from "@/public/images/icon/icon_link.svg";
 import icon6 from "@/public/images/icon/icon_bookmark.svg";
 
-import BlogSidebar from "../BlogSidebar";
 import RelatedService from "./RelatedBlog";
-import Description from "./Description";
-import OtherDescription from "./OtherDescription";
+
 import { Blog } from "@/api/blogs";
 
 interface BlogSingleProps {
   blog: Blog;
 }
 
+import { useTranslations } from "next-intl";
+
 const BlogSingle: React.FC<BlogSingleProps> = ({ blog }) => {
+  const t = useTranslations("BlogDetails");
   return (
     <section className="blog_details_section pt-70">
       <div className="container">
         <div className="item-details_image pos-rel mb-80">
-          <Image src={blog1} alt={blog.title} />
+          <Image src={blog.screens} alt={blog.title} />
         </div>
 
         <div className="item_details_content pb-80">
@@ -106,7 +106,7 @@ const BlogSingle: React.FC<BlogSingleProps> = ({ blog }) => {
         </div>
 
         <div className="row mt-none-30 g-0 align-items-start">
-          <div className="col-lg-8 mt-30">
+          <div className="col-lg-12 mt-30">
             <div className="blog_details_content">
               {/* <div className="post_audio">
                 <button className="audio_play_btn" type="button">
@@ -118,45 +118,15 @@ const BlogSingle: React.FC<BlogSingleProps> = ({ blog }) => {
 
               <h3 className="item_details_info_heading">{blog.heading}</h3>
 
-              <div className="row mb-4">
-                <div className="col-md-6 col-sm-6">
-                  <div className="image_block">
-                    <Image src={blog2} alt="Detail 1" />
-                  </div>
-                </div>
-                <div className="col-md-6 col-sm-6">
-                  <div className="image_block">
-                    <Image src={blog3} alt="Detail 2" />
-                  </div>
-                </div>
-              </div>
-
               <p>{blog.introContent}</p>
               <p>{blog.introContent2}</p>
-
-              <div className="blog-details-video mt-70">
-                <iframe
-                  width="880"
-                  height="440"
-                  src="https://www.youtube.com/embed/brvfBk97KyI?si=Q7zy3j4WYFoCYpsQ"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              </div>
-
-              <Description blog={blog} />
-              <OtherDescription blog={blog} />
             </div>
           </div>
-
-          <BlogSidebar />
         </div>
 
         <div className="related-blog pt-130 pb-130">
-          <h2 className="related-blog-title">Browse related blog</h2>
-          <RelatedService />
+          <h2 className="related-blog-title">{t("browseRelated")}</h2>
+          <RelatedService currentSlug={blog.slug} />
         </div>
       </div>
     </section>

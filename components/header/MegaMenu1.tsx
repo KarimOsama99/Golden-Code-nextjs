@@ -162,7 +162,6 @@ const MegaMenu1: React.FC = () => {
                             alt="Author"
                             width={60}
                             height={60}
-                            style={{ height: "auto" }}
                           />
                         </div>
                         <div className="author_box_content">
@@ -183,7 +182,6 @@ const MegaMenu1: React.FC = () => {
                           alt="Quote"
                           width={40}
                           height={40}
-                          style={{ height: "auto" }}
                         />
                       </div>
                     </div>

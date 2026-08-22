@@ -28,7 +28,7 @@ const MobileMenu: React.FC = () => {
     {
       id: 1,
       titleKey: "home",
-      link: "/home",
+      link: "/",
     },
     {
       id: 3,

@@ -43,9 +43,9 @@ const PrivacyPage: React.FC = () => {
                     <span className="sub-title">
                       <Image src={icon} alt="Privacy Icon" /> {t('subTitle')}
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-                    </h2>
+                    </h1>
                     <span className="page-update_time">
                       {t('updated')}
                     </span>

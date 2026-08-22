@@ -32,15 +32,6 @@ const getTeams = (t: any) => [
     exprience: t('t3Exp'),
     rating: "4.8",
   },
-  {
-    Id: "4",
-    tImg: timg4,
-    name: t('t4Name'),
-    slug: "Ragnar Lothbrok",
-    title: t('t4Title'),
-    exprience: t('t4Exp'),
-    rating: "4.9",
-  }
 ];
 
 export default getTeams;

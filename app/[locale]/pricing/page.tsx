@@ -39,9 +39,9 @@ const PricingPage: React.FC = () => {
                       <Image src={icon} alt="Dollar Icon" />
                       {' '}{t('pageSubTitle')}
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       <span dangerouslySetInnerHTML={{ __html: t.raw('pageTitle') }} />
-                    </h2>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

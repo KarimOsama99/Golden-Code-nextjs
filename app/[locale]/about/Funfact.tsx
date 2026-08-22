@@ -12,20 +12,20 @@ interface FunFact {
 
 const getFunFacts = (t: any) => [
   {
-    value: 120,
+    value: 20,
     suffix: '+',
     text: t('item1'),
     delay: '0ms',
   },
   {
-    value: 1.2,
-    suffix: 'k',
+    value: 12,
+    suffix: '+',
     text: t('item2'),
     delay: '200ms',
     isMiddle: true,
   },
   {
-    value: 100,
+    value: 98,
     suffix: '%',
     text: t('item3'),
     delay: '300ms',
@@ -43,7 +43,7 @@ const FunfactSection: React.FC = () => {
       <div className="container">
         <div className="row mt-none-30">
           {funFacts.map((fact, index) => {
-            let itemClass = 'ap-fanfact-item wow fadeInUp';
+            let itemClass = 'ap-fanfact-item wow fadeInUp text-center';
             if (fact.isMiddle) itemClass += ' ap-fanfact-item--middle';
             if (fact.isLast) itemClass += ' ap-fanfact-item--last';
 

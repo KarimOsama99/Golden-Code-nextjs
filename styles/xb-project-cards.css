@@ -25,6 +25,253 @@
   color: var(--color-primary-two);
 }
 
+/* Swiper prev/next arrow buttons (testimonials, roadmap) — nicer
+   circular shape, and the icon itself flips so it still visually
+   points the correct way in RTL (the Swiper `dir` prop handles the
+   actual slide direction; this just keeps the glyph honest). */
+.sa-tes_button .sa-swiper-btn,
+.roadmap-button .sa-swiper-btn {
+  width: 42px;
+  height: 42px;
+  top: 6px;
+  margin-top: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  margin-inline-end: 10px;
+}
+.sa-tes_button .sa-swiper-btn.swiper-button-prev {
+  right: 52px;
+}
+.gc-swiper-arrow-icon {
+  transition: transform 0.25s ease;
+}
+[dir="rtl"] .gc-swiper-arrow-icon {
+  transform: scaleX(-1);
+}
+
+/* =========================================================
+   Scroll-driven text reveal (home + about)
+   ========================================================= */
+.gc-reveal-section {
+  position: relative;
+  height: 220vh;
+}
+
+.gc-reveal-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.gc-reveal-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-primary-two);
+  margin-bottom: 26px;
+}
+
+.gc-reveal-text {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(24px, 4.4vw, 44px);
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--color-heading-two);
+}
+
+.gc-reveal-word {
+  display: inline-block;
+  will-change: opacity;
+}
+
+@media (max-width: 767px) {
+  .gc-reveal-section {
+    height: 180vh;
+  }
+  .gc-reveal-text {
+    font-size: clamp(22px, 7vw, 32px);
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   "Why choose us" — icon-based cards (no stock photos)
+   ========================================================= */
+.gc-why-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 24px;
+  padding: 40px 30px;
+  height: 100%;
+  min-height: 250px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.gc-why-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(201, 128, 21, 0.8), rgba(201, 128, 21, 0) 50%, rgba(201, 128, 21, 0.8));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.gc-why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(201, 128, 21, 0.12);
+  background: #ffffff;
+}
+
+.gc-why-card:hover::before {
+  opacity: 1;
+}
+
+.gc-why-index {
+  position: absolute;
+  top: -10px;
+  inset-inline-end: 15px;
+  font-size: 90px;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(201, 128, 21, 0.06);
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gc-why-card:hover .gc-why-index {
+  color: rgba(201, 128, 21, 0.12);
+  transform: scale(1.1) translate(0, 10px);
+}
+
+.gc-why-icon {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--color-yellow) 0%, #0a111b 100%);
+  color: var(--color-primary-two);
+  margin-bottom: 25px;
+  box-shadow: 0 10px 20px rgba(25, 40, 63, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gc-why-card:hover .gc-why-icon {
+  transform: scale(1.08) rotate(-5deg);
+  background: linear-gradient(135deg, var(--color-primary-two) 0%, #a46710 100%);
+  color: #ffffff;
+  box-shadow: 0 15px 30px rgba(201, 128, 21, 0.3);
+}
+
+.gc-why-text {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-heading-two);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.gc-why-card:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--color-primary-two);
+  transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gc-why-card:hover:after {
+  width: 100%;
+}
+
+/* Professional check-badge used in the hero feature list (replaces the
+   plain default checkmark icon) */
+.gc-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gc-check-badge {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-primary-two);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Partner/client logo marquee — logos come from real project assets with
+   wildly different aspect ratios (0.98–4.16), so give every slide the same
+   fixed box and scale each logo to fit inside it consistently. */
+.gc-partner-logo {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  margin-right: 0;
+  padding: 0 40px;
+}
+
+@media (max-width: 991px) {
+  .gc-partner-logo {
+    padding: 0 24px;
+  }
+}
+
+.gc-partner-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.gc-partner-logo:hover .gc-partner-logo-img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
 /* =========================================================
    HOME — project carousel
    ========================================================= */
@@ -33,11 +280,8 @@
 }
 
 @media (max-width: 767px) {
-  .hp-carousel {
-    margin-inline: -12px;
-  }
   .hp-slide {
-    border-radius: 0;
+    border-radius: 18px;
   }
 }
 
@@ -107,6 +351,21 @@
 @media (max-width: 575px) {
   .hp-slide-title {
     font-size: 25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hp-slide-title {
+    font-size: 21px;
+  }
+  .hp-slide-body {
+    padding: 20px 16px 22px;
+  }
+  .hp-indicator {
+    width: 88px;
+  }
+  .hp-indicators {
+    gap: 22px;
   }
 }
 
@@ -304,6 +563,13 @@
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .pf-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
 .pf-empty {
   grid-column: 1 / -1;
   text-align: center;
@@ -494,4 +760,34 @@
 }
 [dir="rtl"] .pf-card-cta:hover .gc-card-arrow-icon {
   transform: scaleX(-1) translateX(3px);
+}
+
+/* Hover-reveal doesn't work on touch devices — always show the
+   card's info/CTA on small screens instead of hiding it behind :hover */
+@media (max-width: 767px) {
+  .pf-card-scrim {
+    background: linear-gradient(180deg, rgba(12, 17, 29, 0.15) 0%, rgba(12, 17, 29, 0.4) 45%, rgba(12, 17, 29, 0.92) 100%);
+  }
+  .pf-card-badge {
+    background: #fff;
+  }
+  .pf-visit-btn {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .pf-card-meta {
+    max-height: 24px;
+    opacity: 1;
+    margin-top: 8px;
+  }
+  .pf-card-cta {
+    max-height: 40px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 14px;
+    pointer-events: auto;
+  }
+  .pf-card-img {
+    filter: brightness(0.85);
+  }
 }

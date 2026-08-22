@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import type { Metadata } from "next";
 import Header from "@/components/header/Header";
 import Scrollbar from "@/components/scrollbar/scrollbar";
 import Footer from "@/components/footer/Footer";
@@ -12,6 +13,7 @@ import Image1 from "@/public/images/vectors/web.png";
 import Image2 from "@/public/images/shape/brd_shape.png";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -31,6 +33,36 @@ export async function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "BlogData" });
+  const blogs = getBlogs(t);
+  const blog: Blog | undefined = blogs.find(
+    (b) =>
+      b.slug.toLowerCase().replace(/\s+/g, "-") ===
+      slug.toLowerCase().replace(/\s+/g, "-")
+  );
+
+  if (!blog) {
+    return buildMetadata({
+      locale,
+      path: `/blog/${slug}`,
+      title: "Post Not Found",
+      description: "This blog post could not be found.",
+      noIndex: true,
+    });
+  }
+
+  const normalizedSlug = blog.slug.toLowerCase().replace(/\s+/g, "-");
+
+  return buildMetadata({
+    locale,
+    path: `/blog/${normalizedSlug}`,
+    title: blog.title,
+    description: blog.description ?? blog.title,
+  });
 }
 
 export default async function BlogDetailsPage(props: Props) {
@@ -61,6 +93,7 @@ export default async function BlogDetailsPage(props: Props) {
 
   return (
     <Fragment>
+      {/* Trigger hot reload */}
       <Header />
       <main className="page_content blog-page">
         <section
@@ -75,7 +108,7 @@ export default async function BlogDetailsPage(props: Props) {
                     <span className="sub-title">
                       <Image src={icon} alt="Icon" /> {tPage("subTitle")}
                     </span>
-                    <h2 className="title">{blog.title}</h2>
+                    <h1 className="title">{blog.title}</h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

@@ -31,9 +31,9 @@ const ContactPage: React.FC = () => {
                     <span className="sub-title">
                       <Image src={icon} alt="Contact Icon" /> {t('subTitle')}
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-                    </h2>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

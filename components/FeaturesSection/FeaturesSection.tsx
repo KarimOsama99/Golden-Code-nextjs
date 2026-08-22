@@ -85,6 +85,49 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = (props) => {
                 </tr>
               </tbody>
             </table>
+
+            {/* Mobile-only stacked-card version of the same comparison —
+                a 3-column table doesn't fit a phone screen readably. */}
+            <div className="gc-compare-cards">
+              {[
+                { label: t('row1'), us: true, them: false },
+                { label: t('row2'), us: true, them: false },
+                { label: t('row3'), us: true, them: false },
+                { label: t('row4'), us: true, them: true },
+                { label: t('row5'), us: true, them: false },
+                { label: t('row6'), us: true, them: false },
+                { label: t('row7'), us: true, them: true },
+                { label: t('row8'), us: true, them: true },
+              ].map((row, idx) => (
+                <div className="gc-compare-card" key={idx}>
+                  <p className="gc-compare-card-title">{row.label}</p>
+                  <div className="gc-compare-row is-us">
+                    <span className="gc-compare-row-label">{t('usLabel')}</span>
+                    <span className={`gc-compare-icon ${row.us ? "is-yes" : "is-no"}`}>
+                      <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 4.5L4.2 7.7L11 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="gc-compare-row">
+                    <span className="gc-compare-row-label">{t('col3')}</span>
+                    {row.them ? (
+                      <span className="gc-compare-icon is-yes">
+                        <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 4.5L4.2 7.7L11 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    ) : (
+                      <span className="gc-compare-icon is-no">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L9 9M9 1L1 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

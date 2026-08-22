@@ -31,7 +31,7 @@ const FaqPage: React.FC = () => {
                     <span className="sub-title">
                       <Image src={icon} alt="Privacy Icon" /> {t('subTitle')}
                     </span>
-                    <h2 className="title">{t('title')}</h2>
+                    <h1 className="title">{t('title')}</h1>
                     <span className="page-update_time">
                       {t('updated')}
                     </span>

@@ -1,4 +1,5 @@
 import React, { Fragment, FC } from 'react';
+import type { Metadata } from 'next';
 import CaseStudySection from './CaseSection';
 import Header from "@/components/header/Header";
 import Scrollbar from "@/components/scrollbar/scrollbar";
@@ -10,6 +11,23 @@ import sImg2 from '@/public/images/shape/brd_shape.png';
 import Image from 'next/image';
 // import Projects from '@/api/project';
 import {useTranslations} from 'next-intl';
+import {getTranslations} from 'next-intl/server';
+import { buildMetadata } from '@/lib/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Meta.Portfolio' });
+  return buildMetadata({
+    locale,
+    path: '/portfolio',
+    title: t('title'),
+    description: t('description'),
+  });
+}
 
 interface CaseStudySingleProps {}
 
@@ -31,9 +49,9 @@ const CaseStudySingle: FC<CaseStudySingleProps> = () => {
                     <span className="sub-title">
                       <Image src={icon} alt="" /> {t('subTitle')}
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-                    </h2>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

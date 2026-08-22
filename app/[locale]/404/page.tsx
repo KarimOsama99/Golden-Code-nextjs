@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Header from "@/components/header/Header";
 import Scrollbar from "@/components/scrollbar/scrollbar";
 import Footer from "@/components/footer/Footer";
@@ -8,6 +10,23 @@ import bImg1 from '@/public/images/vectors/error.png';
 import bImg2 from '@/public/images/shape/brd_shape.png';
 import Image from 'next/image';
 import {Link} from '@/i18n/routing';
+import { buildMetadata } from '@/lib/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Meta.NotFound' });
+  return buildMetadata({
+    locale,
+    path: '/404',
+    title: t('title'),
+    description: t('description'),
+    noIndex: true,
+  });
+}
 
 const ErrorPage: React.FC = () => {
   return (
@@ -24,11 +43,11 @@ const ErrorPage: React.FC = () => {
                 <div className="col-lg-8 mt-30">
                   <div className="page-title-box">
                     <span className="sub-title">
-                      <Image src={icon} alt="Music Icon" /> 404 Error
+                      <Image src={icon} alt="" /> 404 Error
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       Hi Sorry We Can’t <br /> Find That Page
-                    </h2>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

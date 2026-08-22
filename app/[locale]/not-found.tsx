@@ -26,9 +26,9 @@ const ErrorPage: React.FC = () => {
                     <span className="sub-title">
                       <Image src={icon} alt="Music Icon" /> 404 Error
                     </span>
-                    <h2 className="title">
+                    <h1 className="title">
                       Hi Sorry We Can’t <br /> Find That Page
-                    </h2>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-lg-4 mt-30">

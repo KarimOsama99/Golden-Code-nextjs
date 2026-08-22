@@ -1,4 +1,68 @@
 {
+  "ScrollReveal": {
+    "Home": {
+      "eyebrow": "What actually matters",
+      "text": "A website that looks good in a demo is easy. One that still works perfectly a year later, under real traffic, with real customers — that takes an actual team behind it."
+    },
+    "About": {
+      "eyebrow": "Why we started",
+      "text": "We didn't start Golden Code to win awards. We started it because too many businesses were paying for websites that looked fine and did nothing — no leads, no growth, no one to call when something broke."
+    }
+  },
+  "Meta": {
+    "Home": {
+      "title": "Web & Mobile App Development and Professional Design",
+      "description": "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores with premium quality and full support."
+    },
+    "About": {
+      "title": "About Us",
+      "description": "Golden Code is a Cairo-based software team specializing in web development, mobile apps, and SEO. Learn about our story, values, and expertise."
+    },
+    "Services": {
+      "title": "Our Services",
+      "description": "Explore Golden Code's web development, mobile app, and digital marketing services designed to boost your online presence and grow your business."
+    },
+    "Portfolio": {
+      "title": "Our Projects",
+      "description": "Browse real case studies from Golden Code — web, mobile, and e-commerce projects delivered for clients in healthcare, education, real estate, and more."
+    },
+    "Blog": {
+      "title": "Blog",
+      "description": "Insights, guides, and expert tips on web development, SEO, and digital growth from the Golden Code team."
+    },
+    "Contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with Golden Code for your next web or mobile project. Reach our team by phone, email, or the contact form."
+    },
+    "Career": {
+      "title": "Careers",
+      "description": "Join the Golden Code team. Explore current job openings and be part of a team building great digital products."
+    },
+    "Faq": {
+      "title": "FAQ",
+      "description": "Answers to common questions about Golden Code's services, process, pricing, and support."
+    },
+    "Pricing": {
+      "title": "Pricing",
+      "description": "Transparent pricing for Golden Code's web development, mobile app, and digital marketing services."
+    },
+    "Privacy": {
+      "title": "Privacy Policy",
+      "description": "Read Golden Code's privacy policy to understand how we collect, use, and protect your information."
+    },
+    "Terms": {
+      "title": "Terms & Conditions",
+      "description": "Read the terms and conditions for using the Golden Code website and services."
+    },
+    "Team": {
+      "title": "Our Team",
+      "description": "Meet the Golden Code team — the developers, designers, and strategists behind our projects."
+    },
+    "NotFound": {
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist or has been moved."
+    }
+  },
   "HomePage": {
     "title": "Golden Code",
     "description": "Web & Mobile App Development"
@@ -76,21 +140,32 @@
     "cta": "Book a free consultation"
   },
   "Testimonial": {
-    "subtitle": "99% positive feedback",
-    "title": "Feedback That Speaks",
-    "t1Des": "Working with Golden Code was fantastic! Their strategies improved our rankings and increased leads.",
-    "t1Sub": "Brand Strat at near",
-    "t2Des": "Golden Code exceeded all our expectations! Their expertise in SEO helped us achieve a remarkable 150%",
-    "t2Sub": "Branding at spinlet",
-    "t3Des": "Choosing Golden Code was a great decision. Their focus on trends helped us rank for competitive keywords, our success!",
-    "t3Sub": "Marketing Dir. at BUSD",
-    "t4Des": "Since partnering with Golden Code, our website's performance has improved remarkably. Their data-driven approach and top-notch!",
-    "t4Sub": "Project Manager at Kuda"
+    "subtitle": "99% Positive Feedback",
+    "title": "Testimonials That Speak",
+    "t1Des": "Golden Code understood our complex idea quickly and turned it into a very smooth app. Ezhalha achieved great success thanks to their professionalism.",
+    "t1Name": "Ahmed Abdalla",
+    "t2Des": "Salam Surgery Clinic website became the main destination for our patients. Professional design and a very comfortable UX made booking much easier than before.",
+    "t2Name": "Dr. Mohamed Abdelsalam",
+    "t3Des": "The UniGuide platform became much easier for students thanks to the Golden Code team. They managed to convey a complex idea simply and attractively.",
+    "t3Name": "Omar Hassan",
+    "t4Des": "Excellent work on the Muhammad in the Bible website. The reading interface is very comfortable and the design perfectly reflects the projects spirit.",
+    "t4Name": "Mohamed Sami",
+    "t5Des": "The new website added immense credibility to our company. They professionally showcased 3M as a trusted partner in the Middle East.",
+    "t5Name": "Mostafa Kamal",
+    "t6Des": "We needed a website to showcase our carpentry work in a modern way, and Golden Code exceeded our expectations. Great communication and an excellent result.",
+    "t6Name": "Mahmoud El-Naggar",
+    "t1Sub": "",
+    "t2Sub": "",
+    "t3Sub": "",
+    "t4Sub": "",
+    "t5Sub": "",
+    "t6Sub": ""
   },
   "Features": {
     "subtitle": "Why we’re different",
     "title": "Take a look at how we're different",
     "col1": "Features",
+    "usLabel": "Golden Code",
     "col3": "Other SEO agencies",
     "row1": "Take on projects only if confident in delivery.",
     "row2": "Tailor-made, revenue-boosting strategy.",
@@ -115,13 +190,25 @@
     "a1p2": "Your on-page and off-page optimization.",
     "a1p3": "Any penalties pulling your ranking down.",
     "q2": "What SEO strategies do you implement for optimal results?",
-    "a2": "We implement a holistic SEO strategy tailored to your goals. Factors affecting the timeline include:",
+    "a2": "We run a holistic strategy built around three pillars:",
+    "a2p1": "In-depth keyword and competitor research to target the right searches.",
+    "a2p2": "On-page optimization — content, technical SEO, and site speed.",
+    "a2p3": "Off-page authority building through quality backlinks and outreach.",
     "q3": "What part of the SEO process do you outsource?",
-    "a3": "We focus on keeping critical SEO activities in-house, but may outsource specialized tasks if it adds value. Timeline depends on:",
+    "a3": "We keep the core work in-house and only bring in outside help for:",
+    "a3p1": "Highly specialized technical audits on request.",
+    "a3p2": "Extra content or design capacity for larger campaigns.",
+    "a3p3": "Niche outreach in industries where we need local connections.",
     "q4": "Can you handle SEO for an enterprise-size company?",
-    "a4": "Absolutely! We’ve worked with enterprise clients across various sectors. However, timelines depend on:",
+    "a4": "Yes — we've worked with enterprise clients across multiple sectors. That scale comes from:",
+    "a4p1": "A dedicated account and project management team.",
+    "a4p2": "Processes built to scale across markets, languages, and large site structures.",
+    "a4p3": "Enterprise-grade reporting so stakeholders can track real impact.",
     "q5": "Do you offer professional link-building services?",
-    "a5": "Yes, we provide white-hat link-building services aligned with your niche and goals. Results depend on:"
+    "a5": "Yes, our white-hat link-building focuses on:",
+    "a5p1": "Manual outreach to relevant, high-authority sites in your niche.",
+    "a5p2": "Content-driven link earning, like guest posts and digital PR.",
+    "a5p3": "Ongoing monitoring to keep your backlink profile safe from penalties."
   },
   "FaqPage": {
     "subTitle": "FAQ's",
@@ -202,8 +289,8 @@
     "cvLink": "CV/Resume Link (Google Drive, Dropbox, etc.)*",
     "submitNow": "Submit now",
     "sending": "Sending...",
-    "successMessage": "✓ Your application has been submitted successfully! We will review it and contact you soon.",
-    "errorMessage": "❌ Failed to submit application: {error}. Please try again.",
+    "successMessage": "Your application has been submitted successfully! We will review it and contact you soon.",
+    "errorMessage": "Failed to submit application: {error}. Please try again.",
     "validationError": "Please fill out all required fields correctly.",
     "envError": "Error: Email service keys are missing in environment variables.",
     "cvLinkRequired": "CV/Resume link is required.",
@@ -251,13 +338,13 @@
     "button": "Book a free consultation"
   },
   "Partner": {
-    "trustedBy": "Trusted by <b>500+</b> teams to empower <b>2,00,000+</b> people"
+    "trustedBy": "Trusted by over <b>120+</b> clients to transform their <b>digital presence</b>"
   },
   "Footer": {
     "writeToUs": "Write to us",
     "callUs": "Call Us (EG)",
     "ourOffice": "Our Office",
-    "address": "Cairo, Hadayek-Helwan",
+    "address": "Cairo",
     "description": "Golden Code The best team specialized in designing and programming websites, blogs and online stores.",
     "company": "Company",
     "aboutUs": "About us",
@@ -287,9 +374,7 @@
     "sendMessageContent": "Give us a chance to serve and bring magic to your brand.",
     "contactInfo": "Contact Info",
     "office1Title": "Egypt Office",
-    "office1Location": "Cairo, Hadayek-Helwan",
-    "office2Title": "Saudi Arabia Office",
-    "office2Location": "Riyadh",
+    "office1Location": "Cairo",
     "officeHoursTitle": "Our Office Hours",
     "officeHoursContent": "Sun - Sat: 10.00 - 5.00 <br/> Friday: Closed"
   },
@@ -387,6 +472,7 @@
     "title": "Explore stunning moments"
   },
   "ServiceSinglePage": {
+    "subTitle": "Our Services",
     "processTitle": "Services process",
     "p1Title": "Consultation",
     "p1Desc": "Gather requirements, define objectives, and agree on success metrics.",
@@ -410,37 +496,30 @@
     "s1Desc": "Web Development builds and maintains websites and web applications for the internet.",
     "s1Heading": "Front-End & Back-End Expertise",
     "s1Desc2": "We specialize in full-stack development, using modern frameworks like React, Angular, or Vue.js for the front-end, and Node.js, Python, or PHP for the back-end.",
-
     "s2Title": "Data Analysis",
     "s2Desc": "Data Analysis examines data sets to draw conclusions about the information they contain.",
     "s2Heading": "Actionable Insights",
     "s2Desc2": "We transform raw data into clear, actionable insights using statistical methods and visualization tools (e.g., Tableau, Power BI) to inform your strategic decisions.",
-
     "s3Title": "SEO audit",
     "s3Desc": "An SEO audit evaluates a website identify improvements for better search rankings and visibility.",
     "s3Heading": "Comprehensive Site Evaluation",
     "s3Desc2": "Our audits cover technical SEO, on-page factors, off-page links, and content strategy to provide a holistic view of your search engine performance.",
-
     "s4Title": "Cyber Security",
     "s4Desc": "Cyber Security protects systems, networks, and programs from digital attacks.",
     "s4Heading": "Proactive Threat Defense",
     "s4Desc2": "We implement robust security protocols, including penetration testing, vulnerability management, and employee training to mitigate risks and ensure data integrity.",
-
     "s5Title": "Custom CRM services",
     "s5Desc": "Custom CRM services tailor customer relationship management solutions to fit specific business needs.",
     "s5Heading": "Streamline Sales & Marketing",
     "s5Desc2": "We build CRM systems that integrate seamlessly with your existing tools, automating workflows and providing a unified view of the customer journey.",
-
     "s6Title": "Hosting",
     "s6Desc": "Hosting services provide the infrastructure and support needed to host websites and applications.",
     "s6Heading": "Reliable Cloud Solutions",
     "s6Desc2": "Choose from dedicated, shared, or cloud hosting solutions optimized for speed, scalability, and 99.9% uptime for maximum performance.",
-
     "s7Title": "Continuous Deployment",
     "s7Desc": "Continuous Deployment automates software release process, ensuring rapid and reliable delivery to users.",
     "s7Heading": "Rapid & Consistent Delivery",
     "s7Desc2": "We set up automated CI/CD pipelines using tools like Jenkins, GitLab CI, or GitHub Actions to deploy verified code changes quickly and with minimal human error.",
-
     "s8Title": "AI solution Design",
     "s8Desc": "We design AI solutions that use your newly found insights to identify new opportunities for improvement.",
     "s8Heading": "Machine Learning Integration",
@@ -472,18 +551,15 @@
     "perYear": "Per Year",
     "perMonth": "Per Month",
     "mostPopular": "Most popular ✨",
-
     "featKeyword": "In-depth Keyword Research",
     "featOnPage": "On-Page SEO Optimization",
     "featTechAudit": "Technical SEO Audits",
     "featMonthlyRep": "Monthly Performance Reporting",
     "featWeeklyRep": "Weekly Reports & SEO Manager",
-
     "featAllBasic": "All features of Basic SEO Package",
     "featLocal": "Local SEO Strategy & Optimization",
     "featContent": "Content Creation & Optimization",
     "featLinkBuild": "High-Quality Link Building",
-
     "featAllAdv": "All features of Advanced SEO Package",
     "featFullAudit": "Full Website & Technical SEO Audit",
     "featCompAnalysis": "Competitor Analysis & Monitoring",
@@ -783,7 +859,9 @@
     },
     {
       "title": "Data storage and retention",
-      "content": ["Personal data is retained only for as long as necessary..."]
+      "content": [
+        "Personal data is retained only for as long as necessary..."
+      ]
     },
     {
       "title": "Legal action",
@@ -815,7 +893,9 @@
     },
     {
       "title": "Policy updates",
-      "content": ["Golden Code may update this Privacy Policy periodically..."]
+      "content": [
+        "Golden Code may update this Privacy Policy periodically..."
+      ]
     },
     {
       "title": "Retargeting and ad cookies",
@@ -872,5 +952,10 @@
         "Golden Code disclaims liability for any damages, including lost data or profits..."
       ]
     }
-  ]
+  ],
+  "BlogDetails": {
+    "browseRelated": "Browse related blog",
+    "by": "By",
+    "readMore": "Read more"
+  }
 }

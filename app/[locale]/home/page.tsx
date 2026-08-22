@@ -1,45 +1,13 @@
-import React, { Fragment } from 'react';
-import Header from '@/components/header/Header';
-import Hero from '@/components/hero/hero';
-import PartnerSection from '@/components/PartnerSection';
-import About from '@/components/about/about';
-import ServiceSection from '@/components/ServiceSection/ServiceSection';
-import ProjectSection from '@/components/ProjectSection/ProjectSection';
-import WorkProcess from '@/components/WorkProcess/WorkProcess';
-import IndustrieSection from '@/components/IndustrieSection/IndustrieSection';
-import Testimonial from '@/components/Testimonial/Testimonial';
-import FeaturesSection from '@/components/FeaturesSection/FeaturesSection';
-import TeamSection from '@/components/TeamSection/TeamSection';
-import FaqSection from '@/components/FaqSection/FaqSection';
-import CtaSection from '@/components/CtaSection/CtaSection';
-import Footer from '@/components/footer/Footer';
-import Scrollbar from '@/components/scrollbar/scrollbar';
+import { redirect } from '@/i18n/routing';
 
-
-const HomePage = () => {
-
-    return (
-        <Fragment>
-            <div className='body_wrap sco_agency'>
-                <Header />
-                <main className="page_content">
-                    <Hero />
-                    <PartnerSection />
-                    <About />
-                    <ServiceSection />
-                    <ProjectSection />
-                    <WorkProcess />
-                    <IndustrieSection />
-                    <Testimonial />
-                    <FeaturesSection />
-                    <TeamSection />
-                    <FaqSection />
-                    <CtaSection />  
-                </main>
-                <Footer />
-                <Scrollbar />
-            </div>
-        </Fragment>
-    )
-};
-export default HomePage;
+// This route used to duplicate the real homepage (`/[locale]`) byte-for-byte —
+// a duplicate-content SEO issue, and nothing on the site links here internally.
+// Redirect it to the canonical homepage instead of rendering a second copy.
+export default async function HomeRedirect({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  redirect({ href: '/', locale });
+}
