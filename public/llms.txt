@@ -1,0 +1,18 @@
+# Golden Code - Web & App Development Services
+
+Golden Code is a specialized agency in web development, mobile applications, data analysis, and cyber security. 
+
+## Services
+- [Web Development](https://golden-code.vercel.app/services/web-development)
+- [Data Analysis](https://golden-code.vercel.app/services/data-analysis)
+- [SEO Audit](https://golden-code.vercel.app/services/SEO-audit)
+- [Cyber Security](https://golden-code.vercel.app/services/cyber-security)
+- [Custom CRM Services](https://golden-code.vercel.app/services/Custom-CRM-services)
+- [Hosting](https://golden-code.vercel.app/services/Hosting)
+- [Continuous Deployment](https://golden-code.vercel.app/services/Continuous-Deployment)
+- [AI Solution](https://golden-code.vercel.app/services/AI-solution)
+
+## Contact
+Email: sales@goldencodee.com
+Phone: +(20) 1124 762 799
+Location: Hadayek Helwan, Cairo, Egypt

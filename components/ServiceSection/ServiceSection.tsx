@@ -111,14 +111,15 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <div className="xb-item--icon ul_li_between">
                         <div className="xb-item--img">
                           {service.sImg ? (
-                            <Image src={service.sImg} alt={service.title} />
+                            <Image src={service.sImg} alt={service.title} sizes="144px" />
                           ) : (
-                            <Image src={hIcon} alt={service.title} /> // fallback image
+                            <Image src={hIcon} alt={service.title} sizes="144px" /> // fallback image
                           )}
                         </div>
                         <Link
                           href={`/services/${service.slug}`}
                           className="xb-item--arrow"
+                          aria-label={`View details for ${service.title}`}
                         >
                           <Image src={sIcon} alt="Arrow icon" />
                         </Link>
@@ -126,6 +127,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <Link
                         href={`/services/${service.slug}`}
                         className="xb-overlay"
+                        aria-label={`View details for ${service.title}`}
                       ></Link>
                     </div>
                   </div>
@@ -150,14 +152,15 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <div className="xb-item--icon ul_li_between">
                         <div className="xb-item--img">
                           {service.sImg ? (
-                            <Image src={service.sImg} alt={service.title} />
+                            <Image src={service.sImg} alt={service.title} sizes="144px" />
                           ) : (
-                            <Image src={hIcon} alt={service.title} /> // fallback
+                            <Image src={hIcon} alt={service.title} sizes="144px" /> // fallback
                           )}
                         </div>
                         <Link
                           href={`/services/${service.slug}`}
                           className="xb-item--arrow"
+                          aria-label={`View details for ${service.title}`}
                         >
                           <Image src={sIcon} alt="Arrow icon" />
                         </Link>
@@ -165,6 +168,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <Link
                         href={`/services/${service.slug}`}
                         className="xb-overlay"
+                        aria-label={`View details for ${service.title}`}
                       ></Link>
                     </div>
                   </div>
