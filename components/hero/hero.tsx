@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { preload } from 'react-dom';
 import {Link} from '@/i18n/routing';
 import { Fade } from 'react-awesome-reveal';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -10,7 +9,6 @@ import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
 const Hero: React.FC = () => {
-  preload('/images/bg/hero-bg02.jpg', { as: 'image' });
   const t = useTranslations('Hero');
   return (
     <section

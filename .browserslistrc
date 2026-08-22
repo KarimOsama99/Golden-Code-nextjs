@@ -1,0 +1,11 @@
+# Modern baseline: these ship Array.prototype.at/flat/flatMap,
+# Object.fromEntries/hasOwn, String.prototype.trimStart/trimEnd natively,
+# so Next.js/SWC stops injecting unnecessary polyfills for them
+# (~14 KiB of legacy JS per PageSpeed).
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+last 2 iOS versions
+not IE 11
+not dead

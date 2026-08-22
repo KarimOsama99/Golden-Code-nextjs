@@ -175,7 +175,6 @@ const ProjectSection: React.FC = () => {
                   src={activeSlide.img}
                   alt={tProData(activeSlide.titleKey)}
                   fill
-                  priority
                   draggable={false}
                   sizes="(max-width: 991px) 100vw, 1140px"
                   className="hp-slide-img"

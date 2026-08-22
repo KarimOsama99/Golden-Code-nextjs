@@ -37,9 +37,9 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('writeToUs')}</p>
-                <p className="xb-item--title" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
+                <h4 className="xb-item--title">
                   <a href="mailto:sales@goldencodee.com" className="xb-contact-link">sales@goldencodee.com</a>
-                </p>
+                </h4>
               </div>
             </div>
             <div className="info-item ul_li">
@@ -50,9 +50,9 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('callUs')}</p>
-                <p className="xb-item--title" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
+                <h4 className="xb-item--title">
                   <a href="tel:+201124762799" className="xb-contact-link">+(20) 1124 762 799</a>
-                </p>
+                </h4>
               </div>
             </div>
             <div className="info-item ul_li">
@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('ourOffice')}</p>
-                <p className="xb-item--title" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
+                <h4 className="xb-item--title">
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Hadayek+Helwan%2C+Cairo%2C+Egypt"
                     target="_blank"
@@ -72,7 +72,7 @@ const Footer: React.FC<FooterProps> = () => {
                   >
                     {t('address')}
                   </a>
-                </p>
+                </h4>
               </div>
             </div>
           </div>
@@ -157,13 +157,12 @@ const Footer: React.FC<FooterProps> = () => {
                 <Link
                   href="https://www.facebook.com/goldencodee/"
                   target="_blank"
-                  aria-label="Facebook"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </Link>
               </li>
               <li>
-                <Link href="/" aria-label="LinkedIn">
+                <Link href="/">
                   <i className="fab fa-linkedin-in"></i>
                 </Link>
               </li>
@@ -184,7 +183,7 @@ const Footer: React.FC<FooterProps> = () => {
                 </Link>
               </li>
               <li>
-                <Link href="https://www.instagram.com/goldencoode/" target='_blank' aria-label="Instagram">
+                <Link href="https://www.instagram.com/goldencoode/" target='_blank'>
                   <i className="fab fa-instagram"></i>
                 </Link>
               </li>
