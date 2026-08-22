@@ -26,6 +26,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favIcon.ico",
   },
+  openGraph: {
+    title: "Golden Code | Web & Mobile App Development",
+    description: "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores.",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: "/images/logo/logo3.png",
+        width: 800,
+        height: 600,
+        alt: "Golden Code Logo",
+      }
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Golden Code | Web & Mobile App Development",
+    description: "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores.",
+    images: ["/images/logo/logo3.png"],
+  },
 };
 
 const organizationJsonLd = {
