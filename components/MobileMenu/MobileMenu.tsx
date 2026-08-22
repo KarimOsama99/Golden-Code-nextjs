@@ -36,10 +36,8 @@ const MobileMenu: React.FC = () => {
       link: "/about",
       submenu: [
         { id: 31, titleKey: "aboutUs", link: "/about" },
-        { id: 3222, titleKey: "pricing", link: "/pricing" },
         { id: 322, titleKey: "team", link: "/team" },
         { id: 3455, titleKey: "faqs", link: "/faq" },
-        { id: 3457, titleKey: "career", link: "/career" },
       ],
     },
     {

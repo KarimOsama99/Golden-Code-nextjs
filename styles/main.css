@@ -10692,6 +10692,9 @@ body[data-aos-easing="ease"] [data-aos] {
 }
 
 @media (max-width: 767px) {
+  .sa-tes_button {
+    margin-top: 30px;
+  }
   .sa-tes_button .sa-swiper-btn {
     position: relative;
     right: 0 !important;
@@ -12320,6 +12323,13 @@ body[data-aos-easing="ease"] [data-aos] {
 .team-item .xb-item--social-link li a {
   font-size: 20px;
   color: var(--color-black);
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.team-item .xb-item--social-link li a:hover {
+  color: var(--color-primary-two);
+  transform: translateY(-3px) scale(1.1);
 }
 
 .team-item .xb-item--social-link li a svg {

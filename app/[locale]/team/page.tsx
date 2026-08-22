@@ -49,7 +49,7 @@ const TeamPage = () => {
                                 </div>
                                 <div className="col-lg-5 mt-30">
                                     <div className="count-box">
-                                        <h2 className="number">4 <span className="suffix">+</span></h2>
+                                        <h2 className="number">3 <span className="suffix">+</span></h2>
                                         <span className="text">
                                             <span dangerouslySetInnerHTML={{ __html: t.raw('countText') }} />
                                         </span>
@@ -86,15 +86,13 @@ const TeamPage = () => {
                                             </div>
                                             <ul className="xb-item--social-link ul_li">
                                                 <li>
-                                                    <Link href="/team" aria-label="LinkedIn">
+                                                    <Link href={team.linkedin || "#"} target={team.linkedin ? "_blank" : undefined} rel={team.linkedin ? "noopener noreferrer" : undefined} aria-label="LinkedIn">
                                                         <i className="fab fa-linkedin-in"></i>
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/team" aria-label="Custom Icon">
-                                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M10.6883 7.62176L17.2244 0H15.6756L10.0002 6.61789L5.46738 0H0.239258L7.09382 10.0074L0.239258 18H1.7882L7.7815 11.0113L12.5685 18H17.7967L10.6879 7.62176H10.6883ZM2.3463 1.16972H4.72537L15.6763 16.8835H13.2972L2.3463 1.16972Z" fill="#111112" />
-                                                        </svg>
+                                                    <Link href={team.github || "#"} target={team.github ? "_blank" : undefined} rel={team.github ? "noopener noreferrer" : undefined} aria-label="GitHub">
+                                                        <i className="fab fa-github"></i>
                                                     </Link>
                                                 </li>
                                             </ul>

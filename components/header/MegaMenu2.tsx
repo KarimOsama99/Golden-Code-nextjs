@@ -57,23 +57,33 @@ const MegaMenu2 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="social_area">
-                      <p className="career_link m-0">
-                        {t('careerPrompt')}{" "}
-                        <Link href="/career">{t('hiring')}</Link>
-                      </p>
-                    </div>
                   </div>
                   <div className="col-xl-3">
-                    <div className="megamenu_case">
+                    <style>{`
+                      .megamenu-custom-btn {
+                        background-color: white !important;
+                        color: #0c111d !important;
+                        display: flex !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        text-align: center !important;
+                      }
+                      .megamenu-custom-btn:hover {
+                        background-color: var(--color-primary-two) !important;
+                        color: white !important;
+                      }
+                    `}</style>
+                    <div className="megamenu_case text-center" style={{ paddingTop: '30px', paddingBottom: '30px', minHeight: '300px' }}>
                       <h3>{t('software')}</h3>
                       <h4>{t('amazingServices')}</h4>
-                      <Image
-                        src={mImg}
-                        alt="services"
-                        width={200}
-                        className="mb-0 mx-auto"
-                      />
+                      <div className="mt-5 pt-3">
+                        <Link
+                          href="/services"
+                          className="thm-btn thm-btn--aso megamenu-btn megamenu-custom-btn w-100"
+                        >
+                          {t('seeAllServices')}
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -115,14 +115,15 @@
     "freeConsultation": "Get free consultation",
     "followUs": "Follow Us:",
     "ceoName": "Karim Osama",
-    "ceoTitle": "CEO at Golden Code",
-    "ceoQuote": "As CEO at Golden Code, I’ve worked hard to clarify client requirements and deliver results efficiently without reinventing the wheel."
+    "ceoTitle": "CEO",
+    "ceoQuote": "I work hard to clarify client requirements and deliver the best results efficiently."
   },
   "MegaMenu2": {
     "careerPrompt": "Looking for new career?",
     "hiring": "We’re Hiring",
     "software": "Software",
-    "amazingServices": "Our Amazing Services"
+    "amazingServices": "Our Amazing Services",
+    "seeAllServices": "See all services"
   },
   "Industrie": {
     "subtitle": "Industries we work",

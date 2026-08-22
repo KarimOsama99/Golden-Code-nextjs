@@ -82,6 +82,12 @@
     margin-right: auto;
     margin-left: 30px;
 }
+@media (max-width: 767px) {
+    [dir="rtl"] .header-style-one .header-bar-mobile, 
+    [dir="rtl"] .header-style-two .header-bar-mobile {
+        margin-left: 0;
+    }
+}
 [dir="rtl"] .header-style-two .header-contact {
     margin-left: unset;
     /* margin-right: 30px; */
@@ -430,4 +436,12 @@
     padding-left: unset;
     padding-right: 14px;
     text-align: right;
+}
+
+/* Service Card Arrow RTL Fixes */
+[dir="rtl"] .service-box .service-item .xb-item--arrow img {
+    transform: rotate(-90deg);
+}
+[dir="rtl"] .service-box:hover .service-item .xb-item--arrow img {
+    transform: rotate(-135deg);
 }

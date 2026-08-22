@@ -20,40 +20,17 @@ const MegaMenu1: React.FC = () => {
       desc: t('aboutDesc'),
     },
     {
-      href: "/pricing",
-      icon: "/images/icon/m_02.svg",
-      title: t('pricing'),
-      desc: t('pricingDesc'),
-    },
-    {
       href: "/team",
       icon: "/images/icon/m_03.svg",
       title: t('team'),
       desc: t('teamDesc'),
     },
     {
-      href: "/services",
-      icon: "/images/icon/m_04.svg",
-      title: t('services'),
-      desc: t('servicesDesc'),
-    },
-    // { href: '/service-single', icon: '/images/icon/m_05.svg', title: 'Services Details', desc: 'Happy to help you!' },
-    {
       href: "/faq",
       icon: "/images/icon/m_06.svg",
       title: t('faq'),
       desc: t('faqDesc'),
     },
-    {
-      href: "/career",
-      icon: "/images/icon/m_07.svg",
-      title: t('career'),
-      desc: t('careerDesc'),
-    },
-    // { href: '/career-details', icon: '/images/icon/m_08.svg', title: 'Career Details', desc: 'Open roles and more.' },
-    // { href: '/portfolio-details', icon: '/images/icon/m_09.svg', title: 'Portfolio Details', desc: 'Detailed breakdowns.' },
-    // { href: '/terms-conditions', icon: '/images/icon/m_10.svg', title: 'Terms & Conditions', desc: 'Your rights & responsibilities.' },
-    // { href: '/privacy-policy', icon: '/images/icon/m_11.svg', title: 'Privacy Policy', desc: 'Commitment to confidentiality.' },
   ];
 
   const clientLogos = [
@@ -69,7 +46,7 @@ const MegaMenu1: React.FC = () => {
             <div className="mega_menu_wrapper_inner">
               <div className="row">
                 {/* Left side */}
-                <div className="col-xl-9">
+                <div className="col-xl-9 d-flex flex-column justify-content-between h-100">
                   <div className="megamenu_pages_wrapper mb-5">
                     <div className="row g-10">
                       {items.map((item, index) => (
@@ -99,7 +76,7 @@ const MegaMenu1: React.FC = () => {
                   </div>
 
                   {/* Buttons and Reviews */}
-                  <ul className="btns_group p-0 unordered_list justify-content-start">
+                  <ul className="btns_group p-0 unordered_list justify-content-start mt-4">
                     <li>
                       <Link
                         href="/contact"
@@ -153,9 +130,9 @@ const MegaMenu1: React.FC = () => {
 
                 {/* Right side */}
                 <div className="col-xl-3">
-                  <div className="autpr_box">
+                  <div className="autpr_box" style={{ paddingTop: '30px', paddingBottom: '30px' }}>
                     <div className="site_author">
-                      <div className="author_box">
+                      <div className="author_box" style={{ marginBottom: '20px' }}>
                         <div className="author_image bg-light">
                           <Image
                             src={avatar}

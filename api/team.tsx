@@ -1,5 +1,5 @@
-import timg1 from '@/public/images/bg/avatar2.jpg'
-import timg2 from "@/public/images/bg/avatar.png";
+import timg1 from '@/public/images/bg/mohamed.webp'
+import timg2 from "@/public/images/bg/karim.webp";
 import timg3 from "@/public/images/bg/avatar3.jpg";
 import timg4 from "@/public/images/bg/avatar4.jpg";
 
@@ -13,6 +13,8 @@ const getTeams = (t: any) => [
     title: t('t1Title'),
     exprience: t('t1Exp'),
     rating: "4.9",
+    github: "",
+    linkedin: "https://www.linkedin.com/in/mohamedsamy902/"
   },
   {
     Id: "2",
@@ -22,6 +24,8 @@ const getTeams = (t: any) => [
     title: t('t2Title'),
     exprience: t('t2Exp'),
     rating: "4.8",
+    github: "",
+    linkedin: "https://www.linkedin.com/in/karim-osama-b21a04233/"
   },
   {
     Id: "3",
@@ -31,6 +35,8 @@ const getTeams = (t: any) => [
     title: t('t3Title'),
     exprience: t('t3Exp'),
     rating: "4.8",
+    github: "",
+    linkedin: ""
   },
 ];
 
