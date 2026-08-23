@@ -114,9 +114,9 @@
     "careerDesc": "Work with us!",
     "freeConsultation": "Get free consultation",
     "followUs": "Follow Us:",
-    "ceoName": "Karim Osama",
-    "ceoTitle": "CEO",
-    "ceoQuote": "I work hard to clarify client requirements and deliver the best results efficiently."
+    "promoTitle": "Let's build together",
+    "promoSubtitle": "Your digital future",
+    "promoText": "We are ready to transform your ideas into successful and innovative digital products."
   },
   "MegaMenu2": {
     "careerPrompt": "Looking for new career?",
@@ -350,6 +350,7 @@
     "company": "Company",
     "aboutUs": "About us",
     "contact": "Contact",
+    "faq": "FAQ",
     "priceTable": "Price table",
     "ourBlog": "Our blog",
     "teamMember": "Team member",

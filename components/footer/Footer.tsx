@@ -98,7 +98,7 @@ const Footer: React.FC<FooterProps> = () => {
                   <Link href="/contact">{t('contact')}</Link>
                 </li>
                 <li className="xb-item--list">
-                  <Link href="/pricing">{t('priceTable')}</Link>
+                  <Link href="/faq">{t('faq')}</Link>
                 </li>
                 <li className="xb-item--list">
                   <Link href="/blog">{t('ourBlog')}</Link>

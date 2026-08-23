@@ -449,3 +449,8 @@
 [dir="rtl"] .service-box:hover .service-item .xb-item--arrow img {
     transform: rotate(-135deg);
 }
+
+
+[dir="rtl"] .promo_box_hover:hover {
+  box-shadow: inset 4px 0 0 var(--color-primary-two);
+}

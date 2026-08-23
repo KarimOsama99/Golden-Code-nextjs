@@ -22391,3 +22391,22 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   display: flex;
   align-items: center;
 }
+
+
+/* Promo Box Hover Effect */
+.promo_box_hover {
+  transition: all 0.4s ease-in-out;
+}
+.promo_box_hover:hover {
+  box-shadow: inset -4px 0 0 var(--color-primary-two);
+}
+.promo_box_hover .promo_icon_hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.promo_box_hover:hover .promo_icon_hover {
+  transform: scale(1.15) rotate(10deg);
+  background-color: var(--color-primary-two) !important;
+}
+.promo_box_hover:hover .promo_icon_hover img {
+  filter: brightness(0) invert(1);
+}

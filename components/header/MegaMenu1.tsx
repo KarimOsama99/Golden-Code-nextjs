@@ -4,8 +4,7 @@ import React from "react";
 import {Link} from '@/i18n/routing';
 import Image from "next/image";
 
-import avatar from "@/public/images/bg/avatar.png";
-import quote from "@/public/images/icon/quote.png";
+
 
 import {useTranslations} from 'next-intl';
 
@@ -130,37 +129,29 @@ const MegaMenu1: React.FC = () => {
 
                 {/* Right side */}
                 <div className="col-xl-3">
-                  <div className="autpr_box" style={{ paddingTop: '30px', paddingBottom: '30px' }}>
+                  <div className="autpr_box promo_box_hover" style={{ paddingTop: '30px', paddingBottom: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div className="site_author">
                       <div className="author_box" style={{ marginBottom: '20px' }}>
-                        <div className="author_image bg-light">
+                        <div className="author_image bg-light promo_icon_hover" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '60px', height: '60px', borderRadius: '50%' }}>
                           <Image
-                            src={avatar}
-                            alt="Author"
-                            width={60}
-                            height={60}
+                            src="/images/icon/magic-black.svg"
+                            alt="Magic Icon"
+                            width={30}
+                            height={30}
                           />
                         </div>
                         <div className="author_box_content">
                           <h3 className="author_name text-white">
-                            {t('ceoName')}
+                            {t('promoTitle')}
                           </h3>
                           <span className="author_designation text-white">
-                            {t('ceoTitle')}
+                            {t('promoSubtitle')}
                           </span>
                         </div>
                       </div>
                       <p className="mb-0 text-white">
-                        “{t('ceoQuote')}”
+                        {t('promoText')}
                       </p>
-                      <div className="author_box_quote">
-                        <Image
-                          src={quote}
-                          alt="Quote"
-                          width={40}
-                          height={40}
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
