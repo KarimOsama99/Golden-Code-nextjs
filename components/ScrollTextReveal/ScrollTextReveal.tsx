@@ -11,7 +11,7 @@ interface WordProps {
 }
 
 const Word: React.FC<WordProps> = ({ children, progress, range }) => {
-  const opacity = useTransform(progress, range, [0.18, 1]);
+  const opacity = useTransform(progress, range, [0.4, 1]);
   return (
     <motion.span className="gc-reveal-word" style={{ opacity }}>
       {children}
@@ -47,7 +47,7 @@ const ScrollTextReveal: React.FC<ScrollTextRevealProps> = ({ variant }) => {
   const words = text.split(" ");
 
   return (
-    <section className="gc-reveal-section" ref={containerRef}>
+    <section className="gc-reveal-section" ref={containerRef} style={{ position: 'relative' }}>
       <div className="gc-reveal-sticky">
         {eyebrow && <span className="gc-reveal-eyebrow">{eyebrow}</span>}
         <p className="gc-reveal-text">

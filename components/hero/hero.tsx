@@ -101,8 +101,8 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="col-lg-6">
-              <div className="hero-right_img pos-rel">
-                <Fade direction="right" triggerOnce duration={1200}>
+              <Fade direction="right" triggerOnce duration={1200}>
+                <div className="hero-right_img pos-rel" style={{ minHeight: "400px" }}>
                   <Image
                     className="wow fadeInRight"
                     data-wow-duration="600ms"
@@ -110,9 +110,10 @@ const Hero: React.FC = () => {
                     alt="Main Hero"
                     fill
                     style={{ objectFit: "contain" }}
+                    priority={true}
                   />
-                </Fade>
-              </div>
+                </div>
+              </Fade>
             </div>
           </div>
         </div>

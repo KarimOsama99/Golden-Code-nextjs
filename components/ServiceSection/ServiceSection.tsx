@@ -111,9 +111,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <div className="xb-item--icon ul_li_between">
                         <div className="xb-item--img">
                           {service.sImg ? (
-                            <Image src={service.sImg} alt={service.title} />
+                            <Image src={service.sImg} alt={service.title} unoptimized={true} />
                           ) : (
-                            <Image src={hIcon} alt={service.title} /> // fallback image
+                            <Image src={hIcon} alt={service.title} unoptimized={true} /> // fallback image
                           )}
                         </div>
                         <Link
@@ -126,6 +126,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <Link
                         href={`/services/${service.slug}`}
                         className="xb-overlay"
+                        aria-label={service.title}
                       ></Link>
                     </div>
                   </div>
@@ -150,9 +151,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <div className="xb-item--icon ul_li_between">
                         <div className="xb-item--img">
                           {service.sImg ? (
-                            <Image src={service.sImg} alt={service.title} />
+                            <Image src={service.sImg} alt={service.title} unoptimized={true} />
                           ) : (
-                            <Image src={hIcon} alt={service.title} /> // fallback
+                            <Image src={hIcon} alt={service.title} unoptimized={true} /> // fallback
                           )}
                         </div>
                         <Link
@@ -165,6 +166,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                       <Link
                         href={`/services/${service.slug}`}
                         className="xb-overlay"
+                        aria-label={service.title}
                       ></Link>
                     </div>
                   </div>

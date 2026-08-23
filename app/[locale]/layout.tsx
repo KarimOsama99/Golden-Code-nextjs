@@ -16,39 +16,17 @@ import "../../styles/mobile-app-shell.css";
 // custom-cursor markup exists anywhere in the codebase, they were only ever
 // used by template demo pages that never shipped. Dropped to cut ~25KB of
 // unused CSS from the render-blocking chain.
-import { SITE_URL, SITE_NAME } from "@/lib/seo";
+import { buildMetadata, SITE_URL, SITE_NAME } from "@/lib/seo";
 
-
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "Golden Code | Web & Mobile App Development and Professional Design",
-  description:
-    "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores with premium quality and full support.",
-  icons: {
-    icon: "/favIcon.ico",
-  },
-  openGraph: {
-    title: "Golden Code | Web & Mobile App Development",
-    description: "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores.",
-    url: SITE_URL,
-    siteName: SITE_NAME,
-    images: [
-      {
-        url: "/images/logo/logo3.png",
-        width: 800,
-        height: 600,
-        alt: "Golden Code Logo",
-      }
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Golden Code | Web & Mobile App Development",
-    description: "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores.",
-    images: ["/images/logo/logo3.png"],
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    locale,
+    path: "/",
+    title: "Web & Mobile App Development and Professional Design",
+    description: "Golden Code is a Cairo-based software team building websites, mobile apps, and e-commerce stores with premium quality and full support.",
+  });
+}
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -114,7 +92,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body id='scrool'>
+      <body id='scrool' style={{ position: 'relative' }}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

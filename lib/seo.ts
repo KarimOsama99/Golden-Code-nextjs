@@ -36,6 +36,7 @@ export function buildMetadata({
   const fullTitle = `${title} | ${SITE_NAME}`;
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: fullTitle,
     description,
     alternates: {

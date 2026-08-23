@@ -133,12 +133,16 @@ const MegaMenu1: React.FC = () => {
                     <div className="site_author">
                       <div className="author_box" style={{ marginBottom: '20px' }}>
                         <div className="author_image bg-light promo_icon_hover" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '60px', height: '60px', borderRadius: '50%' }}>
+                        <div style={{ maxWidth: '30px' }}>
                           <Image
                             src="/images/icon/magic-black.svg"
                             alt="Magic Icon"
                             width={30}
                             height={30}
+                            style={{ width: 'auto', height: 'auto' }}
+                            unoptimized={true}
                           />
+                        </div>
                         </div>
                         <div className="author_box_content">
                           <h3 className="author_name text-white">

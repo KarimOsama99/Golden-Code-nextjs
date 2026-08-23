@@ -39,9 +39,9 @@ const HomePage = () => {
 
     return (
         <Fragment>
-            <div className='body_wrap sco_agency'>
+            <div className='body_wrap sco_agency' style={{ position: 'relative' }}>
                 <Header />
-                <main className="page_content">
+                <main className="page_content" style={{ position: 'relative' }}>
                     <Hero />
                     <PartnerSection />
                     <About />

@@ -97,12 +97,16 @@ const Header: React.FC = () => {
             className="lang-toggle-btn talk thm-btn thm-btn--aso thm-btn--aso_yellow"
           >
             {t('talk')}
-            <Image
-              src="/images/icon/sms-white-icon01.svg"
-              alt="Message Icon"
-              width={20}
-              height={20}
-            />
+            <div style={{ maxWidth: '20px' }}>
+              <Image
+                src="/images/icon/sms-white-icon01.svg"
+                alt="Message Icon"
+                width={20}
+                height={20}
+                style={{ width: 'auto', height: 'auto' }}
+                unoptimized={true}
+              />
+            </div>
           </Link>
         </div>
       </div>
@@ -128,12 +132,17 @@ const Header: React.FC = () => {
             {/* Logo */}
             <div className="header-logo">
               <Link href="/">
-                <Image
-                  src="/images/logo/logo3.png"
-                  alt="Texpo Logo"
-                  width={200}
-                  height={50}
-                />
+                <div style={{ maxWidth: '200px' }}>
+                  <Image
+                    src="/images/logo/logo3.png"
+                    alt="Texpo Logo"
+                    width={200}
+                    height={50}
+                    style={{ width: 'auto', height: 'auto' }}
+                    priority={true}
+                    unoptimized={true}
+                  />
+                </div>
               </Link>
             </div>
 
@@ -206,12 +215,16 @@ const Header: React.FC = () => {
                 className="lang-toggle-btn talk thm-btn thm-btn--aso thm-btn--aso_yellow"
               >
                 {t('talk')}
-                <Image
-                  src="/images/icon/sms-white-icon01.svg"
-                  alt="Message Icon"
-                  width={20}
-                  height={20}
-                />
+                <div style={{ maxWidth: '20px' }}>
+                  <Image
+                    src="/images/icon/sms-white-icon01.svg"
+                    alt="Message Icon"
+                    width={20}
+                    height={20}
+                    style={{ width: 'auto', height: 'auto' }}
+                    unoptimized={true}
+                  />
+                </div>
               </Link>
             </div>
           </div>

@@ -1,14 +1,14 @@
 // services.ts
 import type { StaticImageData } from "next/image";
 
-import icon1 from "@/public/images/icon/ai.gif";
-import icon2 from "@/public/images/icon/web.gif";
-import icon3 from "@/public/images/icon/digital-tra.gif";
-import icon4 from "@/public/images/icon/business-develop.gif";
-import icon5 from "@/public/images/icon/search.gif";
-import icon6 from "@/public/images/icon/warning.gif";
-import icon7 from "@/public/images/icon/crm.gif";
-import icon8 from "@/public/images/icon/bar-chart.gif";
+import icon1 from "@/public/images/icon/ai.webp";
+import icon2 from "@/public/images/icon/web.webp";
+import icon3 from "@/public/images/icon/digital-tra.webp";
+import icon4 from "@/public/images/icon/business-develop.webp";
+import icon5 from "@/public/images/icon/search.webp";
+import icon6 from "@/public/images/icon/warning.webp";
+import icon7 from "@/public/images/icon/crm.webp";
+import icon8 from "@/public/images/icon/bar-chart.webp";
 
 import web from "@/public/images/vectors/web.png";
 import data from "@/public/images/vectors/data.png";
