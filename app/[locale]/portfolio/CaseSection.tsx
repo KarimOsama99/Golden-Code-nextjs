@@ -120,16 +120,28 @@ const CaseStudySection: React.FC = () => {
 
                   <span className="pf-card-badge">{study.framework}</span>
 
-                  <a
-                    href={study.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pf-visit-btn"
-                    aria-label={t("visitSite")}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalIcon />
-                  </a>
+                  {!study.link.includes("#") ? (
+                    <a
+                      href={study.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pf-visit-btn"
+                      aria-label={t("visitSite")}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalIcon />
+                    </a>
+                  ) : (
+                    <button
+                      className="pf-visit-btn disabled"
+                      aria-label={t("visitSite")}
+                      onClick={(e) => e.stopPropagation()}
+                      style={{ opacity: 0.5, cursor: "not-allowed", border: "none" }}
+                      disabled
+                    >
+                      <ExternalIcon />
+                    </button>
+                  )}
                 </motion.article>
               );
             })}

@@ -21,7 +21,7 @@ const getCases = () => [
     cat: "Real Estate Website",
     date: "10-6-2020",
     framework: "React JS",
-    link: "https://mayasem.com/",
+    link: "#",
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const getCases = () => [
     cat: "Healthcare Website",
     date: "1-9-2025",
     framework: "Next JS",
-    link: "https://salamsurgeryclinic.com/",
+    link: "https://v2.salamsurgeryclinic.com/",
   },
   {
     id: 5,

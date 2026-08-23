@@ -186,15 +186,26 @@ export default async function CaseStudySingle({ params }: Props) {
       <div className="sd-service_wrap pt-90 pb-130">
         <div className="container">
           <div className="cp-det-btn mt-20 d-grid">
-            <Link
-              href={study.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cp-btn thm-btn--aso thm-btn--aso_yellow m-auto"
-            >
-              {t("visit")} {displayTitle} {t("website")}
-              <i className="fal fa-arrow-right text-white"></i>
-            </Link>
+            {!study.link.includes("#") ? (
+              <a
+                href={study.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cp-btn thm-btn--aso thm-btn--aso_yellow m-auto"
+              >
+                {t("visit")} {displayTitle} {t("website")}
+                <i className="fal fa-arrow-right text-white"></i>
+              </a>
+            ) : (
+              <button
+                className="cp-btn thm-btn--aso thm-btn--aso_yellow m-auto disabled"
+                style={{ opacity: 0.5, cursor: "not-allowed" }}
+                disabled
+              >
+                {t("visit")} {displayTitle} {t("website")}
+                <i className="fal fa-arrow-right text-white"></i>
+              </button>
+            )}
           </div>
         </div>
       </div>
