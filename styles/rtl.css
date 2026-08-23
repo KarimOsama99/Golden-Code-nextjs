@@ -38,6 +38,10 @@
   content: "\f060"; /* Changes arrow right to arrow left code */
 }
 
+[dir="rtl"] .pf-visit-btn svg {
+  transform: scaleX(-1);
+}
+
 /* Add your custom Arabic overrides below */
 
 [dir="rtl"] .main-menu ul li .submenu li a {

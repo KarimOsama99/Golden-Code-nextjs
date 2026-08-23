@@ -260,6 +260,16 @@ ul.smothscroll {
   right: 30px;
   list-style: none;
   z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+ul.smothscroll.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 ul.smothscroll a {
