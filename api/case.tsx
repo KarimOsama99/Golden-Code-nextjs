@@ -43,7 +43,7 @@ const getCases = () => [
     cat: "Religious Website",
     date: "10-11-2024",
     framework: "Laravel",
-    link: "https://minible.com/",
+    link: "https://minbible.com/",
   },
   {
     id: 4,
@@ -65,7 +65,7 @@ const getCases = () => [
     cat: "Charitable Organization",
     date: "23-5-2024",
     framework: "Laravel",
-    link: "https://khaterfoundation.org/",
+    link: "https://khaterfoundation.com/",
   },
   {
     id: 6,
@@ -98,7 +98,7 @@ const getCases = () => [
     cat: "Educational Platform",
     date: "15-3-2021",
     framework: "Laravel",
-    link: "https://3lmni.com/",
+    link: "#",
   },
   {
     id: 9,
@@ -109,7 +109,7 @@ const getCases = () => [
     cat: "Digital Marketing",
     date: "5-8-2022",
     framework: "Next JS",
-    link: "https://almonasib.org/",
+    link: "https://almonasib.sa/",
   },
   {
     id: 10,
@@ -120,7 +120,7 @@ const getCases = () => [
     cat: "Frames Store",
     date: "20-11-2023",
     framework: "React JS",
-    link: "https://portafoto.net/",
+    link: "#",
   },
   {
     id: 11,
