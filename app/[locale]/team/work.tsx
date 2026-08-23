@@ -39,7 +39,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ bg }) => {
   ];
 
   return (
-    <section className={`work pb-130 ${bg || ""}`}>
+    <section className={`work pt-130 pb-130 ${bg || ""}`}>
       <div className="container">
         <div className="sec-title--two text-center mb-60">
           <div className="sub-title">
@@ -68,15 +68,6 @@ const WorkSection: React.FC<WorkSectionProps> = ({ bg }) => {
             ))}
           </div>
 
-          <div className="header-contact text-center mt-60">
-            <Link
-              href="/contact"
-              className="thm-btn thm-btn--aso thm-btn--header-black"
-            >
-              {tNav('talk')}
-              <Image src={iIcon2} alt="Talk icon" />
-            </Link>
-          </div>
         </div>
       </div>
     </section>

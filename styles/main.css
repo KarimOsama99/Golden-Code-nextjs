@@ -12275,11 +12275,26 @@ body[data-aos-easing="ease"] [data-aos] {
 .team-item .xb-item--inner {
   padding: 0 20px 25px;
   position: relative;
+  gap: 15px;
+}
+
+.team-item .xb-item--social-link {
+  margin-inline-start: auto;
 }
 
 @media (max-width: 991px) {
   .team-item .xb-item--inner {
     padding: 18px 20px 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-item .xb-item--reating {
+    font-size: 13px;
+    padding: 2px 5px;
+  }
+  .team-item .xb-item--reating i {
+    font-size: 12px;
   }
 }
 

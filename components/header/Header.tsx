@@ -147,8 +147,8 @@ const Header: React.FC = () => {
                     </Link>
                   </li>
 
-                  <li className={`menu-item-has-children megamenu ${pathname.startsWith('/about') || pathname.startsWith('/career') ? "active" : ""}`}>
-                    <Link href="/">
+                  <li className={`menu-item-has-children megamenu ${pathname.startsWith('/about') || pathname.startsWith('/team') || pathname.startsWith('/faq') ? "active" : ""}`}>
+                    <Link href="/about">
                       <span>{t('company')}</span>
                     </Link>
                     <MegaMenu1 />

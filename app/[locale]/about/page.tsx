@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 import CtaSection from "@/components/CtaSection/CtaSection";
 import icon from "@/public/images/icon/magic-icon.svg";
 import FeaturesSection from "./Features";
-import WhyChoose from "./WhyChoose";
+import WorkSection from "../team/work";
 import FunfactSection from "./Funfact";
 import Roadmap from "./Roadmap";
 import ScrollTextReveal from "@/components/ScrollTextReveal/ScrollTextReveal";
@@ -59,7 +59,7 @@ const AboutUsPage: React.FC = () => {
 
         <FeaturesSection />
         <div style={{ backgroundColor: "#f6f6f8" }}>
-          <WhyChoose />
+          <WorkSection />
           <FunfactSection />
         </div>
         <Roadmap />
