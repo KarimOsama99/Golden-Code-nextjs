@@ -34,9 +34,17 @@ const Hero: React.FC = () => {
 
                 <Fade direction="up" triggerOnce duration={1200}>
                   <p
-                    className="xb-item--content wow fadeInUp"
+                    className="wow fadeInUp"
                     data-wow-delay="100ms"
                     data-wow-duration="600ms"
+                    style={{ 
+                      marginBottom: '35px',
+                      fontSize: '22px',
+                      fontWeight: '700',
+                      color: '#1a1f2c',
+                      lineHeight: '1.6',
+                      maxWidth: '500px'
+                    }}
                   >
                     {t('subtitle')}
                   </p>

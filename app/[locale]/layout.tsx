@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -46,14 +46,16 @@ const organizationJsonLd = {
   sameAs: ["https://www.facebook.com/goldencodee/"],
 };
 
+import SplashScreen from "@/components/SplashScreen/SplashScreen";
+
 export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }>) {
-  const {locale} = await params;
+  const { locale } = await params;
   const messages = await getMessages();
 
   return (
@@ -93,6 +95,7 @@ export default async function RootLayout({
         />
       </head>
       <body id='scrool' style={{ position: 'relative' }}>
+        <SplashScreen />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

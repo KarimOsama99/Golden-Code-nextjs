@@ -759,3 +759,11 @@
   .stricky-fixed .main-menu ul li.active > a {
     color: var(--color-primary-two) !important;
   }
+
+  /* Move scroll down button to the white space below the image on mobile */
+  @media (max-width: 991px) {
+    .banner-scroll-down {
+      display: block !important;
+      bottom: 20px !important;
+    }
+  }
