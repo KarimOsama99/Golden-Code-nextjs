@@ -75,7 +75,7 @@ export default function SplashScreen() {
             <motion.div
               style={{
                 height: '100%',
-                backgroundColor: '#ffb800', // Golden accent
+                backgroundColor: '#c98015', // Golden accent
               }}
               initial={{ width: '0%' }}
               animate={{ width: '100%' }}
