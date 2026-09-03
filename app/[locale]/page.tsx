@@ -52,7 +52,7 @@ const HomePage = () => {
                     <Testimonial />
                     <FeaturesSection />
                     <ScrollTextReveal variant="Home" />
-                    <FaqSection />
+                    <FaqSection limit={5} />
                     <CtaSection />  
                 </main>
                 <Footer />

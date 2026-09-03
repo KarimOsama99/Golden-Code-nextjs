@@ -93,7 +93,7 @@ const PricingPage: React.FC = () => {
         </section>
 
         <PricingSection />
-        <FaqSection />
+        <FaqSection limit={5} />
         <CtaSection />
       </div>
       <Footer />

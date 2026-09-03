@@ -13,71 +13,59 @@ import Image from 'next/image';
 
 import {useTranslations} from 'next-intl';
 
-const FaqSection: React.FC = () => {
+interface FaqSectionProps {
+  limit?: number;
+}
+
+const FaqSection: React.FC<FaqSectionProps> = ({ limit }) => {
   const t = useTranslations('Faq');
 
-  const faqList: FaqItem[] = [
+  let faqList: FaqItem[] = [
     {
       id: '1',
       question: t('q1'),
-      content: {
-        text: t('a1'),
-        points: [
-          t('a1p1'),
-          t('a1p2'),
-          t('a1p3')
-        ]
-      }
+      content: { text: t('a1'), points: [t('a1p1'), t('a1p2'), t('a1p3')] }
     },
     {
       id: '2',
       question: t('q2'),
-      content: {
-        text: t('a2'),
-        points: [
-          t('a2p1'),
-          t('a2p2'),
-          t('a2p3')
-        ]
-      }
+      content: { text: t('a2'), points: [t('a2p1'), t('a2p2'), t('a2p3')] }
     },
     {
       id: '3',
       question: t('q3'),
-      content: {
-        text: t('a3'),
-        points: [
-          t('a3p1'),
-          t('a3p2'),
-          t('a3p3')
-        ]
-      }
+      content: { text: t('a3'), points: [t('a3p1'), t('a3p2'), t('a3p3')] }
     },
     {
       id: '4',
       question: t('q4'),
-      content: {
-        text: t('a4'),
-        points: [
-          t('a4p1'),
-          t('a4p2'),
-          t('a4p3')
-        ]
-      }
+      content: { text: t('a4'), points: [t('a4p1'), t('a4p2'), t('a4p3')] }
     },
     {
       id: '5',
       question: t('q5'),
-      content: {
-        text: t('a5'),
-        points: [
-          t('a5p1'),
-          t('a5p2'),
-          t('a5p3')
-        ]
-      }
+      content: { text: t('a5'), points: [t('a5p1'), t('a5p2'), t('a5p3')] }
+    },
+    {
+      id: '6',
+      question: t('q6'),
+      content: { text: t('a6'), points: [t('a6p1'), t('a6p2'), t('a6p3')] }
+    },
+    {
+      id: '7',
+      question: t('q7'),
+      content: { text: t('a7'), points: [t('a7p1'), t('a7p2'), t('a7p3')] }
+    },
+    {
+      id: '8',
+      question: t('q8'),
+      content: { text: t('a8'), points: [t('a8p1'), t('a8p2'), t('a8p3')] }
     }
   ];
+
+  if (limit) {
+    faqList = faqList.slice(0, limit);
+  }
 
   const [open, setOpen] = useState<string>('1');
 
