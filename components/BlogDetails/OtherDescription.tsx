@@ -37,9 +37,7 @@ const OtherDescription: FC<OtherDescriptionProps> = ({ blog }) => {
               </Link>
             </li>
             <li>
-              <Link aria-label="Linkedin" href="/blog">
-                <i className="fab fa-linkedin-in"></i>
-              </Link>
+
             </li>
           </ul>
         </div>
@@ -71,11 +69,6 @@ const OtherDescription: FC<OtherDescriptionProps> = ({ blog }) => {
             <li>
               <Link aria-label="Twitter" href="/blog">
                 <i className="fab fa-twitter"></i>
-              </Link>
-            </li>
-            <li>
-              <Link aria-label="Linkedin" href="/blog">
-                <i className="fab fa-linkedin-in"></i>
               </Link>
             </li>
             <li>

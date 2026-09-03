@@ -19,6 +19,9 @@ interface TeamMember {
   title: string;
   exprience: string;
   rating: string;
+  github?: string;
+  twitter?: string;
+  instagram?: string;
 }
 
 import {useTranslations} from 'next-intl';
@@ -95,11 +98,7 @@ const TeamSection: React.FC = () => {
                 </div>
               </div>
               <ul className="xb-item--social-link ul_li">
-                <li>
-                  <Link href={team.linkedin || "#"} target={team.linkedin ? "_blank" : undefined} rel={team.linkedin ? "noopener noreferrer" : undefined} aria-label="LinkedIn">
-                    <i className="fab fa-linkedin-in"></i>
-                  </Link>
-                </li>
+
                 <li>
                   <Link href={team.github || "#"} target={team.github ? "_blank" : undefined} rel={team.github ? "noopener noreferrer" : undefined} aria-label="GitHub">
                     <i className="fab fa-github"></i>

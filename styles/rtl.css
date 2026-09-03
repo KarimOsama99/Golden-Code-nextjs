@@ -103,7 +103,7 @@
 
 [dir="rtl"] .me-3,
 [dir="rtl"] .team-item .xb-item--social-link li:not(:last-child),
-[dir="rtl"] .footer-style-two .footer-copyright .footer-link li:not(:last-child) {
+[dir="rtl"] .footer-style-two .footer-link li:not(:last-child) {
     margin-right: unset;
     margin-left: 1rem;
 }

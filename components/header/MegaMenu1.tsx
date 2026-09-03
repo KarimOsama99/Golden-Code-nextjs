@@ -98,11 +98,6 @@ const MegaMenu1: React.FC = () => {
                         </li>
                         <li>
                           <Link href="/">
-                            <i className="fab fa-linkedin-in"></i>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/">
                             <svg
                               width="18"
                               height="18"

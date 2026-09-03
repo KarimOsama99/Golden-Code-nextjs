@@ -82,9 +82,44 @@ const Footer: React.FC<FooterProps> = () => {
             {/* Newsletter */}
             <div className="sa-newslatter footer-widget">
               <Image src={logo4} width={200} height={75} alt="Logo" />
-              <p className="text-white mt-30">
+              <p className="text-white mt-30 mb-30">
                 {t('description')}
               </p>
+              <ul className="footer-link ul_li mb-40">
+                <li>
+                  <span>{t('followUs')}</span>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.facebook.com/goldencodee/"
+                    target="_blank"
+                    aria-label="Facebook"
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" aria-label="Twitter">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.3872 0H15.9952L10.299 7.20048L17 17H11.7545L7.64298 11.0582L2.94415 17H0.332464L6.42395 9.29688L0 0H5.37853L9.09105 5.43101L13.3872 0ZM12.4711 15.2755H13.9155L4.5917 1.63462H3.0402L12.4711 15.2755Z"
+                        fill="#ffffff80"
+                      />
+                    </svg>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.instagram.com/goldencoode/" target='_blank' aria-label="Instagram">
+                    <i className="fab fa-instagram"></i>
+                  </Link>
+                </li>
+              </ul>
             </div>
 
             {/* Company Links */}
@@ -143,52 +178,12 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Footer Bottom */}
-          <div className="footer-copyright mt-70 ul_li_between">
+          <div className="footer-copyright mt-70 text-center">
             <p className="copyright mt-20">
               {t.rich('copyright', {
                 link: (chunks) => <Link href="/">{chunks}</Link>
               })}
             </p>
-            <ul className="footer-link ul_li mt-20">
-              <li>
-                <span>{t('followUs')}</span>
-              </li>
-              <li>
-                <Link
-                  href="https://www.facebook.com/goldencodee/"
-                  target="_blank"
-                  aria-label="Facebook"
-                >
-                  <i className="fab fa-facebook-f"></i>
-                </Link>
-              </li>
-              <li>
-                <Link href="/" aria-label="LinkedIn">
-                  <i className="fab fa-linkedin-in"></i>
-                </Link>
-              </li>
-              <li>
-                <Link href="/" aria-label="Twitter">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 17 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.3872 0H15.9952L10.299 7.20048L17 17H11.7545L7.64298 11.0582L2.94415 17H0.332464L6.42395 9.29688L0 0H5.37853L9.09105 5.43101L13.3872 0ZM12.4711 15.2755H13.9155L4.5917 1.63462H3.0402L12.4711 15.2755Z"
-                      fill="#ffffff80"
-                    />
-                  </svg>
-                </Link>
-              </li>
-              <li>
-                <Link href="https://www.instagram.com/goldencoode/" target='_blank' aria-label="Instagram">
-                  <i className="fab fa-instagram"></i>
-                </Link>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
