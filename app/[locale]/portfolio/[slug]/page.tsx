@@ -30,7 +30,7 @@ export function generateStaticParams() {
   const locales = ["en", "ar"];
   const cases = getCases();
 
-  const params = [];
+  const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
     for (const caseItem of cases) {
       params.push({

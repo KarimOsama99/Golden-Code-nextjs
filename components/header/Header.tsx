@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, FormEvent } from "react";
+import React, { useState, useEffect, FormEvent, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Link, usePathname } from '@/i18n/routing';
 import Image from "next/image";
@@ -15,6 +15,12 @@ const Header: React.FC = () => {
   const [mobailActive, setMobailState] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const [mounted, setMounted] = useState(false);
+
+  // Drag-to-dismiss state
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const touchStartY = useRef(0);
+  const drawerScrollRef = useRef<HTMLDivElement>(null);
   // Translations
   const t = useTranslations('Navigation');
   const pathname = usePathname();
@@ -49,7 +55,44 @@ const Header: React.FC = () => {
     };
   }, [mobailActive]);
 
-  const closeMobileMenu = () => setMobailState(false);
+  const closeMobileMenu = () => {
+    setMobailState(false);
+    setDragOffset(0);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    // Only allow dragging down if the menu is scrolled to the top
+    if (drawerScrollRef.current && drawerScrollRef.current.scrollTop > 0) {
+      return;
+    }
+    touchStartY.current = e.touches[0].clientY;
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    
+    const currentY = e.touches[0].clientY;
+    const diff = currentY - touchStartY.current;
+    
+    if (diff > 0) {
+      setDragOffset(diff);
+    } else {
+      setDragOffset(0);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+    
+    if (dragOffset > 100) {
+      closeMobileMenu();
+    }
+    
+    setIsDragging(false);
+    setDragOffset(0);
+    touchStartY.current = 0;
+  };
 
   const SubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,6 +110,13 @@ const Header: React.FC = () => {
         className={`xb-header-menu gc-app-drawer ${mobailActive ? "active" : ""}`}
         role="dialog"
         aria-modal="true"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{
+          transform: isDragging && dragOffset > 0 ? `translateY(${dragOffset}px)` : undefined,
+          transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.32, 0.72, 0, 1)'
+        }}
       >
         <div className="gc-app-drawer-top xb-hide-xl">
           <span className="gc-app-drawer-handle" aria-hidden="true" />
@@ -79,7 +129,10 @@ const Header: React.FC = () => {
             <i className="far fa-times" />
           </button>
         </div>
-        <div className="xb-header-menu-scroll gc-app-drawer-scroll lenis lenis-smooth">
+        <div 
+          className="xb-header-menu-scroll gc-app-drawer-scroll lenis lenis-smooth"
+          ref={drawerScrollRef}
+        >
           <nav className="xb-header-nav" onClick={(e) => {
             const target = e.target as HTMLElement;
             if (target.closest('a')) closeMobileMenu();
