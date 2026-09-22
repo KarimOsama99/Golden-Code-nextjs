@@ -10,6 +10,21 @@ import {useTranslations} from 'next-intl';
 
 const Hero: React.FC = () => {
   const t = useTranslations('Hero');
+  const [showScrollDown, setShowScrollDown] = React.useState(true);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowScrollDown(false);
+      } else {
+        setShowScrollDown(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section
       className="hero o-hidden hero-style-two pos-rel pt-120 bg_img"
@@ -34,17 +49,9 @@ const Hero: React.FC = () => {
 
                 <Fade direction="up" triggerOnce duration={1200}>
                   <p
-                    className="wow fadeInUp"
+                    className="hero-subtitle-mobile wow fadeInUp"
                     data-wow-delay="100ms"
                     data-wow-duration="600ms"
-                    style={{ 
-                      marginBottom: '35px',
-                      fontSize: '22px',
-                      fontWeight: '700',
-                      color: '#1a1f2c',
-                      lineHeight: '1.6',
-                      maxWidth: '500px'
-                    }}
                   >
                     {t('subtitle')}
                   </p>
@@ -93,7 +100,7 @@ const Hero: React.FC = () => {
 
                 <Fade direction="up" triggerOnce duration={1600}>
                   <div
-                    className="xb-btn mt-60 wow fadeInUp"
+                    className="xb-btn hero-btn-mt wow fadeInUp"
                     data-wow-delay="300ms"
                     data-wow-duration="600ms"
                   >
@@ -110,7 +117,7 @@ const Hero: React.FC = () => {
 
             <div className="col-lg-6">
               <Fade direction="right" triggerOnce duration={1200}>
-                <div className="hero-right_img pos-rel" style={{ minHeight: "400px" }}>
+                <div className="hero-right_img hero-right_img-container pos-rel">
                   <Image
                     className="wow fadeInRight"
                     data-wow-duration="600ms"
@@ -125,7 +132,14 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="banner-scroll-down active">
+        <div 
+          className="banner-scroll-down active"
+          style={{ 
+            opacity: showScrollDown ? 1 : 0, 
+            transition: 'opacity 0.3s ease',
+            pointerEvents: showScrollDown ? 'auto' : 'none'
+          }}
+        >
           <AnchorLink
             href="#about"
             aria-label="Scroll to top"

@@ -18913,7 +18913,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 15%;
+  bottom: 6%;
 }
 
 .banner-scroll-down a {
@@ -22410,3 +22410,77 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
 .promo_box_hover:hover .promo_icon_hover img {
   filter: brightness(0) invert(1);
 }
+
+/* Hero Mobile Fixes */
+.hero-subtitle-mobile {
+  margin-bottom: 35px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1f2c;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.hero-btn-mt {
+  margin-top: 60px;
+}
+
+.hero-right_img-container {
+  min-height: 400px;
+}
+
+@media (max-width: 767px) {
+  .hero-style-two .xb-hero .xb-item--title {
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+  
+  .hero-subtitle-mobile {
+    font-size: 17px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+  }
+  
+  .hero-btn-mt {
+    margin-top: 45px;
+  }
+  
+  .hero-style-two .xb-hero .xb-item--item {
+    margin-top: 35px;
+  }
+  
+  .hero-style-two .xb-hero .xb-item--item li {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  
+  .hero-style-two .xb-hero .xb-item--item li i {
+    margin-right: 12px;
+  }
+  
+  .hero-right_img-container {
+    display: flex;
+    justify-content: center;
+    min-height: 280px;
+    margin-top: 50px;
+  }
+  
+  .banner-scroll-down {
+    display: none !important;
+  }
+  
+  .hero-style-two {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .xb-hero {
+    width: 100%;
+  }
+}
+
+

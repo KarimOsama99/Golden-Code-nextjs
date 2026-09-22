@@ -761,7 +761,12 @@
   }
 
   /* Move scroll down button to the white space below the image on mobile */
-  @media (max-width: 991px) {
+  @media (max-width: 767px) {
+    .banner-scroll-down {
+      display: none !important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
     .banner-scroll-down {
       display: block !important;
       bottom: 20px !important;
