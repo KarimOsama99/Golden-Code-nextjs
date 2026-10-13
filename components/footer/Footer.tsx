@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = () => {
               <div className="xb-item--holder">
                 <p className="xb-item--content">{t('writeToUs')}</p>
                 <div className="xb-item--title">
-                  <a href="mailto:sales@goldencodee.com" className="xb-contact-link">sales@goldencodee.com</a>
+                  <a href="mailto:support@goldencodee.com" className="xb-contact-link">support@goldencodee.com</a>
                 </div>
               </div>
             </div>

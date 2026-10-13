@@ -34,7 +34,7 @@ const ContactSection: React.FC = () => {
                       <Image src={icon1} alt="Phone" /> +(20) 1124 762 799
                     </span>
                     <span className="xb-item--email">
-                      <Image src={icon2} alt="Email" /> sales@goldencodee.com
+                      <Image src={icon2} alt="Email" /> support@goldencodee.com
                     </span>
                     <ul className="social_icons_block list-unstyled ul_li">
                       <li>

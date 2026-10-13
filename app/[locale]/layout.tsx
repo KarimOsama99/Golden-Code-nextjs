@@ -35,7 +35,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo/logo3.png`,
   image: `${SITE_URL}/images/logo/logo3.png`,
-  email: "sales@goldencodee.com",
+  email: "support@goldencodee.com",
   telephone: "+201124762799",
   address: {
     "@type": "PostalAddress",
