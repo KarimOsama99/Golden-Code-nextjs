@@ -51,7 +51,10 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ jobTitle = 'Position Not Specifie
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | ''; message: string }>({
+    type: '',
+    message: '',
+  });
 
   // Validation functions
   const validateName = (name: string): string | undefined => {
@@ -164,7 +167,7 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ jobTitle = 'Position Not Specifie
 
     if (validateForm()) {
       setLoading(true);
-      setStatusMessage('');
+      setStatus({ type: '', message: '' });
 
       const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
       const templateID = process.env.NEXT_PUBLIC_EMAILJS_JOBSFORM_TEMPLATE_ID;
@@ -172,7 +175,7 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ jobTitle = 'Position Not Specifie
       
       if (!serviceID || !templateID || !publicKey) {
         setLoading(false);
-        setStatusMessage(t('envError'));
+        setStatus({ type: 'error', message: t('envError') });
         console.error('EmailJS keys not configured correctly in .env.local');
         return;
       }
@@ -201,7 +204,7 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ jobTitle = 'Position Not Specifie
         );
 
         console.log('EmailJS SUCCESS!', result.text);
-        setStatusMessage(t('successMessage'));
+        setStatus({ type: 'success', message: t('successMessage') });
         
         // Clear form after success
         setForms({
@@ -217,12 +220,12 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ jobTitle = 'Position Not Specifie
         
       } catch (error: any) {
         console.log('EmailJS FAILED...', error);
-        setStatusMessage(t('errorMessage', { error: error.text || error.message || 'Unknown error' }));
+        setStatus({ type: 'error', message: t('errorMessage', { error: error.text || error.message || 'Unknown error' }) });
       } finally {
         setLoading(false);
       }
     } else {
-      setStatusMessage(t('validationError'));
+      setStatus({ type: 'error', message: t('validationError') });
     }
   };
 
@@ -359,16 +362,37 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ jobTitle = 'Position Not Specifie
         </div>
 
         {/* Status message */}
-        {statusMessage && (
-          <p style={{ 
-            marginTop: '20px', 
-            padding: '10px', 
-            borderRadius: '4px', 
-            color: statusMessage.includes('✓') ? 'green' : 'red', 
-            backgroundColor: statusMessage.includes('✓') ? '#e6ffe6' : '#ffe6e6' 
-          }}>
-            {statusMessage}
-          </p>
+        {status.message && (
+          <div 
+            role="alert"
+            style={{ 
+              marginTop: '20px', 
+              padding: '14px 18px', 
+              borderRadius: '10px', 
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              fontSize: '15px',
+              fontWeight: 500,
+              lineHeight: 1.5,
+              color: status.type === 'success' ? '#166534' : '#991b1b', 
+              backgroundColor: status.type === 'success' ? '#f0fdf4' : '#fef2f2',
+              border: `1px solid ${status.type === 'success' ? '#bbf7d0' : '#fecaca'}`,
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            {status.type === 'success' ? (
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                <path fillRule="evenodd" clipRule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#16a34a"/>
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                <path fillRule="evenodd" clipRule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM9 6C9 5.44772 9.44772 5 10 5C10.5523 5 11 5.44772 11 6V11C11 11.5523 10.5523 12 10 12C9.44772 12 9 11.5523 9 11V6ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#dc2626"/>
+              </svg>
+            )}
+            <span>{status.message}</span>
+          </div>
         )}
       </form>
     </div>
